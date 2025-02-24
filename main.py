@@ -1,4 +1,6 @@
 import arxiv
+import pandas as pd
+import re
 
 search = arxiv.Search(
     query='cat:cs.CL',
@@ -8,18 +10,21 @@ search = arxiv.Search(
 
 client = arxiv.Client()
 papers = list(client.results(search))
-print(papers[1])
 
-{
-    'authors': papers[1].authors,
-    'categories':papers[1].categories,
-    'entry_id': papers[1].entry_id,
-    'pdf_url': papers[1].pdf_url,
-    'primary_catgeory': papers[1].primary_category,
-    'summary': papers[1].summary,
-    'title': papers[1].title,
-    'published': papers[1].published,
-    'doi': papers[1].doi
+dataset = []
+for result in papers: 
+    result.pdf_url = re.sub(r'v\d+$', '', result.pdf_url)
+    dataset.append({
+        'authors': result.authors,
+        'categories': result.categories,
+        'entry_id': result.entry_id,
+        'pdf_url': result.pdf_url,
+        'primary_category': result.primary_category,  # corrected key spelling
+        'summary': result.summary,
+        'title': result.title,
+        'published': result.published,
+        'doi': result.doi   
+    })
 
-    
-}
+dataset = pd.DataFrame(dataset)
+print(dataset.head())
