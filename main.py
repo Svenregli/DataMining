@@ -3,51 +3,57 @@ import pandas as pd
 import re
 from dotenv import load_dotenv
 import os
-from searchagent import summary_agent, reference_extraction_agent,variable_agent
+import asyncio
+from searchagent import variable_extraction_agent  # Also add summary_agent, reference_extraction_agent if needed
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
 
-# Access the API keys from environment variables
-API_KEY = os.getenv('OpenAI_API_KEY')
-LLM_MODEL = os.getenv('LLM_MODEL')
-LogFire_Key = os.getenv('LogFire_Key')
-
-# Debugging: Print the API keys to verify they are loaded
-#print(f"API_KEY: {API_KEY}")
-#print(f"LLM_MODEL: {LLM_MODEL}")
-#print(f"LogFire_Key: {LogFire_Key}")
-
-# Create an arxiv search client
+# Create ArXiv search client
 client = arxiv.Client()
 
 # Perform the search
 search = arxiv.Search(
     query='cat:cs.CL',
-    max_results=100,
+    max_results=10,  # Start small for testing
     sort_by=arxiv.SortCriterion.SubmittedDate
 )
 
-# Fetch the search results
+# Fetch and format results
 papers = list(client.results(search))
-
-# Process the search results
 dataset = []
 for result in papers:
-    result.pdf_url = re.sub(r'v\d+$', '', result.pdf_url)
+    clean_url = re.sub(r'v\d+$', '', result.pdf_url)
     dataset.append({
-        'authors': result.authors,
-        'categories': result.categories,
-        'entry_id': result.entry_id,
-        'pdf_url': result.pdf_url,
-        'primary_category': result.primary_category,
-        'summary': result.summary,
         'title': result.title,
+        'summary': result.summary,
+        'pdf_url': clean_url,
+        'authors': result.authors,
         'published': result.published,
-        'doi': result.doi
+        'primary_category': result.primary_category
     })
 
-# Convert the dataset to a DataFrame
-dataset = pd.DataFrame(dataset)
+df = pd.DataFrame(dataset)
 
 
+async def extract_variables_for_all(df):
+    variables = []
+    for _, row in df.iterrows():
+        prompt = f"What are the independent and dependent variables in the research paper at this URL: {row['pdf_url']}?"
+        try:
+            result = await variable_extraction_agent.run(prompt)
+            variables.append(result.data)  # ✅ This is the output you want
+        except Exception as e:
+            print(f"❌ Error for {row['title']}: {e}")
+            variables.append("Error")
+    df['variables'] = variables
+    return df
+
+
+
+
+
+if __name__ == "__main__":
+    df = asyncio.run(extract_variables_for_all(df))
+    print(df[['title', 'variables']])
+    df.to_csv("arxiv_with_variables.csv", index=False)

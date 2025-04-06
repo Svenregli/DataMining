@@ -31,11 +31,11 @@ web_search_agent = Agent(
     retries=2,
 )
 
-# 🧠 Tool-enabled agent
+#  Tool-enabled agent
 pdf_tool_agent = Agent(
     model,
-    system_prompt="You are an academic assistant that analyzes PDF papers. Use the available tool to extract PDF text from a URL before answering.",
-    tools=[extract_pdf_text_tool],
+    system_prompt="You analyze academic papers using a tool to extract text from PDF URLs.",
+    tools=[extract_pdf_text_tool],  # <- just use the function
     retries=2
 )
 
