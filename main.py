@@ -39,13 +39,23 @@ df = pd.DataFrame(dataset)
 async def extract_variables_for_all(df):
     variables = []
     for _, row in df.iterrows():
-        prompt = f"What are the independent and dependent variables in the research paper at this URL: {row['pdf_url']}?"
+        prompt = f"""
+You are an academic assistant that extracts variables from research papers.
+
+Your task: Identify the independent and dependent variables of the study in the paper at this URL: {row['pdf_url']}
+
+ Return the result in this exact format (use only concise, comma-separated phrases):
+
+Independent Variables: ...
+Dependent Variables: ...
+"""
         try:
             result = await variable_extraction_agent.run(prompt)
-            variables.append(result.data)  # ✅ This is the output you want
+            variables.append(result.data)  #  This is the output you want
         except Exception as e:
-            print(f"❌ Error for {row['title']}: {e}")
+            print(f" Error for {row['title']}: {e}")
             variables.append("Error")
+
     df['variables'] = variables
     return df
 
