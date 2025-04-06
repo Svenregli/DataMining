@@ -1,0 +1,1 @@
+# This file is no longer used for storing API keys. All keys are loaded from the .env file.

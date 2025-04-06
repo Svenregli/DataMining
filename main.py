@@ -1,20 +1,22 @@
 import arxiv
 import pandas as pd
 import re
-from config import API_KEY, ANOTHER_API_KEY
 from dotenv import load_dotenv
 import os
+from searchagent import summary_agent, reference_extraction_agent,variable_agent
 
 # Load environment variables from .env file
 load_dotenv()
 
 # Access the API keys from environment variables
 API_KEY = os.getenv('OpenAI_API_KEY')
-ANOTHER_API_KEY = os.getenv('ANOTHER_API_KEY')
+LLM_MODEL = os.getenv('LLM_MODEL')
+LogFire_Key = os.getenv('LogFire_Key')
 
 # Debugging: Print the API keys to verify they are loaded
-print(f"API_KEY: {API_KEY}")
-print(f"ANOTHER_API_KEY: {ANOTHER_API_KEY}")
+#print(f"API_KEY: {API_KEY}")
+#print(f"LLM_MODEL: {LLM_MODEL}")
+#print(f"LogFire_Key: {LogFire_Key}")
 
 # Create an arxiv search client
 client = arxiv.Client()
@@ -48,5 +50,4 @@ for result in papers:
 # Convert the dataset to a DataFrame
 dataset = pd.DataFrame(dataset)
 
-# Print the first few rows of the DataFrame
-print(dataset.head())
+
