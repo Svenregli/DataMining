@@ -4,7 +4,9 @@ import re
 from dotenv import load_dotenv
 import os
 import asyncio
-from searchagent import variable_extraction_agent  # Also add summary_agent, reference_extraction_agent if needed
+import matplotlib.pyplot as plt
+from collections import Counter
+from searchagent import variable_extraction_agent
 
 # Load environment variables
 load_dotenv()
@@ -15,7 +17,7 @@ client = arxiv.Client()
 # Perform the search
 search = arxiv.Search(
     query='cat:cs.CL',
-    max_results=10,  # Start small for testing
+    max_results=10,  # Keep small for testing
     sort_by=arxiv.SortCriterion.SubmittedDate
 )
 
@@ -35,7 +37,7 @@ for result in papers:
 
 df = pd.DataFrame(dataset)
 
-
+# Async function to extract variables
 async def extract_variables_for_all(df):
     variables = []
     for _, row in df.iterrows():
@@ -44,14 +46,14 @@ You are an academic assistant that extracts variables from research papers.
 
 Your task: Identify the independent and dependent variables of the study in the paper at this URL: {row['pdf_url']}
 
- Return the result in this exact format (use only concise, comma-separated phrases):
+Return the result in this exact format (use only concise, comma-separated phrases):
 
 Independent Variables: ...
 Dependent Variables: ...
 """
         try:
             result = await variable_extraction_agent.run(prompt)
-            variables.append(result.data)  #  This is the output you want
+            variables.append(result.data)
         except Exception as e:
             print(f" Error for {row['title']}: {e}")
             variables.append("Error")
@@ -59,11 +61,19 @@ Dependent Variables: ...
     df['variables'] = variables
     return df
 
-
-
-
-
+# Main runner
 if __name__ == "__main__":
     df = asyncio.run(extract_variables_for_all(df))
-    print(df[['title', 'variables']])
+
+    # Optional: Split into columns
+    df[['independent', 'dependent']] = df['variables'].str.extract(
+        r"Independent Variables:\s*(.*?)\s*Dependent Variables:\s*(.*)", expand=True
+    )
+
+    # Save to file
+    df.to_excel("arxiv_with_variables.xlsx", index=False)
     df.to_csv("arxiv_with_variables.csv", index=False)
+
+    # Print preview
+    print(df[['title', 'independent', 'dependent']])
+
