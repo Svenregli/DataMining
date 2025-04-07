@@ -1,44 +1,35 @@
+# main.py
 import arxiv
 import pandas as pd
 import re
 from dotenv import load_dotenv
 import os
 import asyncio
-import matplotlib.pyplot as plt
-from collections import Counter
 from searchagent import variable_extraction_agent
 
-# Load environment variables
 load_dotenv()
 
-# Create ArXiv search client
-client = arxiv.Client()
+def ingest_arxiv_papers(query="cat:cs.CL", max_results=10):
+    print(f"Fetching papers with query: {query}")
+    client = arxiv.Client()
+    search = arxiv.Search(query=query, max_results=max_results, sort_by=arxiv.SortCriterion.SubmittedDate)
+    papers = list(client.results(search))
 
-# Perform the search
-search = arxiv.Search(
-    query='cat:cs.CL',
-    max_results=10,  # Keep small for testing
-    sort_by=arxiv.SortCriterion.SubmittedDate
-)
+    dataset = []
+    for result in papers:
+        clean_url = re.sub(r'v\d+$', '', result.pdf_url)
+        dataset.append({
+            'title': result.title,
+            'summary': result.summary,
+            'pdf_url': clean_url,
+            'authors': [a.name for a in result.authors],
+            'published': result.published,
+            'primary_category': result.primary_category
+        })
+    return pd.DataFrame(dataset)
 
-# Fetch and format results
-papers = list(client.results(search))
-dataset = []
-for result in papers:
-    clean_url = re.sub(r'v\d+$', '', result.pdf_url)
-    dataset.append({
-        'title': result.title,
-        'summary': result.summary,
-        'pdf_url': clean_url,
-        'authors': result.authors,
-        'published': result.published,
-        'primary_category': result.primary_category
-    })
 
-df = pd.DataFrame(dataset)
-
-# Async function to extract variables
-async def extract_variables_for_all(df):
+async def extract_variables(df: pd.DataFrame):
     variables = []
     for _, row in df.iterrows():
         prompt = f"""
@@ -59,21 +50,21 @@ Dependent Variables: ...
             variables.append("Error")
 
     df['variables'] = variables
-    return df
-
-# Main runner
-if __name__ == "__main__":
-    df = asyncio.run(extract_variables_for_all(df))
-
-    # Optional: Split into columns
     df[['independent', 'dependent']] = df['variables'].str.extract(
         r"Independent Variables:\s*(.*?)\s*Dependent Variables:\s*(.*)", expand=True
     )
+    return df
 
-    # Save to file
-    df.to_excel("arxiv_with_variables.xlsx", index=False)
-    df.to_csv("arxiv_with_variables.csv", index=False)
 
-    # Print preview
-    print(df[['title', 'independent', 'dependent']])
+def save_data(df: pd.DataFrame, out_dir="data"):
+    os.makedirs(out_dir, exist_ok=True)
+    df.to_parquet(os.path.join(out_dir, "arxiv_with_variables.parquet"), index=False)
+    df.to_csv(os.path.join(out_dir, "arxiv_with_variables.csv"), index=False)
+    print("Saved data to disk.")
 
+
+if __name__ == "__main__":
+    df_raw = ingest_arxiv_papers()
+    df_processed = asyncio.run(extract_variables(df_raw))
+    save_data(df_processed)
+    print(df_processed[['title', 'independent', 'dependent']])

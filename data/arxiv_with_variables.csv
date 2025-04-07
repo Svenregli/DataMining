@@ -1,0 +1,192 @@
+title,summary,pdf_url,authors,published,primary_category,variables,independent,dependent
+Bonsai: Interpretable Tree-Adaptive Grounded Reasoning,"To develop general-purpose collaborative agents, humans need reliable AI
+systems that can (1) adapt to new domains and (2) transparently reason with
+uncertainty to allow for verification and correction. Black-box models
+demonstrate powerful data processing abilities but do not satisfy these
+criteria due to their opaqueness, domain specificity, and lack of uncertainty
+awareness. We introduce Bonsai, a compositional and probabilistic reasoning
+system that generates adaptable inference trees by retrieving relevant
+grounding evidence and using it to compute likelihoods of sub-claims derived
+from broader natural language inferences. Bonsai's reasoning power is tunable
+at test-time via evidence scaling and it demonstrates reliable handling of
+varied domains including transcripts, photographs, videos, audio, and
+databases. Question-answering and human alignment experiments demonstrate that
+Bonsai matches the performance of domain-specific black-box methods while
+generating interpretable, grounded, and uncertainty-aware reasoning traces.",http://arxiv.org/pdf/2504.03640,"['Kate Sanders', 'Benjamin Van Durme']",2025-04-04 17:59:50+00:00,cs.CL,"Independent Variables: Evidence scaling, Domain types (transcripts, photographs, videos, audio, databases)
+
+Dependent Variables: BONSAI reasoning performance, Interpretability, Uncertainty-awareness, Test-time adaptability","Evidence scaling, Domain types (transcripts, photographs, videos, audio, databases)","BONSAI reasoning performance, Interpretability, Uncertainty-awareness, Test-time adaptability"
+Do Larger Language Models Imply Better Reasoning? A Pretraining Scaling Law for Reasoning,"Large Language Models (LLMs) have demonstrated remarkable capabilities across
+a wide range of tasks requiring complex reasoning. However, the effects of
+scaling on their reasoning abilities remain insufficiently understood. In this
+paper, we introduce a synthetic multihop reasoning environment designed to
+closely replicate the structure and distribution of real-world large-scale
+knowledge graphs. Our reasoning task involves completing missing edges in the
+graph, which requires advanced multi-hop reasoning and mimics real-world
+reasoning scenarios. To evaluate this, we pretrain language models (LMs) from
+scratch solely on triples from the incomplete graph and assess their ability to
+infer the missing edges. Interestingly, we observe that overparameterization
+can impair reasoning performance due to excessive memorization. We investigate
+different factors that affect this U-shaped loss curve, including graph
+structure, model size, and training steps. To predict the optimal model size
+for a specific knowledge graph, we find an empirical scaling that linearly maps
+the knowledge graph search entropy to the optimal model size. This work
+provides new insights into the relationship between scaling and reasoning in
+LLMs, shedding light on possible ways to optimize their performance for
+reasoning tasks.",http://arxiv.org/pdf/2504.03635,"['Xinyi Wang', 'Shawn Tan', 'Mingyu Jin', 'William Yang Wang', 'Rameswar Panda', 'Yikang Shen']",2025-04-04 17:57:22+00:00,cs.AI,"Independent Variables: model size, training steps, graph structure
+
+Dependent Variables: reasoning performance, testing loss","model size, training steps, graph structure","reasoning performance, testing loss"
+Nemotron-H: A Family of Accurate and Efficient Hybrid Mamba-Transformer Models,"As inference-time scaling becomes critical for enhanced reasoning
+capabilities, it is increasingly becoming important to build models that are
+efficient to infer. We introduce Nemotron-H, a family of 8B and 56B/47B hybrid
+Mamba-Transformer models designed to reduce inference cost for a given accuracy
+level. To achieve this goal, we replace the majority of self-attention layers
+in the common Transformer model architecture with Mamba layers that perform
+constant computation and require constant memory per generated token. We show
+that Nemotron-H models offer either better or on-par accuracy compared to other
+similarly-sized state-of-the-art open-sourced Transformer models (e.g.,
+Qwen-2.5-7B/72B and Llama-3.1-8B/70B), while being up to 3$\times$ faster at
+inference. To further increase inference speed and reduce the memory required
+at inference time, we created Nemotron-H-47B-Base from the 56B model using a
+new compression via pruning and distillation technique called MiniPuzzle.
+Nemotron-H-47B-Base achieves similar accuracy to the 56B model, but is 20%
+faster to infer. In addition, we introduce an FP8-based training recipe and
+show that it can achieve on par results with BF16-based training. This recipe
+is used to train the 56B model. All Nemotron-H models will be released, with
+support in Hugging Face, NeMo, and Megatron-LM.",http://arxiv.org/pdf/2504.03624,"['NVIDIA', ':', 'Aaron Blakeman', 'Aarti Basant', 'Abhinav Khattar', 'Adithya Renduchintala', 'Akhiad Bercovich', 'Aleksander Ficek', 'Alexis Bjorlin', 'Ali Taghibakhshi', 'Amala Sanjay Deshmukh', 'Ameya Sunil Mahabaleshwarkar', 'Andrew Tao', 'Anna Shors', 'Ashwath Aithal', 'Ashwin Poojary', 'Ayush Dattagupta', 'Balaram Buddharaju', 'Bobby Chen', 'Boris Ginsburg', 'Boxin Wang', 'Brandon Norick', 'Brian Butterfield', 'Bryan Catanzaro', 'Carlo del Mundo', 'Chengyu Dong', 'Christine Harvey', 'Christopher Parisien', 'Dan Su', 'Daniel Korzekwa', 'Danny Yin', 'Daria Gitman', 'David Mosallanezhad', 'Deepak Narayanan', 'Denys Fridman', 'Dima Rekesh', 'Ding Ma', 'Dmytro Pykhtar', 'Dong Ahn', 'Duncan Riach', 'Dusan Stosic', 'Eileen Long', 'Elad Segal', 'Ellie Evans', 'Eric Chung', 'Erick Galinkin', 'Evelina Bakhturina', 'Ewa Dobrowolska', 'Fei Jia', 'Fuxiao Liu', 'Gargi Prasad', 'Gerald Shen', 'Guilin Liu', 'Guo Chen', 'Haifeng Qian', 'Helen Ngo', 'Hongbin Liu', 'Hui Li', 'Igor Gitman', 'Ilia Karmanov', 'Ivan Moshkov', 'Izik Golan', 'Jan Kautz', 'Jane Polak Scowcroft', 'Jared Casper', 'Jarno Seppanen', 'Jason Lu', 'Jason Sewall', 'Jiaqi Zeng', 'Jiaxuan You', 'Jimmy Zhang', 'Jing Zhang', 'Jining Huang', 'Jinze Xue', 'Jocelyn Huang', 'Joey Conway', 'John Kamalu', 'Jon Barker', 'Jonathan Cohen', 'Joseph Jennings', 'Jupinder Parmar', 'Karan Sapra', 'Kari Briski', 'Kateryna Chumachenko', 'Katherine Luna', 'Keshav Santhanam', 'Kezhi Kong', 'Kirthi Sivamani', 'Krzysztof Pawelec', 'Kumar Anik', 'Kunlun Li', 'Lawrence McAfee', 'Leon Derczynski', 'Lindsey Pavao', 'Luis Vega', 'Lukas Voegtle', 'Maciej Bala', 'Maer Rodrigues de Melo', 'Makesh Narsimhan Sreedhar', 'Marcin Chochowski', 'Markus Kliegl', 'Marta Stepniewska-Dziubinska', 'Matthieu Le', 'Matvei Novikov', 'Mehrzad Samadi', 'Michael Andersch', 'Michael Evans', 'Miguel Martinez', 'Mike Chrzanowski', 'Mike Ranzinger', 'Mikolaj Blaz', 'Misha Smelyanskiy', 'Mohamed Fawzy', 'Mohammad Shoeybi', 'Mostofa Patwary', 'Nayeon Lee', 'Nima Tajbakhsh', 'Ning Xu', 'Oleg Rybakov', 'Oleksii Kuchaiev', 'Olivier Delalleau', 'Osvald Nitski', 'Parth Chadha', 'Pasha Shamis', 'Paulius Micikevicius', 'Pavlo Molchanov', 'Peter Dykas', 'Philipp Fischer', 'Pierre-Yves Aquilanti', 'Piotr Bialecki', 'Prasoon Varshney', 'Pritam Gundecha', 'Przemek Tredak', 'Rabeeh Karimi', 'Rahul Kandu', 'Ran El-Yaniv', 'Raviraj Joshi', 'Roger Waleffe', 'Ruoxi Zhang', 'Sabrina Kavanaugh', 'Sahil Jain', 'Samuel Kriman', 'Sangkug Lym', 'Sanjeev Satheesh', 'Saurav Muralidharan', 'Sean Narenthiran', 'Selvaraj Anandaraj', 'Seonmyeong Bak', 'Sergey Kashirsky', 'Seungju Han', 'Shantanu Acharya', 'Shaona Ghosh', 'Sharath Turuvekere Sreenivas', 'Sharon Clay', 'Shelby Thomas', 'Shrimai Prabhumoye', 'Shubham Pachori', 'Shubham Toshniwal', 'Shyamala Prayaga', 'Siddhartha Jain', 'Sirshak Das', 'Slawek Kierat', 'Somshubra Majumdar', 'Song Han', 'Soumye Singhal', 'Sriharsha Niverty', 'Stefania Alborghetti', 'Suseella Panguluri', 'Swetha Bhendigeri', 'Syeda Nahida Akter', 'Szymon Migacz', 'Tal Shiri', 'Terry Kong', 'Timo Roman', 'Tomer Ronen', 'Trisha Saar', 'Tugrul Konuk', 'Tuomas Rintamaki', 'Tyler Poon', 'Ushnish De', 'Vahid Noroozi', 'Varun Singh', 'Vijay Korthikanti', 'Vitaly Kurin', 'Wasi Uddin Ahmad', 'Wei Du', 'Wei Ping', 'Wenliang Dai', 'Wonmin Byeon', 'Xiaowei Ren', 'Yao Xu', 'Yejin Choi', 'Yian Zhang', 'Ying Lin', 'Yoshi Suhara', 'Zhiding Yu', 'Zhiqi Li', 'Zhiyu Li', 'Zhongbo Zhu', 'Zhuolin Yang', 'Zijia Chen']",2025-04-04 17:41:58+00:00,cs.CL,"Independent Variables: Model architecture, layer type (Mamba layers, self-attention layers), parameter size (8B, 47B, 56B models), compression technique (MiniPuzzle), training recipe (FP8 vs BF16)
+
+Dependent Variables: Inference cost, accuracy, inference speed, memory requirement during inference","Model architecture, layer type (Mamba layers, self-attention layers), parameter size (8B, 47B, 56B models), compression technique (MiniPuzzle), training recipe (FP8 vs BF16)","Inference cost, accuracy, inference speed, memory requirement during inference"
+Align to Structure: Aligning Large Language Models with Structural Information,"Generating long, coherent text remains a challenge for large language models
+(LLMs), as they lack hierarchical planning and structured organization in
+discourse generation. We introduce Structural Alignment, a novel method that
+aligns LLMs with human-like discourse structures to enhance long-form text
+generation. By integrating linguistically grounded discourse frameworks into
+reinforcement learning, our approach guides models to produce coherent and
+well-organized outputs. We employ a dense reward scheme within a Proximal
+Policy Optimization framework, assigning fine-grained, token-level rewards
+based on the discourse distinctiveness relative to human writing. Two
+complementary reward models are evaluated: the first improves readability by
+scoring surface-level textual features to provide explicit structuring, while
+the second reinforces deeper coherence and rhetorical sophistication by
+analyzing global discourse patterns through hierarchical discourse motifs,
+outperforming both standard and RLHF-enhanced models in tasks such as essay
+generation and long-document summarization. All training data and code will be
+publicly shared at https://github.com/minnesotanlp/struct_align.",http://arxiv.org/pdf/2504.03622,"['Zae Myung Kim', 'Anand Ramachandran', 'Farideh Tavazoee', 'Joo-Kyung Kim', 'Oleg Rokhlenko', 'Dongyeop Kang']",2025-04-04 17:40:04+00:00,cs.CL,"Independent Variables: Structural alignment method, Surface-level text structures, Discourse graph structures, Proximal Policy Optimization framework, Reinforcement Learning from AI Feedback
+
+Dependent Variables: Coherence of generated text, Readability of text, Rhetorical sophistication, Long-form text generation performance","Structural alignment method, Surface-level text structures, Discourse graph structures, Proximal Policy Optimization framework, Reinforcement Learning from AI Feedback","Coherence of generated text, Readability of text, Rhetorical sophistication, Long-form text generation performance"
+Multilingual Retrieval-Augmented Generation for Knowledge-Intensive Task,"Retrieval-augmented generation (RAG) has become a cornerstone of contemporary
+NLP, enhancing large language models (LLMs) by allowing them to access richer
+factual contexts through in-context retrieval. While effective in monolingual
+settings, especially in English, its use in multilingual tasks remains
+unexplored. This paper investigates the effectiveness of RAG across multiple
+languages by proposing novel approaches for multilingual open-domain
+question-answering. We evaluate the performance of various multilingual RAG
+strategies, including question-translation (tRAG), which translates questions
+into English before retrieval, and Multilingual RAG (MultiRAG), where retrieval
+occurs directly across multiple languages. Our findings reveal that tRAG, while
+useful, suffers from limited coverage. In contrast, MultiRAG improves
+efficiency by enabling multilingual retrieval but introduces inconsistencies
+due to cross-lingual variations in the retrieved content. To address these
+issues, we propose Crosslingual RAG (CrossRAG), a method that translates
+retrieved documents into a common language (e.g., English) before generating
+the response. Our experiments show that CrossRAG significantly enhances
+performance on knowledge-intensive tasks, benefiting both high-resource and
+low-resource languages.",http://arxiv.org/pdf/2504.03616,"['Leonardo Ranaldi', 'Barry Haddow', 'Alexandra Birch']",2025-04-04 17:35:43+00:00,cs.CL,"Independent Variables: Multilingual retrieval strategies, question-translation (tRAG), multilingual RAG (MultiRAG), Crosslingual RAG (CrossRAG)
+
+Dependent Variables: Performance on knowledge-intensive tasks, RAG accuracy, RAG consistency, multilingual generative abilities","Multilingual retrieval strategies, question-translation (tRAG), multilingual RAG (MultiRAG), Crosslingual RAG (CrossRAG)","Performance on knowledge-intensive tasks, RAG accuracy, RAG consistency, multilingual generative abilities"
+"AIR: A Systematic Analysis of Annotations, Instructions, and Response Pairs in Preference Dataset","Preference learning is critical for aligning large language models (LLMs)
+with human values, yet its success hinges on high-quality datasets comprising
+three core components: Preference \textbf{A}nnotations, \textbf{I}nstructions,
+and \textbf{R}esponse Pairs. Current approaches conflate these components,
+obscuring their individual impacts and hindering systematic optimization. In
+this work, we propose \textbf{AIR}, a component-wise analysis framework that
+systematically isolates and optimizes each component while evaluating their
+synergistic effects. Through rigorous experimentation, AIR reveals actionable
+principles: annotation simplicity (point-wise generative scoring), instruction
+inference stability (variance-based filtering across LLMs), and response pair
+quality (moderate margins + high absolute scores). When combined, these
+principles yield +5.3 average gains over baseline method, even with only 14k
+high-quality pairs. Our work shifts preference dataset design from ad hoc
+scaling to component-aware optimization, offering a blueprint for efficient,
+reproducible alignment.",http://arxiv.org/pdf/2504.03612,"['Bingxiang He', 'Wenbin Zhang', 'Jiaxi Song', 'Cheng Qian', 'Zixuan Fu', 'Bowen Sun', 'Ning Ding', 'Haiwen Hong', 'Longtao Huang', 'Hui Xue', 'Ganqu Cui', 'Wanxiang Che', 'Zhiyuan Liu', 'Maosong Sun']",2025-04-04 17:33:07+00:00,cs.CL,"Independent Variables: Preference Annotations, Instructions, Response Pairs  
+Dependent Variables: Preference Dataset Quality, Model Performance (over baseline)","Preference Annotations, Instructions, Response Pairs","Preference Dataset Quality, Model Performance (over baseline)"
+APIGen-MT: Agentic Pipeline for Multi-Turn Data Generation via Simulated Agent-Human Interplay,"Training effective AI agents for multi-turn interactions requires
+high-quality data that captures realistic human-agent dynamics, yet such data
+is scarce and expensive to collect manually. We introduce APIGen-MT, a
+two-phase framework that generates verifiable and diverse multi-turn agent
+data. In the first phase, our agentic pipeline produces detailed task
+blueprints with ground-truth actions, leveraging a committee of LLM reviewers
+and iterative feedback loops. These blueprints are then transformed into
+complete interaction trajectories through simulated human-agent interplay. We
+train a family of models -- the xLAM-2-fc-r series with sizes ranging from 1B
+to 70B parameters. Our models outperform frontier models such as GPT-4o and
+Claude 3.5 on $\tau$-bench and BFCL benchmarks, with the smaller models
+surpassing their larger counterparts, particularly in multi-turn settings,
+while maintaining superior consistency across multiple trials. Comprehensive
+experiments demonstrate that our verified blueprint-to-details approach yields
+high-quality training data, enabling the development of more reliable,
+efficient, and capable agents. We open-source both the synthetic data collected
+and the trained xLAM-2-fc-r models to advance research in AI agents. Models are
+available on HuggingFace at
+https://huggingface.co/collections/Salesforce/xlam-2-67ef5be12949d8dcdae354c4
+and project website is https://apigen-mt.github.io",http://arxiv.org/pdf/2504.03601,"['Akshara Prabhakar', 'Zuxin Liu', 'Weiran Yao', 'Jianguo Zhang', 'Ming Zhu', 'Shiyu Wang', 'Zhiwei Liu', 'Tulika Awalgaonkar', 'Haolin Chen', 'Thai Hoang', 'Juan Carlos Niebles', 'Shelby Heinecke', 'Huan Wang', 'Silvio Savarese', 'Caiming Xiong']",2025-04-04 17:13:57+00:00,cs.CL,"Independent Variables: Use of APIGen-MT framework, Model size (e.g., xLAM-2-fc-r series sizes from 1B to 70B)
+
+Dependent Variables: Quality of multi-turn interaction data, Model performance on τ-bench and BFCL benchmarks","Use of APIGen-MT framework, Model size (e.g., xLAM-2-fc-r series sizes from 1B to 70B)","Quality of multi-turn interaction data, Model performance on τ-bench and BFCL benchmarks"
+EnrichIndex: Using LLMs to Enrich Retrieval Indices Offline,"Existing information retrieval systems excel in cases where the language of
+target documents closely matches that of the user query. However, real-world
+retrieval systems are often required to implicitly reason whether a document is
+relevant. For example, when retrieving technical texts or tables, their
+relevance to the user query may be implied through a particular jargon or
+structure, rather than explicitly expressed in their content. Large language
+models (LLMs) hold great potential in identifying such implied relevance by
+leveraging their reasoning skills. Nevertheless, current LLM-augmented
+retrieval is hindered by high latency and computation cost, as the LLM
+typically computes the query-document relevance online, for every query anew.
+To tackle this issue we introduce EnrichIndex, a retrieval approach which
+instead uses the LLM offline to build semantically-enriched retrieval indices,
+by performing a single pass over all documents in the retrieval corpus once
+during ingestion time. Furthermore, the semantically-enriched indices can
+complement existing online retrieval approaches, boosting the performance of
+LLM re-rankers. We evaluated EnrichIndex on five retrieval tasks, involving
+passages and tables, and found that it outperforms strong online LLM-based
+retrieval systems, with an average improvement of 11.7 points in recall @ 10
+and 10.6 points in NDCG @ 10 compared to strong baselines. In terms of online
+calls to the LLM, it processes 293.3 times fewer tokens which greatly reduces
+the online latency and cost. Overall, EnrichIndex is an effective way to build
+better retrieval indices offline by leveraging the strong reasoning skills of
+LLMs.",http://arxiv.org/pdf/2504.03598,"['Peter Baile Chen', 'Tomer Wolfson', 'Michael Cafarella', 'Dan Roth']",2025-04-04 17:08:46+00:00,cs.CL,"Independent Variables: Use of LLM offline, Use of EnrichIndex, Type of retrieval tasks, Type of documents (passages and tables).
+
+Dependent Variables: Retrieval performance, Recall @ 10, NDCG @ 10, Online LLM latency, Online LLM token processing cost.","Use of LLM offline, Use of EnrichIndex, Type of retrieval tasks, Type of documents (passages and tables).","Retrieval performance, Recall @ 10, NDCG @ 10, Online LLM latency, Online LLM token processing cost."
+Extending the SAREF4ENER Ontology with Flexibility Based on FlexOffers,"A key element to support the increased amounts of renewable energy in the
+energy system is flexibility, i.e., the possibility of changing energy loads in
+time and amount. Many flexibility models have been designed; however, exact
+models fail to scale for long time horizons or many devices. Because of this,
+the FlexOffer (FOs) model has been designed, to provide device-independent
+approximations of flexibility with good accuracy, and much better scaling for
+long time horizons and many devices. An important aspect of the real-life
+implementation of energy flexibility is enabling flexible data exchange with
+many types of smart energy appliances and market systems, e.g., in smart
+buildings. For this, ontologies standardizing data formats are required.
+However, the current industry standard ontology for integrating smart devices
+for energy purposes, SAREF for Energy Flexibility (SAREF4ENER) only has limited
+support for flexibility and thus cannot support important use cases. In this
+paper we propose an extension of SAREF4ENER that integrates full support for
+the complete FlexOffer model, including advanced use cases, while maintaining
+backward compatibility. This novel ontology module can accurately describe
+flexibility for advanced devices such as electric vehicles, batteries, and heat
+pumps. It can also capture the inherent uncertainty associated with many
+flexible load types.",http://arxiv.org/pdf/2504.03595,"['Fabio Lilliu', 'Amir Laadhar', 'Christian Thomsen', 'Diego Reforgiato Recupero', 'Torben Bach Pedersen']",2025-04-04 17:02:14+00:00,cs.CL,"Independent Variables: SAREF4ENER ontology extension, FlexOffer model, advanced devices (e.g., electric vehicles, batteries, heat pumps)
+
+Dependent Variables: energy flexibility, data exchange capability, performance with smart energy appliances and market systems","SAREF4ENER ontology extension, FlexOffer model, advanced devices (e.g., electric vehicles, batteries, heat pumps)","energy flexibility, data exchange capability, performance with smart energy appliances and market systems"
+SynWorld: Virtual Scenario Synthesis for Agentic Action Knowledge Refinement,"In the interaction between agents and their environments, agents expand their
+capabilities by planning and executing actions. However, LLM-based agents face
+substantial challenges when deployed in novel environments or required to
+navigate unconventional action spaces. To empower agents to autonomously
+explore environments, optimize workflows, and enhance their understanding of
+actions, we propose SynWorld, a framework that allows agents to synthesize
+possible scenarios with multi-step action invocation within the action space
+and perform Monte Carlo Tree Search (MCTS) exploration to effectively refine
+their action knowledge in the current environment. Our experiments demonstrate
+that SynWorld is an effective and general approach to learning action knowledge
+in new environments. Code is available at https://github.com/zjunlp/SynWorld.",http://arxiv.org/pdf/2504.03561,"['Runnan Fang', 'Xiaobin Wang', 'Yuan Liang', 'Shuofei Qiao', 'Jialong Wu', 'Zekun Xi', 'Ningyu Zhang', 'Yong Jiang', 'Pengjun Xie', 'Fei Huang', 'Huajun Chen']",2025-04-04 16:10:57+00:00,cs.CL,"Independent Variables: Virtual scenario synthesis, multi-step action invocation, Monte Carlo Tree Search (MCTS), environment feedback
+
+Dependent Variables: Agent's action knowledge, task performance, workflow optimization, environmental interactivity, operational versatility.","Virtual scenario synthesis, multi-step action invocation, Monte Carlo Tree Search (MCTS), environment feedback","Agent's action knowledge, task performance, workflow optimization, environmental interactivity, operational versatility."
