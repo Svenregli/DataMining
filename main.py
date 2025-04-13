@@ -9,7 +9,7 @@ from searchagent import variable_extraction_agent
 
 load_dotenv()
 
-def ingest_arxiv_papers(query="cat:cs.CL", max_results=10):
+def ingest_arxiv_papers(query="cat:cs.CL", max_results=1000):
     print(f"Fetching papers with query: {query}")
     client = arxiv.Client()
     search = arxiv.Search(query=query, max_results=max_results, sort_by=arxiv.SortCriterion.SubmittedDate)
