@@ -15,18 +15,24 @@ embed_model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
 client = chromadb.HttpClient(host="localhost", port=8000)
 collection = client.get_or_create_collection("paper_chunks")
 
-def search_chunks(query: str, k=6):
-    results = collection.query(
-        query_texts=[query],
-        n_results=k
-    )
 
-    if results["documents"]:
-        docs = results["documents"][0]
-        metas = results["metadatas"][0]
-        return list(zip(docs, metas))  # ✅ returns [(chunk, metadata), ...]
-    else:
-        return []
+
+def search_chunks(query: str, k=6, year=None, author=None):
+    results = collection.query(query_texts=[query], n_results=50)  # Get more to allow filtering
+
+    docs = results["documents"][0]
+    metas = results["metadatas"][0]
+
+    # Apply filters
+    filtered = []
+    for doc, meta in zip(docs, metas):
+        year_match = (year is None or meta.get("year") == year)
+        author_match = (author is None or author in meta.get("authors", "").lower())
+        if year_match and author_match:
+            filtered.append((doc, meta))  #  returns tuple of (chunk, metadata)
+
+    return filtered[:k]
+
 
 
 

@@ -1,8 +1,25 @@
 import streamlit as st
 from rag_extract_variables import search_chunks, extract_variables_from_chunks
+import pandas as pd
 
-st.set_page_config(page_title="🎓 Research Variable Extractor", layout="wide")
+st.set_page_config(
+    page_title="🎓 Research Variable Extractor",
+    layout="wide",
+    initial_sidebar_state="expanded"  # ✅ opens sidebar on page load
+)
 st.title("🔍 Academic Assistant – Variable Extraction")
+
+# Load raw metadata to power filters
+df_meta = pd.read_parquet("data/arxiv_raw.parquet")
+
+# Extract available years
+df_meta["year"] = pd.to_datetime(df_meta["published"]).dt.year
+available_years = sorted(df_meta["year"].unique())
+
+# Create author list (flattened from all papers)
+all_authors = df_meta["authors"].explode().dropna().astype(str).unique().tolist()
+all_authors.sort()
+
 
 # 🧠 ArXiv category dropdown
 arxiv_categories = {
@@ -25,13 +42,26 @@ task = st.radio(
 )
 
 
+st.sidebar.header("📂 Filter Options")
+
+# Year filter
+selected_year = st.sidebar.selectbox("Filter by Year", options=["All"] + list(available_years), index=0)
+
+# Author filter (text input or multiselect)
+selected_author = st.sidebar.text_input("Filter by Author Name (optional)").strip().lower()
+
+
 # 🧠 Query input
 query = st.text_input("Enter your research query:")
 
 if query:
     with st.spinner("🔎 Searching ChromaDB..."):
-        chunks = search_chunks(query, k=k)
-
+        chunks = search_chunks(
+            query,
+            k=k,
+            year=None if selected_year == "All" else int(selected_year),
+            author=selected_author if selected_author else None
+        )
     if not chunks:
         st.warning("⚠️ No matching chunks found. Try a broader or more topic-specific query.")
         st.stop()
