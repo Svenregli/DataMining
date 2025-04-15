@@ -13,7 +13,7 @@ embed_model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
 client = chromadb.HttpClient(host="localhost", port=8000)
 collection = client.get_or_create_collection("paper_chunks")
 
-# Chunking logic (simple — one chunk for now)
+# Chunking logic
 def chunk_text(text, size=1500, overlap=300):
     chunks = []
     start = 0
