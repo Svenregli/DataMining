@@ -4,14 +4,15 @@ import openai
 from dotenv import load_dotenv
 import os
 import time # Import time for potential backoff
-
+from chromadb.utils import embedding_functions
+from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
 # Load env variables (make sure .env has OPENAI_API_KEY)
 load_dotenv()
 openai_client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Load sentence-transformer model
 print("Loading embedding model...")
-embed_model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
+openai_ef = OpenAIEmbeddingFunction(api_key=os.getenv("OPENAI_API_KEY"))
 print("Embedding model loaded.")
 
 # Connect to ChromaDB server
@@ -19,26 +20,30 @@ try:
     print("Connecting to ChromaDB...")
     client = chromadb.HttpClient(host="localhost", port=8000)
     client.heartbeat()
-    collection = client.get_or_create_collection("paper_chunks")
+    collection = client.get_or_create_collection("paper_chunks", embedding_function=openai_ef)
     print("Connected to ChromaDB and collection obtained.")
 except Exception as e:
     print(f"Error connecting to ChromaDB: {e}")
     collection = None
 
 
-def search_chunks(query: str, k=6, year=None, author=None):
+def search_chunks(query: str, k=6, year=None, author=None, collection_name="arxiv"):
     """
     Searches for relevant text chunks in ChromaDB based on a query and filters.
     """
     if not collection:
         print("ChromaDB collection is not available.")
         return []
+
     try:
+        # Get or create collection based on input name
+        collection = client.get_or_create_collection(collection_name)
+
         results = collection.query(query_texts=[query], n_results=50)
 
         if not results or not results.get("documents") or not results["documents"][0]:
-             print("No results found in ChromaDB for the query.")
-             return []
+            print("No results found in ChromaDB for the query.")
+            return []
 
         docs = results["documents"][0]
         metas = results["metadatas"][0]
@@ -59,6 +64,7 @@ def search_chunks(query: str, k=6, year=None, author=None):
     except Exception as e:
         print(f"Error during ChromaDB search: {e}")
         return []
+
 
 
 def extract_variables_from_chunks(chunks: list[str]) -> str:

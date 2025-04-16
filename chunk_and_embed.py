@@ -1,17 +1,20 @@
 import pandas as pd
-from sentence_transformers import SentenceTransformer
 import chromadb
 import datetime 
 import numpy as np
+from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
+import os
+
 # Load data
 df = pd.read_parquet("data/arxiv_raw.parquet")
 
 # Init embedding model
-embed_model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
+openai_ef = OpenAIEmbeddingFunction(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Connect to running Chroma server
 client = chromadb.HttpClient(host="localhost", port=8000)
-collection = client.get_or_create_collection("paper_chunks")
+collection = client.get_or_create_collection("paper_chunks", embedding_function=openai_ef)
+
 
 # Chunking logic
 def chunk_text(text, size=1500, overlap=300):
@@ -34,7 +37,7 @@ if isinstance(raw_authors, (list, np.ndarray)):
 else:
     authors = str(raw_authors)
     for j, chunk in enumerate(text_chunks):
-        embedding = embed_model.encode(chunk).tolist()
+
 
         metadata = {
             "title": row["title"],
@@ -48,7 +51,6 @@ else:
 
         collection.add(
             documents=[chunk],
-            embeddings=[embedding],
             ids=[f"{i}_chunk_{j}"],
             metadatas=[metadata]
         )
