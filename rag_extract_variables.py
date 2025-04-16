@@ -27,22 +27,26 @@ except Exception as e:
     collection = None
 
 
-def search_chunks(query: str, k=6, year=None, author=None, collection_name="arxiv"):
+def search_chunks(query: str, k=6, year=None, author=None, collection_name="semantic_scholar"):
     """
     Searches for relevant text chunks in ChromaDB based on a query and filters.
     """
-    if not collection:
-        print("ChromaDB collection is not available.")
+    try:
+        # Define client inside the function
+        client = chromadb.HttpClient(host="localhost", port=8000)
+        openai_ef = OpenAIEmbeddingFunction(api_key=os.getenv("OPENAI_API_KEY"))
+
+        # Always create collection first
+        collection = client.get_or_create_collection(collection_name, embedding_function=openai_ef)
+    except Exception as e:
+        print(f"❌ Error creating or connecting to ChromaDB collection: {e}")
         return []
 
     try:
-        # Get or create collection based on input name
-        collection = client.get_or_create_collection(collection_name)
-
         results = collection.query(query_texts=[query], n_results=50)
 
         if not results or not results.get("documents") or not results["documents"][0]:
-            print("No results found in ChromaDB for the query.")
+            print("⚠️ No results found in ChromaDB for the query.")
             return []
 
         docs = results["documents"][0]
@@ -62,8 +66,10 @@ def search_chunks(query: str, k=6, year=None, author=None, collection_name="arxi
         return filtered[:k]
 
     except Exception as e:
-        print(f"Error during ChromaDB search: {e}")
+        print(f"❌ Error during ChromaDB search: {e}")
         return []
+
+
 
 
 

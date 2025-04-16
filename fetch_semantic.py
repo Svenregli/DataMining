@@ -4,11 +4,12 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import chromadb
 from chromadb.utils import embedding_functions
 import os
+import tempfile
 
 # Set up embedding + ChromaDB
 openai_ef = embedding_functions.OpenAIEmbeddingFunction(api_key=os.getenv("OPENAI_API_KEY"))
-chroma_client = chromadb.Client()
-collection = chroma_client.get_or_create_collection("semantic_scholar", embedding_function=openai_ef)
+client = chromadb.HttpClient(host="localhost", port=8000)
+collection = client.get_or_create_collection("semantic_scholar", embedding_function=openai_ef)
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 
@@ -25,17 +26,19 @@ def query_semantic_scholar(query: str, limit: int = 10):
     return response.json().get("data", [])
 
 # 2. Helper to fetch full PDF text
+
+
 def fetch_pdf_text(pdf_url):
     response = requests.get(pdf_url)
     response.raise_for_status()
 
-    pdf_path = "temp.pdf"
-    with open(pdf_path, "wb") as f:
-        f.write(response.content)
+    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
+        tmp.write(response.content)
+        tmp_path = tmp.name
 
-    # Only try to open after the file is fully written
-    doc = fitz.open(pdf_path)
+    doc = fitz.open(tmp_path)
     return "\n".join([page.get_text() for page in doc])
+
 
 
 # 3. Embed papers into ChromaDB
@@ -68,7 +71,8 @@ def embed_papers_to_chroma(papers):
             ids = [f"{paper_id}_chunk_{j}" for j in range(len(chunks))]
 
             collection.add(documents=chunks, metadatas=metadatas, ids=ids)
-            print(f"✅ Added: {title}")
+            print(f"✅ Added {len(chunks)} chunks for: {title}")
+
 
         except Exception as e:
             print(f"❌ Error processing '{title}': {e}")

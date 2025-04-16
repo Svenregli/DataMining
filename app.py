@@ -165,6 +165,7 @@ with tab2:
             chunks = search_chunks(
                 query,
                 k=k,
+                collection_name="paper_chunks",
                 year=None if selected_year == "All" else int(selected_year),
                 author=selected_author if selected_author else None
             )
