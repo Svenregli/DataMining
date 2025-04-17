@@ -1,53 +1,85 @@
-# 🧠 AI-Powered Academic Assistant
+# 🧠 AI-Powered Academic Research Assistant
 
-This project is an AI-powered research assistant that helps users **search, analyze, and extract structured information** from academic papers. It supports **semantic search** over chunked ArXiv abstracts and lets you extract:
+A local-first, AI-powered assistant that helps you **search**, **analyze**, and **extract structured insights** from academic papers—sourced from both **ArXiv** and **Semantic Scholar**.
 
-- ✅ Independent & Dependent Variables
-- ✅ Paper Summaries
-
-All via OpenAI's GPT models and a **fully local ChromaDB vector store**.
+Built with OpenAI’s GPT models and **ChromaDB 1.0+**, it enables powerful **semantic search** and variable extraction across chunked paper abstracts.
 
 ---
 
 ## 🚀 Features
 
-- 🔎 Ingest papers from [ArXiv](https://arxiv.org/)
-- ✂️ Chunk text using sliding windows
-- 🧠 Embed with `sentence-transformers`
-- 💾 Store/retrieve via **ChromaDB 1.0+** (persistent, local)
-- 💬 Ask GPT to extract variables or generate summaries
-- 🖥️ Interactive UI with **Streamlit**
-- 🎛️ Adjustable filters (category, chunk count, task type)
-- 📦 Local vector storage in `chroma_store/`
+- 🔍 Fetch abstracts from [ArXiv](https://arxiv.org/) and [Semantic Scholar](https://www.semanticscholar.org/)
+- ✂️ Chunk content using a sliding window approach
+- 🧠 Embed text with `sentence-transformers`
+- 💾 Store and query vectors locally with **ChromaDB**
+- 💬 Extract insights using OpenAI's GPT models:
+  - ✅ Independent & Dependent Variables
+  - ✅ Concise Paper Summaries
+- 🖥️ Interactive **Streamlit UI**
+- 🎛️ Adjustable filters:
+  - Source (ArXiv or Semantic Scholar)
+  - Category / Keywords
+  - Publication year
+  - Chunk count
+  - Task type (summarization or variable extraction)
+- 📦 Persistent vector storage in `./chroma_store/`
 
 ---
 
-## 🔧 Setup Instructions
+## 🛠️ Setup Instructions
 
-### 1. Clone & create a virtual environment
+### 1. Clone and create virtual environment
 
 ```bash
 git clone https://github.com/Svenregli/DataMining
 cd DataMining
 python -m venv .venv
+
+# Activate (Windows)
 .\.venv\Scripts\activate
+
+# Activate (macOS/Linux)
+source .venv/bin/activate
+
+## 🛠️ Setup Instructions
 pip install -r requirements.txt
 
+## 3. Add your OpenAI API key to an env file 
+The key has to be in this format: "OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-###Add yourOpenAI API key
-OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-
-### 3. run ChromaDB in a seperate Terminal
+## 4. Start ChromaDB in a seperate terminal
 chroma run --path ./chroma_store
-It should look like this: ![alt text](image.png)
 
-
-### 4. fetch the papers from Arxiv: 
-python fetch_arxiv.py          # Download abstracts (category is editable)
-python chunk_and_embed.py      # Create semantic chunks & store in Chroma
-
-
-### Launch the UI
+## 5. Launch streamlit App
 streamlit run app.py
-Your browser will open at http://localhost:8501
+✨ Example Use Cases
+Identify dependent and independent variables in research
+
+Generate quick summaries of papers
+
+Perform semantic similarity search on abstract content
+
+Build structured datasets from unstructured literature
+
+💡 What’s Next?
+📄 Support for full PDF ingestion (with Grobid or PDF parsers)
+
+🧠 Visualization of variable networks and research clusters
+
+📊 More filters (e.g., citations, journal, author)
+
+🔁 Cross-source deduplication & similarity linking
+
+🧪 Tech Stack
+OpenAI API
+
+ChromaDB 1.0+
+
+Sentence-Transformers
+
+Streamlit
+
+ArXiv API
+
+Semantic Scholar API
