@@ -70,6 +70,7 @@ Build structured datasets from unstructured literature
 📊 More filters (e.g., citations, journal, author)
 
 🔁 Cross-source deduplication & similarity linking
+🐳 Using containers like Docker
 
 🧪 Tech Stack
 OpenAI API

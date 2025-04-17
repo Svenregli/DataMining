@@ -1,9 +1,13 @@
-import chromadb
-from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
-import os
+import pkg_resources
 
-client = chromadb.HttpClient(host="localhost", port=8000)
-openai_ef = OpenAIEmbeddingFunction(api_key=os.getenv("OPENAI_API_KEY"))
+packages = [
+    "streamlit", "chromadb", "python-dotenv", "openai", "sentence-transformers",
+    "PyMuPDF", "tqdm", "pandas", "requests", "arxiv", "langchain"
+]
 
-collection = client.get_or_create_collection("semantic_scholar", embedding_function=openai_ef)
-print(collection.count())  # ✅ should be > 0
+for pkg in packages:
+    try:
+        version = pkg_resources.get_distribution(pkg).version
+        print(f"{pkg}: {version}")
+    except Exception as e:
+        print(f"{pkg}: not found ({e})")
