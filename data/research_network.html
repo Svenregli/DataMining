@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "eec73b1441146616f2898431f095a2e893113a44", "label": "Rohingya Refugee and Foreign Policy: China\u2019s Policy and Interests in Rakhine State", "shape": "dot", "size": 10, "title": "Rohingya Refugee and Foreign Policy: China\u2019s Policy and Interests in Rakhine State"}, {"color": "#97c2fc", "id": "29b2ca611383b56979a26b809c8b8f4aedd31a8f", "label": "A Special Relationship?", "shape": "dot", "size": 10, "title": "A Special Relationship?"}, {"color": "#97c2fc", "id": "866808465173dfa874e43341a321edd48065d0f3", "label": "Myanmar\u0027s \u0027Rohingya\u0027 Conflict", "shape": "dot", "size": 10, "title": "Myanmar\u0027s \u0027Rohingya\u0027 Conflict"}, {"color": "#97c2fc", "id": "8cbe90897f22a9ff2b4cfafb3e4900cfc089a3ad", "label": "The Gathering Storm: China\u2019s Challenge to US Power in Asia", "shape": "dot", "size": 10, "title": "The Gathering Storm: China\u2019s Challenge to US Power in Asia"}, {"color": "#97c2fc", "id": "6e2bd0443477828ed727d6aae615060aa23f14c4", "label": "International Society as a Process: Institutions, Identities, and China\u2019s Peaceful Rise", "shape": "dot", "size": 10, "title": "International Society as a Process: Institutions, Identities, and China\u2019s Peaceful Rise"}, {"color": "#97c2fc", "id": "6993c3c02e8a0ab603c3c2858867a41731a84240", "label": "Productivity spillovers from R\u0026D, exports and FDI in China\u0027s manufacturing sector", "shape": "dot", "size": 10, "title": "Productivity spillovers from R\u0026D, exports and FDI in China\u0027s manufacturing sector"}, {"color": "#97c2fc", "id": "152686bd1bdc207a67a914e635fa4a89d4a7e756", "label": "The Effect of Fixed Exchange Rates on Monetary Policy", "shape": "dot", "size": 10, "title": "The Effect of Fixed Exchange Rates on Monetary Policy"}, {"color": "#97c2fc", "id": "748712f2cf61fe517f8199f5a54cf244144a7dbf", "label": "China\u2019s Unpeaceful Rise", "shape": "dot", "size": 10, "title": "China\u2019s Unpeaceful Rise"}, {"color": "#97c2fc", "id": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "label": "Regime Complexity and Complex Foreign Policy: China in International Development Finance Governance", "shape": "dot", "size": 10, "title": "Regime Complexity and Complex Foreign Policy: China in International Development Finance Governance"}, {"color": "#97c2fc", "id": "597b09ab92cef1d5c1ed32b6e0524677cdd19303", "label": "Global Club Goods and the Fragmented Global Financial Safety Net", "shape": "dot", "size": 10, "title": "Global Club Goods and the Fragmented Global Financial Safety Net"}, {"color": "#97c2fc", "id": "d4304ab5f8fdcf9a2c777e062735fb9d9324a226", "label": "Global development governance in the \u2018interregnum\u2019", "shape": "dot", "size": 10, "title": "Global development governance in the \u2018interregnum\u2019"}, {"color": "#97c2fc", "id": "452b34586e14b49a2e73b8476dc6641cee923732", "label": "State Actors, Market Games: Credit Guarantees and the Funding of China Development Bank", "shape": "dot", "size": 10, "title": "State Actors, Market Games: Credit Guarantees and the Funding of China Development Bank"}, {"color": "#97c2fc", "id": "fffc189566be22fe3bdb8325f14e37c3e2817182", "label": "From Drawing Board to Reality: The First Four Years of Operations at the Asian Infrastructure Investment Bank and New Development Bank", "shape": "dot", "size": 10, "title": "From Drawing Board to Reality: The First Four Years of Operations at the Asian Infrastructure Investment Bank and New Development Bank"}, {"color": "#97c2fc", "id": "0ad129a9ebdca1b9751e8d457555dcd7d3890f7e", "label": "AIIB\n at Three: A Comparative and Institutional Perspective", "shape": "dot", "size": 10, "title": "AIIB\n at Three: A Comparative and Institutional Perspective"}, {"color": "#97c2fc", "id": "33b8ad2e6e29469730b22df8f1039a684a0d71de", "label": "The Asian Infrastructure Investment Bank \u2013 New Multilateralism: Early Development, Innovation, and Future Agendas", "shape": "dot", "size": 10, "title": "The Asian Infrastructure Investment Bank \u2013 New Multilateralism: Early Development, Innovation, and Future Agendas"}, {"color": "#97c2fc", "id": "38ef03576f412417ce577f2e17362dc0249da956", "label": "China in a World of Orders: Rethinking Compliance and Challenge in Beijing\u0027s International Relations", "shape": "dot", "size": 10, "title": "China in a World of Orders: Rethinking Compliance and Challenge in Beijing\u0027s International Relations"}, {"color": "#97c2fc", "id": "f5154dd8b4794714bb124c66d382b575519c01bd", "label": "China in Africa: Competition for traditional development finance institutions?", "shape": "dot", "size": 10, "title": "China in Africa: Competition for traditional development finance institutions?"}, {"color": "#97c2fc", "id": "0e55cd110759b6be0afcb456d65c0e13e2ad35c2", "label": "The New Development Bank and the Asian Infrastructure Investment Bank: China\u0027s Ambiguous Approach to Global Financial Governance", "shape": "dot", "size": 10, "title": "The New Development Bank and the Asian Infrastructure Investment Bank: China\u0027s Ambiguous Approach to Global Financial Governance"}, {"color": "#97c2fc", "id": "4ba39318f972129f5995759b39d1b410e44cbbe8", "label": "Limits to the BRICS\u2019 challenge: credit rating reform and institutional innovation in global finance", "shape": "dot", "size": 10, "title": "Limits to the BRICS\u2019 challenge: credit rating reform and institutional innovation in global finance"}, {"color": "#97c2fc", "id": "9cd5ca98eb6d028c0a816517f46a6bad91b4f87a", "label": "A Comparative Guide to the Asian Infrastructure Investment Bank", "shape": "dot", "size": 10, "title": "A Comparative Guide to the Asian Infrastructure Investment Bank"}, {"color": "#97c2fc", "id": "1e12a23cdb1bd51fddc1ae9435acc1381bc8bb7f", "label": "China and the Third World: Patterns of Engagement and Indifference", "shape": "dot", "size": 10, "title": "China and the Third World: Patterns of Engagement and Indifference"}, {"color": "#97c2fc", "id": "dc15119d94fd4580f7f6c44eccb62155b21839d1", "label": "Are \u201cNew\u201d Donors Challenging World Bank Conditionality?", "shape": "dot", "size": 10, "title": "Are \u201cNew\u201d Donors Challenging World Bank Conditionality?"}, {"color": "#97c2fc", "id": "5c3f65c8fb800a4fe68089ea1b41b6edf6438592", "label": "Tangled Governance: International Regime Complexity, the Troika, and the Euro Crisis", "shape": "dot", "size": 10, "title": "Tangled Governance: International Regime Complexity, the Troika, and the Euro Crisis"}, {"color": "#97c2fc", "id": "16e8172a67a821c89e40df19ed0f5ad4e1cda7bf", "label": "Bad neighbors? How co-located Chinese and World Bank development projects impact local corruption in Tanzania", "shape": "dot", "size": 10, "title": "Bad neighbors? How co-located Chinese and World Bank development projects impact local corruption in Tanzania"}, {"color": "#97c2fc", "id": "92e98b6e81c808804f900b38240debf9130dfec4", "label": "Estimating China\u2019s Foreign Aid 2001-2013", "shape": "dot", "size": 10, "title": "Estimating China\u2019s Foreign Aid 2001-2013"}, {"color": "#97c2fc", "id": "aaa2f0f8e835ae2603605ea0b0457800edbc2dfe", "label": "The resurgence of South\u2013South cooperation", "shape": "dot", "size": 10, "title": "The resurgence of South\u2013South cooperation"}, {"color": "#97c2fc", "id": "dd2657975e2a9811b2e4bfe92f8c374450a3f635", "label": "Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa", "shape": "dot", "size": 10, "title": "Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa"}, {"color": "#97c2fc", "id": "f60c726a8dd8bd9b9721a023bfd26861fe178150", "label": "China and Sovereign Debt Restructuring", "shape": "dot", "size": 10, "title": "China and Sovereign Debt Restructuring"}, {"color": "#97c2fc", "id": "cde44023851d031f5965b463355bcad5d0f72183", "label": "New Friends, Old Friends? the World Bank and Africa When the Chinese Are Coming", "shape": "dot", "size": 10, "title": "New Friends, Old Friends? the World Bank and Africa When the Chinese Are Coming"}, {"color": "#97c2fc", "id": "713851fd930bc963845f66f5c3fe0a9d589996e4", "label": "Southern Pioneers of International Development", "shape": "dot", "size": 10, "title": "Southern Pioneers of International Development"}, {"color": "#97c2fc", "id": "a355e23bbcb9b2f5d2fc5e135832bcbe02c36bb1", "label": "Forgotten Foundations of Bretton Woods: International Development and the Making of the Postwar Order", "shape": "dot", "size": 10, "title": "Forgotten Foundations of Bretton Woods: International Development and the Making of the Postwar Order"}, {"color": "#97c2fc", "id": "1eec3a1b4c9a8f07da3d083e30baeac37e4c6322", "label": "China\u2019s Foreign Aid", "shape": "dot", "size": 10, "title": "China\u2019s Foreign Aid"}, {"color": "#97c2fc", "id": "7e5dc0e15dba9902fa864401c807e9fec121bd1c", "label": "Introduction: rising states, rising donors and the global aid regime", "shape": "dot", "size": 10, "title": "Introduction: rising states, rising donors and the global aid regime"}, {"color": "#97c2fc", "id": "4d9daa92e965f4e992a9e07cc3a0866536335e20", "label": "From Recipients to Donors: Emerging Powers and the Changing Development Landscape", "shape": "dot", "size": 10, "title": "From Recipients to Donors: Emerging Powers and the Changing Development Landscape"}, {"color": "#97c2fc", "id": "9858aad1b6ddbfd4a52e593c0e748eb0f24ca651", "label": "South Korea as an emerging donor: Challenges and changes on its entering OECD/DAC", "shape": "dot", "size": 10, "title": "South Korea as an emerging donor: Challenges and changes on its entering OECD/DAC"}, {"color": "#97c2fc", "id": "a4f778a94dfa7ab96132c4b10271ad1925722d81", "label": "Overlapping Institutions in Trade Policy", "shape": "dot", "size": 10, "title": "Overlapping Institutions in Trade Policy"}, {"color": "#97c2fc", "id": "f92890dcf95b57903de052ad7a5200a6f142b162", "label": "The Politics of International Regime Complexity", "shape": "dot", "size": 10, "title": "The Politics of International Regime Complexity"}, {"color": "#97c2fc", "id": "ff4ad92eb5105fb5bc55e62c4965725506374a10", "label": "Factionalism in Chinese Communist Politics", "shape": "dot", "size": 10, "title": "Factionalism in Chinese Communist Politics"}, {"color": "#97c2fc", "id": "f1de5d9f3a4f0282aff7363f30b652797f2f5d95", "label": "Domestic Political Audiences and the Escalation of International Disputes", "shape": "dot", "size": 10, "title": "Domestic Political Audiences and the Escalation of International Disputes"}, {"color": "#97c2fc", "id": "faf98e6a2e54af65cba872f4599fb1efe298e560", "label": "Reconsidering Policy Design: Policies and Publics", "shape": "dot", "size": 10, "title": "Reconsidering Policy Design: Policies and Publics"}, {"color": "#97c2fc", "id": "742cf2427f114b2df18024114a73c36a7e4cbf92", "label": "China\u0027s Participation in the IMF, the World Bank, and GATT: Toward a Global Economic Order", "shape": "dot", "size": 10, "title": "China\u0027s Participation in the IMF, the World Bank, and GATT: Toward a Global Economic Order"}, {"color": "#97c2fc", "id": "a3dc725feb718cb7649f506a36c9973935d8e06c", "label": "Power structures and regional development banks", "shape": "dot", "size": 10, "title": "Power structures and regional development banks"}, {"color": "#97c2fc", "id": "ff555fc7cb6a514b44feed8d26c9062d5fc7b11a", "label": "Development Assistance Committee (DAC)", "shape": "dot", "size": 10, "title": "Development Assistance Committee (DAC)"}, {"color": "#97c2fc", "id": "5ad5b83edda3ec7032bdf6795879ed6094832c02", "label": "Coordinated Credit Spaces: The Globalization of Chinese Development Finance", "shape": "dot", "size": 10, "title": "Coordinated Credit Spaces: The Globalization of Chinese Development Finance"}, {"color": "#97c2fc", "id": "f757de5905d7343d988e054c850dbccf0345603b", "label": "A Club of the Rich to Help the Poor? The OECD, \u201cDevelopment\u201d, and the Hegemony of Donor Countries", "shape": "dot", "size": 10, "title": "A Club of the Rich to Help the Poor? The OECD, \u201cDevelopment\u201d, and the Hegemony of Donor Countries"}, {"color": "#97c2fc", "id": "4defede3852d1f6020c2548e43cb2d3423a2f7f0", "label": "Regime Complexity and Policy Coherency: Introducing a Co-Adjustments Model", "shape": "dot", "size": 10, "title": "Regime Complexity and Policy Coherency: Introducing a Co-Adjustments Model"}, {"color": "#97c2fc", "id": "8ffe64aca9a39ecc8d72d663b2c09e2ab9328385", "label": "Regime Complexes: A Buzz, a Boom, or a Boost for Global Governance?", "shape": "dot", "size": 10, "title": "Regime Complexes: A Buzz, a Boom, or a Boost for Global Governance?"}, {"color": "#97c2fc", "id": "880bae31557cad80fda50f1f6785e1b1611164d9", "label": "Non-State Actors : Navigating the Regime Complexes for Forestry and Genetic Resources", "shape": "dot", "size": 10, "title": "Non-State Actors : Navigating the Regime Complexes for Forestry and Genetic Resources"}, {"color": "#97c2fc", "id": "2610aec8242e4163691fcdf95e67b66e6cfdab66", "label": "Kastenberg, Joshua E. Goldwater v. Carter: Foreign Policy, China, and the Resurgence of Executive Branch Primacy", "shape": "dot", "size": 10, "title": "Kastenberg, Joshua E. Goldwater v. Carter: Foreign Policy, China, and the Resurgence of Executive Branch Primacy"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "eec73b1441146616f2898431f095a2e893113a44", "to": "29b2ca611383b56979a26b809c8b8f4aedd31a8f", "width": 1}, {"arrows": "to", "from": "eec73b1441146616f2898431f095a2e893113a44", "to": "866808465173dfa874e43341a321edd48065d0f3", "width": 1}, {"arrows": "to", "from": "eec73b1441146616f2898431f095a2e893113a44", "to": "8cbe90897f22a9ff2b4cfafb3e4900cfc089a3ad", "width": 1}, {"arrows": "to", "from": "eec73b1441146616f2898431f095a2e893113a44", "to": "6e2bd0443477828ed727d6aae615060aa23f14c4", "width": 1}, {"arrows": "to", "from": "eec73b1441146616f2898431f095a2e893113a44", "to": "6993c3c02e8a0ab603c3c2858867a41731a84240", "width": 1}, {"arrows": "to", "from": "eec73b1441146616f2898431f095a2e893113a44", "to": "152686bd1bdc207a67a914e635fa4a89d4a7e756", "width": 1}, {"arrows": "to", "from": "eec73b1441146616f2898431f095a2e893113a44", "to": "748712f2cf61fe517f8199f5a54cf244144a7dbf", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "597b09ab92cef1d5c1ed32b6e0524677cdd19303", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "d4304ab5f8fdcf9a2c777e062735fb9d9324a226", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "452b34586e14b49a2e73b8476dc6641cee923732", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "fffc189566be22fe3bdb8325f14e37c3e2817182", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "0ad129a9ebdca1b9751e8d457555dcd7d3890f7e", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "33b8ad2e6e29469730b22df8f1039a684a0d71de", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "38ef03576f412417ce577f2e17362dc0249da956", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "f5154dd8b4794714bb124c66d382b575519c01bd", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "0e55cd110759b6be0afcb456d65c0e13e2ad35c2", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "4ba39318f972129f5995759b39d1b410e44cbbe8", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "9cd5ca98eb6d028c0a816517f46a6bad91b4f87a", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "1e12a23cdb1bd51fddc1ae9435acc1381bc8bb7f", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "dc15119d94fd4580f7f6c44eccb62155b21839d1", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "5c3f65c8fb800a4fe68089ea1b41b6edf6438592", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "16e8172a67a821c89e40df19ed0f5ad4e1cda7bf", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "92e98b6e81c808804f900b38240debf9130dfec4", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "aaa2f0f8e835ae2603605ea0b0457800edbc2dfe", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "dd2657975e2a9811b2e4bfe92f8c374450a3f635", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "f60c726a8dd8bd9b9721a023bfd26861fe178150", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "cde44023851d031f5965b463355bcad5d0f72183", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "713851fd930bc963845f66f5c3fe0a9d589996e4", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "a355e23bbcb9b2f5d2fc5e135832bcbe02c36bb1", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "1eec3a1b4c9a8f07da3d083e30baeac37e4c6322", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "7e5dc0e15dba9902fa864401c807e9fec121bd1c", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "4d9daa92e965f4e992a9e07cc3a0866536335e20", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "9858aad1b6ddbfd4a52e593c0e748eb0f24ca651", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "a4f778a94dfa7ab96132c4b10271ad1925722d81", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "f92890dcf95b57903de052ad7a5200a6f142b162", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "ff4ad92eb5105fb5bc55e62c4965725506374a10", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "f1de5d9f3a4f0282aff7363f30b652797f2f5d95", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "faf98e6a2e54af65cba872f4599fb1efe298e560", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "742cf2427f114b2df18024114a73c36a7e4cbf92", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "a3dc725feb718cb7649f506a36c9973935d8e06c", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "ff555fc7cb6a514b44feed8d26c9062d5fc7b11a", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "5ad5b83edda3ec7032bdf6795879ed6094832c02", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "f757de5905d7343d988e054c850dbccf0345603b", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "4defede3852d1f6020c2548e43cb2d3423a2f7f0", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "8ffe64aca9a39ecc8d72d663b2c09e2ab9328385", "width": 1}, {"arrows": "to", "from": "98d4ef1de4dc11f0816cf47d35931ebff19faa0a", "to": "880bae31557cad80fda50f1f6785e1b1611164d9", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "repulsion": {
+            "centralGravity": 0.2,
+            "damping": 0.09,
+            "nodeDistance": 200,
+            "springConstant": 0.05,
+            "springLength": 200
+        },
+        "solver": "repulsion",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

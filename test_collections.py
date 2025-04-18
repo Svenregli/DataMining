@@ -1,13 +1,2 @@
-import pkg_resources
-
-packages = [
-    "streamlit", "chromadb", "python-dotenv", "openai", "sentence-transformers",
-    "PyMuPDF", "tqdm", "pandas", "requests", "arxiv", "langchain"
-]
-
-for pkg in packages:
-    try:
-        version = pkg_resources.get_distribution(pkg).version
-        print(f"{pkg}: {version}")
-    except Exception as e:
-        print(f"{pkg}: not found ({e})")
+from fetch_semantic import query_semantic_scholar, embed_papers_to_chroma
+df = query_semantic_scholar("macroeconomic forecasting", limit=10)

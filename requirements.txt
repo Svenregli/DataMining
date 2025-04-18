@@ -9,3 +9,4 @@ pandas==2.2.3
 requests==2.32.3
 arxiv==2.1.3
 langchain==0.3.23
+plotly==6.0.1
