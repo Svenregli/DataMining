@@ -176,3 +176,22 @@ def load_all_cached_papers(folder=CACHE_DIR):
             except Exception as e:
                 st.warning(f"Failed to load {file}: {e}")
     return all_references
+
+
+
+# Function: Load all cached query files and track source filenames
+def load_all_cached_papers_with_sources(folder="data/semantic_scholar_cache"):
+    all_papers = []
+    for file in os.listdir(folder):
+        if file.endswith(".json"):
+            path = os.path.join(folder, file)
+            query_name = file.replace("search_", "").replace(".json", "")
+            try:
+                with open(path, "r") as f:
+                    papers = json.load(f)
+                    for paper in papers:
+                        paper["source"] = query_name  # tag each paper with its query source
+                        all_papers.append(paper)
+            except Exception as e:
+                st.warning(f"Failed to load {file}: {e}")
+    return all_papers

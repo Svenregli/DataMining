@@ -3,21 +3,13 @@ from rag_extract_variables import search_chunks, extract_variables_from_chunks, 
 from pdf_utils import extract_text_from_pdf, chunk_text
 import pandas as pd
 from fetch_semantic import query_semantic_scholar, embed_papers_to_openai_wrapper
-from embed_papers_openai import embed_papers_to_openai, embed_and_store_chunks, load_all_cached_papers, enrich_chroma_papers_with_references
+from embed_papers_openai import embed_papers_to_openai, embed_and_store_chunks, load_all_cached_papers, enrich_chroma_papers_with_references,load_all_cached_papers_with_sources
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-import plotly.express as px
 from pyvis.network import Network
 import streamlit.components.v1 as components
 import networkx as nx
 import json
 import os
-
-
-
-
-
-
-
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 # --- Streamlit App Setup ---
@@ -198,37 +190,86 @@ with tab3:
 
 # Tab 4: Global Research Citation Network
 
+def load_enriched_papers(queries_folder="data/semantic_scholar_cache", cache_folder="data/semantic_scholar_cache"):
+    all_papers = []
+    for file in os.listdir(queries_folder):
+        if file.endswith(".json"):
+            path = os.path.join(queries_folder, file)
+            query_name = file.replace("search_", "").replace(".json", "")
+            try:
+                with open(path, "r") as f:
+                    papers = json.load(f)
+                    for paper in papers:
+                        pid = paper.get("paperId")
+                        ref_path = os.path.join(cache_folder, f"paper_{pid}.json")
+                        if os.path.exists(ref_path):
+                            try:
+                                with open(ref_path, "r") as ref_file:
+                                    references = json.load(ref_file)
+                                paper["references"] = references
+                            except:
+                                paper["references"] = []
+                        else:
+                            paper["references"] = []
+                        paper["source"] = query_name
+                        all_papers.append(paper)
+            except Exception as e:
+                st.warning(f"Failed to load {file}: {e}")
+    return all_papers
+
+# Generate unique colors per query source
+def generate_color_palette(sources):
+    base_colors = [
+        "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
+        "#8c564b", "#e377c2", "#7f7f7f", "#bcbd22", "#17becf"
+    ]
+    palette = {}
+    for i, source in enumerate(sorted(set(sources))):
+        palette[source] = base_colors[i % len(base_colors)]
+    return palette
+
+# Tab 4: Global Research Citation Network
 with tab4:  # "Research Network" tab
     st.markdown("---")
     st.markdown("### 🌐 Global Research Citation Network (from cached queries)")
 
-    if st.button("📡 Enrich stored Papers with References"):
-        with st.spinner("Fetching missing references from stored papers..."):
+    if st.button("📡 Enrich References for All Embedded Papers"):
+        with st.spinner("Fetching references from Semantic Scholar for embedded papers..."):
             count = enrich_chroma_papers_with_references()
-            st.success(f"✅ Enriched {count} new papers from stored papers.")
+            st.success(f"✅ Enriched {count} papers with reference metadata.")
 
-    papers = load_all_cached_papers()
+    papers = load_enriched_papers()
 
     if not papers:
-        st.warning("⚠️ No cached queries found. Please fetch and save queries from Tab 1 first.")
+        st.warning("⚠️ No enriched papers found. Please run a Semantic Scholar query and enrich references in Tab 1.")
     else:
-        st.success(f"Loaded {len(papers)} papers from cache.")
+        st.success(f"Loaded {len(papers)} enriched papers.")
 
         G = nx.DiGraph()
         edges = 0
 
+        sources = [p.get("source", "unknown") for p in papers]
+        color_map = generate_color_palette(sources)
+
         for paper in papers:
             pid = paper.get("paperId")
             title = paper.get("title", "Untitled")
+            source = paper.get("source", "unknown")
+            year = paper.get("year")
 
             if pid:
-                G.add_node(pid, label=title)
+                G.add_node(
+                    pid,
+                    label=title[:60],
+                    title=f"{title}\nYear: {year}",
+                    color=color_map.get(source, "#999")
+                )
 
                 for ref in paper.get("references", []):
                     ref_id = ref.get("paperId")
                     ref_title = ref.get("title", "Unknown")
                     if ref_id:
-                        G.add_node(ref_id, label=ref_title)
+                        G.add_node(ref_id, label=ref_title[:60], title=ref_title)
                         G.add_edge(pid, ref_id)
                         edges += 1
 
@@ -237,17 +278,55 @@ with tab4:  # "Research Network" tab
         if edges == 0:
             st.warning("⚠️ No citation edges were created. Make sure references have 'paperId' fields.")
         else:
-            net = Network(height="600px", width="100%", directed=True)
+            net = Network(
+                height="800px",
+                width="100%",
+                directed=True,
+                notebook=False,
+                bgcolor="#ffffff",
+                font_color="black"
+            )
             net.from_nx(G)
+            net.set_options("""
+var options = {
+  "nodes": {
+    "font": {
+      "size": 18
+    },
+    "shape": "dot",
+    "size": 15
+  },
+  "edges": {
+    "color": {
+      "inherit": true
+    },
+    "smooth": false
+  },
+  "physics": {
+    "barnesHut": {
+      "gravitationalConstant": -30000,
+      "centralGravity": 0.3,
+      "springLength": 400,
+      "springConstant": 0.04,
+      "damping": 0.09,
+      "avoidOverlap": 1
+    },
+    "minVelocity": 0.75
+  }
+}
+""")
+
+
             net.save_graph("data/global_citation_network.html")
 
             with open("data/global_citation_network.html", "r", encoding="utf-8") as f:
                 html = f.read()
-            components.html(html, height=650, scrolling=True)
+            components.html(html, height=850, scrolling=True)
 
-        # Optional diagnostics
         missing_refs = sum(1 for p in papers for r in p.get("references", []) if not r.get("paperId"))
         st.info(f"🧩 Found {missing_refs} references missing 'paperId'.")
+
+
 
 
 

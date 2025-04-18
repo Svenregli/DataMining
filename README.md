@@ -1,86 +1,116 @@
-# 🧠 AI-Powered Academic Research Assistant
+# 📚 Semantic Scholar Research Assistant
 
-A local-first, AI-powered assistant that helps you **search**, **analyze**, and **extract structured insights** from academic papers—sourced from both **ArXiv** and **Semantic Scholar**.
+A powerful academic assistant that helps you fetch, embed, analyze, and visualize scientific papers using Semantic Scholar and OpenAI. Built with Streamlit.
+🔁 Step-by-Step Workflow
+1. Search & Fetch (Tab 1)
+The user enters a topic (e.g., "causal inference in medical AI").
 
-Built with OpenAI’s GPT models and **ChromaDB 1.0+**, it enables powerful **semantic search** and variable extraction across chunked paper abstracts.
+The app queries the Semantic Scholar API to fetch matching papers.
 
+Optionally, the user can fetch the full list of references for each paper.
+
+The papers are displayed, and the user can choose to extract variables or summarize abstracts using GPT.
+
+2. Embed with OpenAI (Tab 1)
+When “Fetch and Embed” is selected, each paper’s title and abstract are chunked using RecursiveCharacterTextSplitter.
+
+These chunks are embedded into OpenAI’s vector space using text-embedding-3-small.
+On Tab 2 , the user can upload  individual PDF's and summarize them or retrieve the variables, however these uploaded PDF files are not added to the graph (yet)
+
+All embedded chunks are stored in data/vector_store.json.
+Be aware that the semantic scholar API has a request limit of 100 request per 5 minutes, therefore only fetch a few papers per query
+
+3. Semantic Retrieval (Tab 3)
+The user inputs a search query (e.g., “factors influencing dropout”).
+
+The system embeds the query and performs cosine similarity search against all stored chunks.
+
+Top-k chunks are returned, and the user can:
+
+Extract independent/dependent variables using GPT
+
+Generate a summary of the retrieved content
+
+4. Reference Enrichment (Optional in Tab 4)
+Each paper’s references can be enriched by querying the Semantic Scholar API again.
+
+These reference relationships are cached locally in semantic_scholar_cache/.
+
+5. Citation Graph Visualization (Tab 4)
+The app builds a directed citation graph using networkx and displays it using PyVis.
+
+Nodes are colored based on the original query file.
+
+Hovering shows titles and metadata (e.g., year).
+
+Physics settings have been tuned for clarity and spacing.
 ---
 
 ## 🚀 Features
 
-- 🔍 Fetch abstracts from [ArXiv](https://arxiv.org/) and [Semantic Scholar](https://www.semanticscholar.org/)
-- ✂️ Chunk content using a sliding window approach
-- 🧠 Embed text with `sentence-transformers`
-- 💾 Store and query vectors locally with **ChromaDB**
-- 💬 Extract insights using OpenAI's GPT models:
-  - ✅ Independent & Dependent Variables
-  - ✅ Concise Paper Summaries
-- 🖥️ Interactive **Streamlit UI**
-- 🎛️ Adjustable filters:
-  - Source (ArXiv or Semantic Scholar)
-  - Category / Keywords
-  - Publication year
-  - Chunk count
-  - Task type (summarization or variable extraction)
-- 📦 Persistent vector storage in `./chroma_store/`
+- 🔍 **Semantic Scholar Integration** — Search for papers by topic
+- 📄 **Chunk & Embed with OpenAI** — Embed paper text into OpenAI’s vector space
+- 🧠 **Variable Extraction & Summarization** — Use GPT to analyze retrieved chunks
+- 🌐 **Citation Graph Network** — Visualize references and citations with PyVis
+- 🧠 **Query-aware vector search** — Retrieve relevant chunks using OpenAI cosine similarity
 
 ---
 
-## 🛠️ Setup Instructions
+## 🛠 Installation
 
-### 1. Clone and create virtual environment
+1. Clone the repository:
 
 ```bash
-git clone https://github.com/Svenregli/DataMining
-cd DataMining
-python -m venv .venv
+git clone https://github.com/your-username/semantic-scholar-assistant.git
+cd semantic-scholar-assistant
+```
 
-# Activate (Windows)
-.\.venv\Scripts\activate
+2. Install requirements:
 
-# Activate (macOS/Linux)
-source .venv/bin/activate
-
-## 🛠️ Setup Instructions
+```bash
 pip install -r requirements.txt
+```
 
-## 3. Add your OpenAI API key to an env file 
-The key has to be in this format: "OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+3. Add your OpenAI API key to a `.env` file:
 
+```env
+OPENAI_API_KEY=your_openai_key_here
+```
 
-## 4. Start ChromaDB in a seperate terminal
-chroma run --path ./chroma_store
+---
 
-## 5. Launch streamlit App
+## ▶️ Run the App
+
+```bash
 streamlit run app.py
-✨ Example Use Cases
-Identify dependent and independent variables in research
+```
 
-Generate quick summaries of papers
+---
 
-Perform semantic similarity search on abstract content
+## 📁 Project Structure
 
-Build structured datasets from unstructured literature
+```text
+├── app.py                            # Main Streamlit app
+├── fetch_semantic.py                # Semantic Scholar query + embedding
+├── enrich_chroma_papers_with_references.py  # Reference enrichment from API
+├── embed_papers_openai.py          # Vector store logic using OpenAI
+├── rag_extract_variables.py        # GPT-based extraction and summarization
+├── data/
+│   ├── vector_store.json            # Embedded chunks
+│   ├── semantic_scholar_queries/   # Fetched queries
+│   └── semantic_scholar_cache/     # Cached references
+├── requirements.txt
+└── README.md
+```
 
-💡 What’s Next?
-📄 Support for full PDF ingestion (with Grobid or PDF parsers)
+---
 
-🧠 Visualization of variable networks and research clusters
+## ✨ Future Ideas
 
-📊 More filters (e.g., citations, journal, author)
+- Add filters by author, year, venue
+- Support ArXiv + PDF upload pipelines
+- Highlight highly cited nodes
+- run project on docker 
+-  external storage of vectors, for example in Azure storage accounts to ensure scalability
 
-🔁 Cross-source deduplication & similarity linking
-🐳 Using containers like Docker
-
-🧪 Tech Stack
-OpenAI API
-
-ChromaDB 1.0+
-
-Sentence-Transformers
-
-Streamlit
-
-ArXiv API
-
-Semantic Scholar API
+---

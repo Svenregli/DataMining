@@ -22,3 +22,6 @@ def chunk_text(text, size=1000, overlap=200):
     if end < len(text) and start < len(text):
         chunks.append(text[start:])
     return chunks
+
+
+
