@@ -1,53 +1,77 @@
 # 📚 Semantic Scholar Research Assistant
 
 A powerful academic assistant that helps you fetch, embed, analyze, and visualize scientific papers using Semantic Scholar and OpenAI. Built with Streamlit.
-You can test it here: https://datamining-dkm9iake685izsyfddtr3q.streamlit.app/
-There are around 10$ credit left for this API key, this should be sufficent to analyze around 500-1000 papers, depending on the length of the papers
 
-🔁 Step-by-Step Workflow
-1. Search & Fetch (Tab 1)
-The user enters a topic (e.g., "causal inference in medical AI").
+👉 **Try it live**: [https://datamining-dkm9iake685izsyfddtr3q.streamlit.app/](https://datamining-dkm9iake685izsyfddtr3q.streamlit.app/)
 
-The app queries the Semantic Scholar API to fetch matching papers.
+💸 **Note**: There are around **$10 in OpenAI credit** remaining on the API key. This should be sufficient to analyze ~500–1000 papers depending on their length.
 
-Optionally, the user can fetch the full list of references for each paper.
+---
 
-The papers are displayed, and the user can choose to extract variables or summarize abstracts using GPT.
+## 🔁 Step-by-Step Workflow
 
-2. Embed with OpenAI (Tab 1)
-When “Fetch and Embed” is selected, each paper’s title and abstract are chunked using RecursiveCharacterTextSplitter.
+### 1️⃣ Search & Fetch (Tab 1)
 
-These chunks are embedded into OpenAI’s vector space using text-embedding-3-small.
-On Tab 2 , the user can upload  individual PDF's and summarize them or retrieve the variables, however these uploaded PDF files are not added to the graph (yet)
+- Enter a topic (e.g., _“causal inference in medical AI”_)
+- The app queries the **Semantic Scholar API** to fetch relevant papers
+- Optionally fetch full reference lists for each paper
+- The results are displayed, and you can:
+  - 🧠 Extract independent/dependent variables using GPT
+  - 📝 Summarize the abstract
 
-All embedded chunks are stored in data/vector_store.json.
-Be aware that the semantic scholar API has a request limit of 100 request per 5 minutes, therefore only fetch a few papers per query
+---
 
-3. Semantic Retrieval (Tab 3)
-The user inputs a search query (e.g., “factors influencing dropout”).
+### 2️⃣ Embed with OpenAI (Tab 1)
 
-The system embeds the query and performs cosine similarity search against all stored chunks.
+- When “Fetch and Embed” is selected:
+  - Each paper’s title and abstract are chunked using `RecursiveCharacterTextSplitter`
+  - Chunks are embedded using OpenAI's `text-embedding-3-small`
+- Chunks are saved to:  
+  📁 `data/vector_store.json`
 
-Top-k chunks are returned, and the user can:
+> ⚠️ **API Rate Limit**: Semantic Scholar allows 100 requests per 5 minutes.  
+> 📌 It's best to embed papers **without references first**, then enrich them later.
 
-Extract independent/dependent variables using GPT
+#### Enrich later via Tab 4:
 
-Generate a summary of the retrieved content
+![image](https://github.com/user-attachments/assets/3693ddda-ac14-417a-a2d7-d6eb8fcb4157)
 
-4. Reference Enrichment (Optional in Tab 4)
-Each paper’s references can be enriched by querying the Semantic Scholar API again.
+Tab 4 will:
+- Query all stored papers
+- Enrich references (if not already present)
+- Apply backoff + retry, but stops after 5 failed attempts
 
-These reference relationships are cached locally in semantic_scholar_cache/.
+---
 
-5. Citation Graph Visualization (Tab 4)
-The app builds a directed citation graph using networkx and displays it using PyVis.
+### 3️⃣ Semantic Retrieval (Tab 3)
 
-Nodes are colored based on the original query file.
+- Enter a search query (e.g., _“factors influencing dropout”_)
+- The app embeds the query and performs **cosine similarity** search over all embedded chunks
+- You can:
+  - 🧠 Extract variables
+  - 📄 Summarize results using GPT
 
-Hovering shows titles and metadata (e.g., year).
+---
+
+### 4️⃣ Reference Enrichment (Tab 4)
+
+- Re-fetch full reference metadata from Semantic Scholar
+- Results are cached in:  
+  📁 `data/semantic_scholar_cache/`
+
+---
+
+### 5️⃣ Citation Graph Visualization (Tab 4)
+
+- A directed graph is built with `networkx` and rendered with `PyVis`
+- 🖍 Nodes are **color-coded by query**
+- 🪧 Hovering reveals title, year, and metadata
+
+**Central nodes** (papers currently stored and embedded) appear in the middle of the graph:
+
 ![image](https://github.com/user-attachments/assets/6be2243f-5ec1-4ec1-bb96-0a35159d61f0)
 
-
+---
 ---
 
 ## 🚀 Features
