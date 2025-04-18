@@ -2,6 +2,7 @@
 
 A powerful academic assistant that helps you fetch, embed, analyze, and visualize scientific papers using Semantic Scholar and OpenAI. Built with Streamlit.
 You can test it here: https://datamining-dkm9iake685izsyfddtr3q.streamlit.app/
+There are around 10$ credit left for this API key, this should be sufficent to analyze around 500-1000 papers, depending on the length of the papers
 
 🔁 Step-by-Step Workflow
 1. Search & Fetch (Tab 1)
@@ -45,7 +46,6 @@ Nodes are colored based on the original query file.
 
 Hovering shows titles and metadata (e.g., year).
 
-Physics settings have been tuned for clarity and spacing.
 ---
 
 ## 🚀 Features
@@ -110,6 +110,7 @@ streamlit run app.py
 ## ✨ Future Ideas
 
 - Add filters by author, year, venue
+- Add a filter to get only publily available papers
 - Support ArXiv + PDF upload pipelines
 - Highlight highly cited nodes
 - run project on docker 
