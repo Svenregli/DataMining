@@ -1,89 +1,196 @@
 [
   {
-    "paperId":"2610aec8242e4163691fcdf95e67b66e6cfdab66",
-    "title":"Kastenberg, Joshua E. Goldwater v. Carter: Foreign Policy, China, and the Resurgence of Executive Branch Primacy",
-    "abstract":null,
-    "year":2024,
-    "venue":"Congress &amp; the Presidency",
-    "url":"https:\/\/www.semanticscholar.org\/paper\/2610aec8242e4163691fcdf95e67b66e6cfdab66",
-    "references":[
-
-    ],
-    "topics":[
-
-    ],
-    "independent_variables":[
-
-    ],
-    "dependent_variables":[
-
-    ]
-  },
-  {
-    "paperId":"eec73b1441146616f2898431f095a2e893113a44",
-    "title":"Rohingya Refugee and Foreign Policy: China\u2019s Policy and Interests in Rakhine State",
-    "abstract":null,
-    "year":2022,
-    "venue":"Rohingya Refugee Crisis in Myanmar",
-    "url":"https:\/\/www.semanticscholar.org\/paper\/eec73b1441146616f2898431f095a2e893113a44",
+    "paperId":"a8aa47b3a111b2021bf315edbc58a1ca3f86ba3a",
+    "title":"Policy Change and Policy Stasis: Comparing Swiss Foreign Policy toward South Africa (1968\u201394) and Iraq (1990\u201391)",
+    "abstract":"This article investigates how concepts from the field of public policy, in particular the Advocacy Coalition Framework (ACF) initially introduced by Sabatier and Jenkins-Smith, can be applied to the study of foreign policy analysis. Using a most similar comparative case studies design, we examine Switzerland's foreign policy toward South Africa under apartheid for the period from 1968 to 1994 and compare it with the Swiss position toward Iraq after the Iraqi invasion of Kuwait in 1990, when the Swiss government imposed\u2014for the first time\u2014comprehensive economic sanctions against another state. The application of the ACF shows that a dominant advocacy coalition in Swiss foreign policy toward South Africa prevented a major policy change in Swiss\u2013South African relations despite external pressure from the international and national political levels. Actually, quite the opposite could be observed: Swiss foreign policy increased its persistence in not taking economic sanctions against the racist regime in South Africa during the 1980s and early 1990s. The ACF, with its analytical focus on policy subsystems and the role of external shocks as potential triggers for change, provided a useful framework for analyzing the factors for policy change and stasis in Swiss foreign relations toward the selected two countries.",
+    "year":2010,
+    "venue":"",
+    "url":"https:\/\/www.semanticscholar.org\/paper\/a8aa47b3a111b2021bf315edbc58a1ca3f86ba3a",
     "references":[
       {
-        "title":"A Special Relationship?",
-        "year":2022,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/29b2ca611383b56979a26b809c8b8f4aedd31a8f",
+        "title":"Themes and Variations: Taking Stock of the Advocacy Coalition Framework",
+        "year":2009,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/0fb29d4a50b094d657c91865d81ba1015b4243e2",
         "authors":[
-          "David Flint"
+          "C. Weible",
+          "P. Sabatier",
+          "K. McQueen"
         ]
       },
       {
-        "title":"Myanmar's 'Rohingya' Conflict",
-        "year":2018,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/866808465173dfa874e43341a321edd48065d0f3",
+        "title":"Utilizing Qualitative Data Analysis Software",
+        "year":2008,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/78f8e5a9bf6c6b3c2675a3c72561bac1bbf704f7",
         "authors":[
-          "Anthony Ware",
-          "Costas Laoutides"
+          "Sungsoo Hwang"
         ]
       },
       {
-        "title":"The Gathering Storm: China\u2019s Challenge to US Power in Asia",
-        "year":2010,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/8cbe90897f22a9ff2b4cfafb3e4900cfc089a3ad",
+        "title":"The Politics of Switzerland: Continuity and Change in a Consensus Democracy",
+        "year":2008,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/ddff1862d37fde016468e89e676976558517dc6e",
         "authors":[
-          "J. Mearsheimer"
+          "Hanspeter Kriesi",
+          "Alexander H. Trechsel"
         ]
       },
       {
-        "title":"International Society as a Process: Institutions, Identities, and China\u2019s Peaceful Rise",
-        "year":2010,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/6e2bd0443477828ed727d6aae615060aa23f14c4",
+        "title":"The Politics of Crisis Policymaking: Chernobyl and Swedish Nuclear Energy Policy",
+        "year":2008,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/8a877323ca24d4c6a35abd0ccc71c1a0c3003276",
         "authors":[
-          "Yaqing Qin"
+          "D. Nohrstedt"
         ]
       },
       {
-        "title":"Productivity spillovers from R&D, exports and FDI in China's manufacturing sector",
-        "year":2006,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/6993c3c02e8a0ab603c3c2858867a41731a84240",
+        "title":"Economic Policy and Decision Making at the Intersection of Domestic and International Politics: The Advocacy Coalition Framework and the National Economic Council",
+        "year":2003,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/f75797ff1e9ca6314ecff6fe141153e93e92aa11",
         "authors":[
-          "Yingqi Wei",
-          "Yingqi Wei",
-          "Xiaming Liu"
+          "C. Dolan"
         ]
       },
       {
-        "title":"The Effect of Fixed Exchange Rates on Monetary Policy",
-        "year":2004,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/152686bd1bdc207a67a914e635fa4a89d4a7e756",
+        "title":"Understanding policy change with the advocacy coalition framework: an application to Swiss drug policy",
+        "year":2001,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/c81ed4c5ef11849c44da08a2a4d0b9a99070816a",
         "authors":[
-          "Jay C. Shambaugh"
+          "D. K\u00fcbler"
         ]
       },
       {
-        "title":"China\u2019s Unpeaceful Rise",
-        "year":2006,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/748712f2cf61fe517f8199f5a54cf244144a7dbf",
+        "title":"Advocacy Coalitions Along the Domestic\u2010Foreign Frontier: Globalization and Canadian Climate Change Policy",
+        "year":2000,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/de6a3423f3ee56175d4c712c49f20b320f583436",
         "authors":[
-          "J. Mearsheimer"
+          "Karen T. Litfin"
+        ]
+      },
+      {
+        "title":"Schweizerische Aussenpolitik im Wandel: Internationalisierung, Globalisierung und Multilateralisierung",
+        "year":1999,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/94d30968fedaabac98efd09566864f3f4a7c8fe8",
+        "authors":[
+          "Christian Hirschi",
+          "Uwe Serd\u00fclt",
+          "T. Widmer"
+        ]
+      },
+      {
+        "title":"The Advocacy Coalition Framework and the Policy Process Analysis: The Case of Smoking Control in Japan",
+        "year":1999,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/4236cd1c81e97d470d4387b861e4ea75409a4d5d",
+        "authors":[
+          "Hajime Sato"
+        ]
+      },
+      {
+        "title":"The Advocacy Coalition Framework and Implementation of the Endangered Species Act: A Case Study in Western Water Politics",
+        "year":1998,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/9542666174cf5418cc18ce20a32a259591f7ab7f",
+        "authors":[
+          "Brian A. Ellison"
+        ]
+      },
+      {
+        "title":"The advocacy coalition framework: revisions and relevance for Europe",
+        "year":1998,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/3fd584464378fe08fc10e3cc87529315ff74fb6a",
+        "authors":[
+          "P. Sabatier"
+        ]
+      },
+      {
+        "title":"Policy paradigms, social learning, and the state: the case of economic policymaking in Britain",
+        "year":1993,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/8969ccb540a22c8f9864c056cf268b664f46d440",
+        "authors":[
+          "P. Hall"
+        ]
+      },
+      {
+        "title":"Conflict and Resolution: Contest, Cost, and Change",
+        "year":1991,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/f8bfc46b157932b8ddbe695a799179500d440f59",
+        "authors":[
+          "I. Zartman"
+        ]
+      },
+      {
+        "title":"The logic of public policy design: Linking policy actors and plausible instruments",
+        "year":1991,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/7655e99271077db6070fa3d8b7050b8323d350f4",
+        "authors":[
+          "S. Linder",
+          "B. Guy Peters"
+        ]
+      },
+      {
+        "title":"I. \u201cMost Different Systems\u201d and \u201cMost Similar Systems\u201d",
+        "year":1975,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/e1977c36262b874efdb62bae67a8baca469fceb9",
+        "authors":[
+          "Theodore W. Meckstroth"
+        ]
+      },
+      {
+        "title":"The Politics of Switzerland: Frontmatter",
+        "year":2008,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/366c3233808913ca11f57e43fe398a7ea5bebc4a",
+        "authors":[
+          "Hanspeter Kriesi",
+          "Alexander H. Trechsel"
+        ]
+      },
+      {
+        "title":"Internationalization and Domestic Politics: Evidence from the Swiss Case",
+        "year":2005,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/400886d01d643597760a6c564f7ea97248f75287",
+        "authors":[
+          "P. Sciarini",
+          "S. Nicolet"
+        ]
+      },
+      {
+        "title":"Swiss foreign policy, 1945-2002",
+        "year":2003,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/805b09d2a5dbdd1a5f4c30cf48d172f974a65d05",
+        "authors":[
+          "J\u00fcrg Martin Gabriel",
+          "T. Fischer"
+        ]
+      },
+      {
+        "title":"The Long Road to Membership: Switzerland and the United Nations",
+        "year":2003,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/4f07a0c6c236a34c5de74792e926fe22bd1468ab",
+        "authors":[
+          "Daniel Mbckli"
+        ]
+      },
+      {
+        "title":"Swiss Foreign Trade Policy",
+        "year":2003,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/1d31419cfa0b90f99e3269bb892fa98ed9897328",
+        "authors":[
+          "R. Senti"
+        ]
+      },
+      {
+        "title":"Domestic Politics and International Relations",
+        "year":2002,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/118587bb6444700a30e68e7a7ab588b6df8c58c8",
+        "authors":[
+          "P. Gourevitch"
+        ]
+      },
+      {
+        "title":"Implementation and public policy, with a new postscript",
+        "year":1989,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/6f62071d66c10b5c1b2c799a63bcb3129aa639cd",
+        "authors":[
+          "D. Mazmanian",
+          "P. Sabatier"
         ]
       }
     ],
@@ -98,432 +205,55 @@
     ]
   },
   {
-    "paperId":"98d4ef1de4dc11f0816cf47d35931ebff19faa0a",
-    "title":"Regime Complexity and Complex Foreign Policy: China in International Development Finance Governance",
-    "abstract":"This paper examines China \u2019 s involvement in the governance of international development \ufb01 nance (IDF), analyzes its approach to the IDF regime complex, and explains its strategic policy incoherence. It shows that in recent decades China has actively engaged with the elemental IDF regimes at multiple levels \u2013 global, regional, cross-regional, subregional, and bilateral. It argues that the Chinese government has been strategically incoherent in its policy toward IDF governance, lending support to competing models and norms. China \u2019 s \u2018 forum linking \u2019 strategy with regard to multilateral development banks has enhanced international cooperation while its unconventional bilateral development assistance programs have facilitated \u2018 forum shopping \u2019 by the recipient countries, thus undermining the traditional IDF framework. There are multiple sources of China \u2019 s strategic policy incoherence. Besides the country \u2019 s multiple identities and complex interests, this paper highlights the impact of the fragmented nature of the regime complex and Chinese perception of this fragmentation.",
-    "year":2021,
-    "venue":"Global Policy",
-    "url":"https:\/\/www.semanticscholar.org\/paper\/98d4ef1de4dc11f0816cf47d35931ebff19faa0a",
+    "paperId":"139e3c4788c563d25da3409d71272e7b0047db24",
+    "title":"The decision-making process in Swiss foreign policy at the beginning of the 21st century",
+    "abstract":"Available scientific studies on modern external relations of Switzerland provide us with extensive interesting information about their current condition and foundations. Most of them also contain in-depth analyses of the outcomes of Swiss foreign policy, but rarely address the specificity of the decision-making process. The latter is currently undergoing major changes due to the growing influence of Europeanisation and internationalisation. In recent years we can observe some shifts in the distribution of power and the rise of new actors, the modification of consultation procedures or a reduction in the level of conflict. This is especially evident in European policy, which still remains a special case. Based on the available scientific studies and analyses of different socio-economic statistics, a few interesting conclusions can be drawn about the conditions and determinants of the decision-making processes. A point of reference here is provided by the Schengen\/Dublin agreement, which was negotiated and signed in 2004, as a part of the second package of bilateral agreements. Based on this interesting example, the issue of the modern shape of decision-making process in foreign policy and its development over the last few years can be addressed.",
+    "year":2014,
+    "venue":"",
+    "url":"https:\/\/www.semanticscholar.org\/paper\/139e3c4788c563d25da3409d71272e7b0047db24",
     "references":[
       {
-        "title":"Global Club Goods and the Fragmented Global Financial Safety Net",
-        "year":2020,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/597b09ab92cef1d5c1ed32b6e0524677cdd19303",
-        "authors":[
-          "Michael A. Gavin"
-        ]
-      },
-      {
-        "title":"Global development governance in the \u2018interregnum\u2019",
-        "year":2020,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/d4304ab5f8fdcf9a2c777e062735fb9d9324a226",
-        "authors":[
-          "J. Taggart"
-        ]
-      },
-      {
-        "title":"State Actors, Market Games: Credit Guarantees and the Funding of China Development Bank",
-        "year":2020,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/452b34586e14b49a2e73b8476dc6641cee923732",
-        "authors":[
-          "Mu-Jen Chen"
-        ]
-      },
-      {
-        "title":"From Drawing Board to Reality: The First Four Years of Operations at the Asian Infrastructure Investment Bank and New Development Bank",
-        "year":2020,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/fffc189566be22fe3bdb8325f14e37c3e2817182",
-        "authors":[
-          "C. Humphrey"
-        ]
-      },
-      {
-        "title":"AIIB\n at Three: A Comparative and Institutional Perspective",
-        "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/0ad129a9ebdca1b9751e8d457555dcd7d3890f7e",
-        "authors":[
-          "N. Lichtenstein"
-        ]
-      },
-      {
-        "title":"The Asian Infrastructure Investment Bank \u2013 New Multilateralism: Early Development, Innovation, and Future Agendas",
-        "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/33b8ad2e6e29469730b22df8f1039a684a0d71de",
-        "authors":[
-          "G. Chin"
-        ]
-      },
-      {
-        "title":"China in a World of Orders: Rethinking Compliance and Challenge in Beijing's International Relations",
-        "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/38ef03576f412417ce577f2e17362dc0249da956",
-        "authors":[
-          "A. Johnston"
-        ]
-      },
-      {
-        "title":"China in Africa: Competition for traditional development finance institutions?",
-        "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/f5154dd8b4794714bb124c66d382b575519c01bd",
-        "authors":[
-          "C. Humphrey",
-          "K. Michaelowa"
-        ]
-      },
-      {
-        "title":"The New Development Bank and the Asian Infrastructure Investment Bank: China's Ambiguous Approach to Global Financial Governance",
-        "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/0e55cd110759b6be0afcb456d65c0e13e2ad35c2",
-        "authors":[
-          "Hongying Wang"
-        ]
-      },
-      {
-        "title":"Limits to the BRICS\u2019 challenge: credit rating reform and institutional innovation in global finance",
-        "year":2018,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/4ba39318f972129f5995759b39d1b410e44cbbe8",
-        "authors":[
-          "E. Helleiner",
-          "Hongying Wang"
-        ]
-      },
-      {
-        "title":"A Comparative Guide to the Asian Infrastructure Investment Bank",
-        "year":2018,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/9cd5ca98eb6d028c0a816517f46a6bad91b4f87a",
-        "authors":[
-          "N. Lichtenstein"
-        ]
-      },
-      {
-        "title":"China and the Third World: Patterns of Engagement and Indifference",
-        "year":2018,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/1e12a23cdb1bd51fddc1ae9435acc1381bc8bb7f",
-        "authors":[
-          "P. Ness"
-        ]
-      },
-      {
-        "title":"Are \u201cNew\u201d Donors Challenging World Bank Conditionality?",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/dc15119d94fd4580f7f6c44eccb62155b21839d1",
-        "authors":[
-          "Diego F. Hern\u00e1ndez"
-        ]
-      },
-      {
-        "title":"Tangled Governance: International Regime Complexity, the Troika, and the Euro Crisis",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/5c3f65c8fb800a4fe68089ea1b41b6edf6438592",
-        "authors":[
-          "C. Henning"
-        ]
-      },
-      {
-        "title":"Bad neighbors? How co-located Chinese and World Bank development projects impact local corruption in Tanzania",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/16e8172a67a821c89e40df19ed0f5ad4e1cda7bf",
-        "authors":[
-          "Samuel Brazys",
-          "Johan A. Elkink",
-          "G. Kelly"
-        ]
-      },
-      {
-        "title":"Estimating China\u2019s Foreign Aid 2001-2013",
-        "year":2016,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/92e98b6e81c808804f900b38240debf9130dfec4",
-        "authors":[
-          "Naohiro Kitano",
-          "Yukino Harada"
-        ]
-      },
-      {
-        "title":"The resurgence of South\u2013South cooperation",
-        "year":2016,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/aaa2f0f8e835ae2603605ea0b0457800edbc2dfe",
-        "authors":[
-          "B. Gosovic"
-        ]
-      },
-      {
-        "title":"Apples and Dragon Fruits: The Determinants of Aid and Other Forms of State Financing from China to Africa",
-        "year":2015,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/dd2657975e2a9811b2e4bfe92f8c374450a3f635",
-        "authors":[
-          "A. Dreher",
-          "A. Fuchs",
-          "Bradley C. Parks",
-          "Austin Strange",
-          "M. Tierney"
-        ]
-      },
-      {
-        "title":"China and Sovereign Debt Restructuring",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/f60c726a8dd8bd9b9721a023bfd26861fe178150",
-        "authors":[
-          "Hongying Wang"
-        ]
-      },
-      {
-        "title":"New Friends, Old Friends? the World Bank and Africa When the Chinese Are Coming",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/cde44023851d031f5965b463355bcad5d0f72183",
-        "authors":[
-          "Dominik Kopi\u0144ski",
-          "Qian Sun"
-        ]
-      },
-      {
-        "title":"Southern Pioneers of International Development",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/713851fd930bc963845f66f5c3fe0a9d589996e4",
-        "authors":[
-          "E. Helleiner"
-        ]
-      },
-      {
-        "title":"Forgotten Foundations of Bretton Woods: International Development and the Making of the Postwar Order",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/a355e23bbcb9b2f5d2fc5e135832bcbe02c36bb1",
-        "authors":[
-          "E. Helleiner"
-        ]
-      },
-      {
-        "title":"China\u2019s Foreign Aid",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/1eec3a1b4c9a8f07da3d083e30baeac37e4c6322",
-        "authors":[
-          "T. Lixia",
-          "Jiewen Ma",
-          "Xiaoyu Li"
-        ]
-      },
-      {
-        "title":"Introduction: rising states, rising donors and the global aid regime",
-        "year":2012,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/7e5dc0e15dba9902fa864401c807e9fec121bd1c",
-        "authors":[
-          "G. Chin",
-          "Fahimul Quadir"
-        ]
-      },
-      {
-        "title":"From Recipients to Donors: Emerging Powers and the Changing Development Landscape",
-        "year":2012,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/4d9daa92e965f4e992a9e07cc3a0866536335e20",
-        "authors":[
-          "E. Mawdsley"
-        ]
-      },
-      {
-        "title":"South Korea as an emerging donor: Challenges and changes on its entering OECD\/DAC",
-        "year":2010,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/9858aad1b6ddbfd4a52e593c0e748eb0f24ca651",
-        "authors":[
-          "Hongtack Chun",
-          "E. N. Munyi",
-          "Heejin Lee"
-        ]
-      },
-      {
-        "title":"Overlapping Institutions in Trade Policy",
+        "title":"Switzerland's Flexible Integration in the EU: A Conceptual Framework",
         "year":2009,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/a4f778a94dfa7ab96132c4b10271ad1925722d81",
+        "url":"https:\/\/www.semanticscholar.org\/paper\/59b24f797cea024a7bbb6cd374b3c4e2eaa16d96",
         "authors":[
-          "Christina L. Davis"
+          "S. Lavenex"
         ]
       },
       {
-        "title":"The Politics of International Regime Complexity",
-        "year":2009,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/f92890dcf95b57903de052ad7a5200a6f142b162",
-        "authors":[
-          "K. Alter",
-          "Sophie Meunier"
-        ]
-      },
-      {
-        "title":"Factionalism in Chinese Communist Politics",
+        "title":"The Impact of Internationalisation on the Swiss Decision-Making Process: A Quantitative Analysis of Legislative Acts, 1995-1999",
         "year":2002,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/ff4ad92eb5105fb5bc55e62c4965725506374a10",
+        "url":"https:\/\/www.semanticscholar.org\/paper\/729ad68244edb64f9f5dd712b0b49f58c7b83f33",
         "authors":[
-          "Jing Huang"
+          "P. Sciarini",
+          "S. Nicolet",
+          "A. Fischer"
         ]
       },
       {
-        "title":"Domestic Political Audiences and the Escalation of International Disputes",
-        "year":1994,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/f1de5d9f3a4f0282aff7363f30b652797f2f5d95",
+        "title":"National Role Conceptions in the Study of Foreign Policy",
+        "year":1970,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/e1a85d9c4a490717f2d2bd0708041558f8fbf85f",
         "authors":[
-          "J. Fearon"
+          "K. Holsti"
         ]
       },
       {
-        "title":"Reconsidering Policy Design: Policies and Publics",
-        "year":1991,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/faf98e6a2e54af65cba872f4599fb1efe298e560",
+        "title":"Le syst\u00e8me politique suisse",
+        "year":1998,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/e2c392217b7d7963f2b181b27630f54ebfb9e66e",
         "authors":[
-          "P. May"
+          "Hanspeter Kriesi"
         ]
       },
       {
-        "title":"China's Participation in the IMF, the World Bank, and GATT: Toward a Global Economic Order",
-        "year":1990,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/742cf2427f114b2df18024114a73c36a7e4cbf92",
+        "title":"Neues Handbuch der schweizerischen Aussenpolitik",
+        "year":1992,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/4dd0666dc4d2e3ef68c35e41117386e1ea20dc26",
         "authors":[
-          "H. Jacobson",
-          "M. Oksenberg"
-        ]
-      },
-      {
-        "title":"Power structures and regional development banks",
-        "year":1981,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/a3dc725feb718cb7649f506a36c9973935d8e06c",
-        "authors":[
-          "Stephen D. Krasner"
-        ]
-      },
-      {
-        "title":"Development Assistance Committee (DAC)",
-        "year":2021,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/ff555fc7cb6a514b44feed8d26c9062d5fc7b11a",
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"n.d.b), Aid Coordination Groups",
-        "year":2021,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Public Opinion on Chinese Foreign Aid Policy: The Challenge of the Level II Game",
-        "year":2020,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Zhongguo, Lianheguo Hezuo yu \u201cYidai Yilu\u201d de Duobian Tuijin",
-        "year":2020,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Coordinated Credit Spaces: The Globalization of Chinese Development Finance",
-        "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/5ad5b83edda3ec7032bdf6795879ed6094832c02",
-        "authors":[
-          "G. Chin",
-          "K. Gallagher"
-        ]
-      },
-      {
-        "title":"China\u2019s Answer to the World Bank Wants Green, Clean Asian Infrastructure",
-        "year":2018,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"A Club of the Rich to Help the Poor? The OECD, \u201cDevelopment\u201d, and the Hegemony of Donor Countries",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/f757de5905d7343d988e054c850dbccf0345603b",
-        "authors":[
-          "M. Schmelzer"
-        ]
-      },
-      {
-        "title":"Regime Complexity and Policy Coherency: Introducing a Co-Adjustments Model",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/4defede3852d1f6020c2548e43cb2d3423a2f7f0",
-        "authors":[
-          "J. Morin",
-          "Amandine J. Orsini"
-        ]
-      },
-      {
-        "title":"Regime Complexes: A Buzz, a Boom, or a Boost for Global Governance?",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/8ffe64aca9a39ecc8d72d663b2c09e2ab9328385",
-        "authors":[
-          "Amandine J. Orsini",
-          "J. Morin",
-          "O. Young"
-        ]
-      },
-      {
-        "title":"Non-State Actors : Navigating the Regime Complexes for Forestry and Genetic Resources",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/880bae31557cad80fda50f1f6785e1b1611164d9",
-        "authors":[
-          "Amandine J. Orsini"
-        ]
-      },
-      {
-        "title":"Two\u2010way Socialization: China, the World Bank, and Hegemonic Weakening",
-        "year":2012,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"AIIB . ( n . d . ) Our Projects",
-        "year":2009,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"The DAC at Work: Development Assistance Committee', in Development Co-operation Report 2001: Efforts and Policies of the Members of the Development Assistance Committee",
-        "year":2003,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"China's Global Development Footprint",
-        "year":null,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"The AIIB is a Complement Rather Than a Competitor",
-        "year":null,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"China Exim Bank and Africa: New Lending, New Challenges",
-        "year":null,
-        "url":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Program-for-Results Financing (PforR)",
-        "year":null,
-        "url":null,
-        "authors":[
-
+          "Alois Riklin",
+          "H. Haug",
+          "R. Probst"
         ]
       }
     ],

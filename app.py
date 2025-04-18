@@ -8,7 +8,7 @@ from pyvis.network import Network
 import streamlit.components.v1 as components
 import networkx as nx
 import json
-
+import os
 
 # --- Streamlit App Setup ---
 st.set_page_config(
@@ -18,82 +18,80 @@ st.set_page_config(
 )
 
 st.title("🔍 Academic Assistant")
-tab1, tab2,tab3,tab4 = st.tabs(["Semantic Scholar","📎 Upload PDF", "📚 ArXiv Search" , "Research citation Network"])
+tab1, tab2,tab3,tab4 = st.tabs(["Semantic Scholar","📎 Upload PDF", "📚 Search stored papers" , "Research citation Network"])
 
 with tab1:
-
-    ###############################################################################################
-    # --- Semantic Scholar Search Section ---
-    ###############################################################################################
+        ###############################################################################################
+        #  --- Semantic Scholar Search Section ---
+        ##############################################################################################
     st.markdown("---")
-    st.markdown("### 🧠 Search Semantic Scholar Papers")
+    st.markdown("### 🔎 Semantic Scholar Search")
 
+    # Inputs
+    user_query = st.text_input("Enter a research topic:", value="causal inference in medical AI")
+    paper_limit = st.slider("How many papers to fetch?", 1, 20, 5)
+    fetch_refs = st.checkbox("Fetch references for citation network? (slower)", value=False)
 
-    from fetch_semantic import query_semantic_scholar, embed_papers_to_chroma
+    # Mode selection
+    mode = st.radio("Choose what to do:", [
+        "Fetch and Analyze (no embedding)",
+        "Fetch and Embed to ChromaDB"
+    ])
 
-    user_query = st.text_input("Enter a research topic for Semantic Scholar:", value="causal inference in medical AI", key="semantic_query_input")
-    paper_limit = st.slider("How many papers to fetch from Semantic Scholar?", 1, 20, 5, key="semantic_limit_slider")
-    fetch_refs = st.checkbox("Fetch references for each paper? slower but will create the Plot in the Research citation Network tab", value=False)
-    k_semantic = st.slider("How many chunks to retrieve from ChromaDB?", 3, 15, 6, key="k_semantic_slider")
-
-    st.markdown("#### 🔄 Step 1: Fetch and Embed Papers (Optional)")
-    if st.button("Fetch and Embed Semantic Scholar Papers"):
-        with st.spinner("Querying Semantic Scholar and embedding results..."):
+    # Process query
+    if st.button("🚀 Run Query"):
+        with st.spinner("Fetching papers from Semantic Scholar..."):
             try:
                 df = query_semantic_scholar(user_query, limit=paper_limit, fetch_references=fetch_refs)
                 papers = df.to_dict(orient="records")
-                embed_papers_to_chroma(papers)
-                st.success(f"✅ Embedded {len(papers)} papers from Semantic Scholar.")
+                st.success(f"Fetched {len(papers)} papers.")
+
+                if mode == "Fetch and Embed to ChromaDB":
+                    embed_papers_to_chroma(papers)
+                    st.success(f"Embedded {len(papers)} papers to ChromaDB.")
+
+                # Show papers + select
+                titles = [p["title"] for p in papers]
+                selected_title = st.selectbox("Choose a paper to analyze:", titles)
+                selected_paper = next(p for p in papers if p["title"] == selected_title)
+
+                st.markdown(f"### 📘 {selected_paper['title']}")
+                st.markdown(f"**Abstract:** {selected_paper.get('abstract', 'No abstract available')}")
+
+                # LLM Task
+                task = st.radio("Run on Abstract:", ["Extract Variables", "Summarize Paper"])
+                if task == "Extract Variables":
+                    with st.spinner("Extracting variables..."):
+                        result = extract_variables_from_chunks([selected_paper.get("abstract", "")])
+                    st.code(result)
+                elif task == "Summarize Paper":
+                    with st.spinner("Summarizing..."):
+                        result = summarize_chunks([selected_paper.get("abstract", "")])
+                    st.markdown(result)
+
+                # Inline citation graph (only if references were fetched)
+                if fetch_refs:
+                    st.markdown("### 🔗 Citation Network for This Query")
+                    G = nx.DiGraph()
+                    for paper in papers:
+                        pid = paper["paperId"]
+                        title = paper["title"]
+                        G.add_node(pid, label=title)
+                        for ref in paper.get("references", []):
+                            ref_id = ref.get("url", "").split("/")[-1]
+                            if ref_id:
+                                G.add_node(ref_id, label=ref.get("title", "Unknown"))
+                                G.add_edge(pid, ref_id)
+
+                    net = Network(height="500px", width="100%", directed=True)
+                    net.from_nx(G)
+                    net.save_graph("data/temp_query_network.html")
+                    with open("data/temp_query_network.html", "r", encoding="utf-8") as f:
+                        html = f.read()
+                    components.html(html, height=550, scrolling=True)
+
             except Exception as e:
-                st.error(f"❌ Failed to fetch or embed papers: {e}")
-
-    st.markdown("#### 🎯 Step 2: Analyze Local ChromaDB (already embedded papers)")
-
-    semantic_task = st.radio(
-        "Choose task for Semantic Scholar papers:",
-        ["Extract Variables", "Summarize Paper"],
-        key="semantic_task_selector",
-        horizontal=True
-    )
-
-    if user_query and semantic_task:
-        with st.spinner("🔎 Searching ChromaDB for matching Semantic Scholar chunks..."):
-            chunks = search_chunks(
-                query=user_query,
-                k=k_semantic,
-                collection_name="semantic_scholar"
-            )
-
-        if not chunks:
-            st.warning("⚠️ No matching chunks found. Try a different query.")
-        else:
-            chunk_texts = []
-            seen_titles = set()
-
-            st.markdown("### 📄 Retrieved Chunks from Semantic Scholar:")
-
-            for i, (chunk_text, meta) in enumerate(chunks):
-                title = meta.get("title", "Unknown Title")
-                source_url = meta.get("source_url", "#")
-
-                if title not in seen_titles:
-                    st.markdown(f"#### 📘 {title}")
-                    st.markdown(f"[🔗 View Paper]({source_url})")
-                    seen_titles.add(title)
-
-                chunk_texts.append(chunk_text)
-
-            if semantic_task == "Extract Variables":
-                with st.spinner("🧠 Extracting variables from Semantic Scholar chunks..."):
-                    result = extract_variables_from_chunks(chunk_texts)
-                st.markdown("#### 🧠 Extracted Variables (from Semantic Scholar):")
-                st.code(result)
-
-            elif semantic_task == "Summarize Paper":
-                with st.spinner("📝 Generating summary from Semantic Scholar chunks..."):
-                    result = summarize_chunks(chunk_texts)
-                st.markdown("#### ✨ Summary (from Semantic Scholar):")
-                st.markdown(result)
+                st.error(f"❌ Failed to fetch or process papers: {e}")
 
 
 
@@ -138,71 +136,49 @@ with tab2:
 
 
 ##############################################################################################
-# --- ArXiv Search Section ---
+# --- Retrieval Search Section ---
 ##############################################################################################
 with tab3:
     st.markdown("---")
-    st.markdown("### 📚 Or Search ArXiv Papers")
+    st.markdown("### 🧠 Analyze Embedded Papers in ChromaDB")
 
-    mock_data = {
-        'published': pd.to_datetime(['2023-01-15', '2022-05-20', '2023-08-10']),
-        'authors': [['Author A', 'Author B'], ['Author C'], ['Author A', 'Author D']],
-        'categories': ['cs.LG', 'cs.AI', 'cs.CV']
-    }
-    df_meta = pd.DataFrame(mock_data)
-    df_meta["year"] = pd.to_datetime(df_meta["published"]).dt.year
-    available_years = sorted(df_meta["year"].unique())
-
-    all_authors = df_meta["authors"].explode().dropna().astype(str).unique().tolist()
-    all_authors.sort()
-
-    k = st.slider("How many chunks to retrieve from ChromaDB?", min_value=3, max_value=15, value=6, key="k_slider")
-
-    arxiv_task = st.radio(
-        "Choose LLM task for ArXiv search results:",
-        ["Extract Variables", "Summarize Paper"],
-        key="arxiv_task_selector",
-        horizontal=True
-    )
-
-    st.sidebar.header("📂 ArXiv Filter Options")
-    selected_year = st.sidebar.selectbox("Filter by Year", options=["All"] + list(available_years), index=0, key="year_filter")
-    selected_author = st.sidebar.text_input("Filter by Author Name (optional)", key="author_filter").strip().lower()
-
-    query = st.text_input("Enter your research query for ArXiv:", key="query_input")
+    query = st.text_input("Search embedded paper chunks:", value="causal inference in medical AI")
+    k = st.slider("How many chunks to retrieve:", 3, 20, 6)
 
     if query:
-        st.markdown("---")
-        with st.spinner("🔎 Searching ChromaDB for ArXiv papers..."):
-            chunks = search_chunks(
-                query,
-                k=k,
-                collection_name="paper_chunks",
-                year=None if selected_year == "All" else int(selected_year),
-                author=selected_author if selected_author else None
-            )
+        with st.spinner("Searching ChromaDB..."):
+            chunks = search_chunks(query=query, k=k, collection_name="semantic_scholar")
 
         if not chunks:
-            st.warning("⚠️ No matching ArXiv chunks found. Try a different query or adjust filters.")
+            st.warning("⚠️ No matching chunks found. Try another query.")
         else:
-            st.markdown("### 📄 Retrieved Text Chunks from ArXiv:")
             chunk_texts = []
+            seen_titles = set()
+
+            st.markdown("### 📄 Retrieved Chunks:")
             for i, (chunk_text, meta) in enumerate(chunks):
-                st.markdown(f"#### 🧩 Chunk {i+1} from **{meta.get('title', 'Unknown Title')}**")
-                st.markdown(f"[🔗 View paper PDF]({meta.get('url', '#')})")
-                st.text_area(f"Chunk {i+1} Preview", f"{chunk_text[:300]}...", height=100, key=f"chunk_preview_{i}")
+                title = meta.get("title", "Unknown Title")
+                source_url = meta.get("source_url", "#")
+
+                if title not in seen_titles:
+                    st.markdown(f"#### 📘 {title}")
+                    st.markdown(f"[🔗 View Paper]({source_url})")
+                    seen_titles.add(title)
+
                 chunk_texts.append(chunk_text)
 
-            if arxiv_task == "Extract Variables":
-                with st.spinner("🧠 Extracting variables from ArXiv chunks..."):
+            task = st.radio("Choose analysis task:", ["Extract Variables", "Summarize Paper"], horizontal=True)
+
+            if task == "Extract Variables":
+                with st.spinner("Extracting variables from retrieved chunks..."):
                     result = extract_variables_from_chunks(chunk_texts)
-                st.markdown("#### 🧠 Extracted Variables (from ArXiv):")
+                st.markdown("#### 🧠 Extracted Variables:")
                 st.code(result)
 
-            elif arxiv_task == "Summarize Paper":
-                with st.spinner("📝 Generating summary from ArXiv chunks..."):
+            elif task == "Summarize Paper":
+                with st.spinner("Summarizing retrieved chunks..."):
                     result = summarize_chunks(chunk_texts)
-                st.markdown("#### ✨ Summary (from ArXiv):")
+                st.markdown("#### ✨ Summary:")
                 st.markdown(result)
 
 
@@ -211,40 +187,49 @@ with tab3:
 #############################################################################################
 
 with tab4:  # "Research Network" tab
-    st.header("🔗 Research Citation Network")
+    st.markdown("---")
+    st.markdown("### 🌐 Global Research Citation Network (from cached queries)")
 
-    try:
-        # Load cached results
-        with open("data/semantic_scholar_results.json", "r") as f:
-            papers = json.load(f)
+    # Load all cached results
+    def load_all_cached_papers(folder="data/semantic_scholar_cache"):
+        all_papers = []
+        for file in os.listdir(folder):
+            if file.endswith(".json"):
+                try:
+                    with open(os.path.join(folder, file), "r") as f:
+                        papers = json.load(f)
+                        all_papers.extend(papers)
+                except:
+                    st.warning(f"Failed to load {file}")
+        return all_papers
 
-        # Build the citation graph
+    papers = load_all_cached_papers()
+
+    if not papers:
+        st.warning("⚠️ No cached queries found. Please fetch and save queries from Tab 1 first.")
+    else:
+        st.success(f"Loaded {len(papers)} papers from cache.")
+
         G = nx.DiGraph()
         for paper in papers:
             pid = paper.get("paperId")
-            title = paper.get("title", "No Title")
-            G.add_node(pid, label=title, title=title)
-            for ref in paper.get("references", []):
-                ref_url = ref.get("url")
-                ref_id = ref_url.split("/")[-1] if ref_url else None
-                if ref_id:
-                    ref_title = ref.get("title", "Unknown")
-                    G.add_node(ref_id, label=ref_title, title=ref_title)
-                    G.add_edge(pid, ref_id)
+            title = paper.get("title", "Untitled")
+            if pid:
+                G.add_node(pid, label=title)
+                for ref in paper.get("references", []):
+                    ref_id = ref.get("paperId")
+                    if ref_id:
+                        G.add_node(ref_id, label=ref.get("title", "Unknown"))
+                        G.add_edge(pid, ref_id)
 
-        # Build the PyVis interactive graph
+
         net = Network(height="600px", width="100%", directed=True)
         net.from_nx(G)
-        net.repulsion(node_distance=200, spring_length=200)
-        net.save_graph("data/research_network.html")
+        net.save_graph("data/global_citation_network.html")
 
-        # Display it in Streamlit
-        with open("data/research_network.html", "r", encoding="utf-8") as f:
-            graph_html = f.read()
-        components.html(graph_html, height=650, scrolling=True)
-
-    except Exception as e:
-        st.error(f"⚠️ Could not load or render research network: {e}")##############################################################################################
+        with open("data/global_citation_network.html", "r", encoding="utf-8") as f:
+            html = f.read()
+        components.html(html, height=650, scrolling=True)
 
 
 

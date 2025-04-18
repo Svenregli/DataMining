@@ -18,14 +18,8 @@ collection = client.get_or_create_collection("semantic_scholar", embedding_funct
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 
-# 1. Query Semantic Scholar API
-import os
-import time
-import requests
-import pandas as pd
-import json
-import random
 
+# 1. Query Semantic Scholar API
 def query_semantic_scholar(query: str, limit: int = 10, fetch_references: bool = True):
     base_url = "https://api.semanticscholar.org/graph/v1"
     cache_dir = "data/semantic_scholar_cache"
@@ -136,6 +130,7 @@ def query_semantic_scholar(query: str, limit: int = 10, fetch_references: bool =
                         "title": ref.get("title"),
                         "year": ref.get("year"),
                         "url": ref.get("url"),
+                        "paperId": ref.get("paperId"),
                         "authors": [a.get("name") for a in ref.get("authors", [])] if ref.get("authors") else []
                     }
                     for ref in references_raw
