@@ -45,7 +45,7 @@ Tab 4 will:
 
 ### 3️⃣ Semantic Retrieval (Tab 3)
 
-- Enter a search query (e.g., _“factors influencing dropout”_)
+- Enter a search query (e.g., _“causal inference in medical AI”_)
 - The app embeds the query and performs **cosine similarity** search over all embedded chunks
 - You can:
   - 🧠 Extract variables
