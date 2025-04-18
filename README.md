@@ -45,6 +45,8 @@ The app builds a directed citation graph using networkx and displays it using Py
 Nodes are colored based on the original query file.
 
 Hovering shows titles and metadata (e.g., year).
+![image](https://github.com/user-attachments/assets/6be2243f-5ec1-4ec1-bb96-0a35159d61f0)
+
 
 ---
 
