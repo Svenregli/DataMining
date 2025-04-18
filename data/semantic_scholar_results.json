@@ -1,13 +1,464 @@
 [
   {
-    "paperId":"c276ec1f5dd8c8f8f59f24aa463b73532162089f",
-    "title":"FORMATION OF THE PARTY-POLITICAL STRUCTURE AND POLITICAL DEVELOPMENT OF GERMANY IN 1949\u20131963",
-    "abstract":null,
-    "year":2024,
-    "venue":"Scientific notes of Taurida National V.I. Vernadsky University, series Historical Sciences",
-    "url":"https:\/\/www.semanticscholar.org\/paper\/c276ec1f5dd8c8f8f59f24aa463b73532162089f",
+    "paperId":"97f763bdf080c392b531574c5eff75c24294e578",
+    "title":"Evaluating the impact of public financial support on innovation activities of European Union enterprises: Additionality approach",
+    "abstract":"Abstract The study aims at estimating the effects of support for research and development and innovation from the European Union (EU) budget for boosting innovation in European enterprises, using input, output, and behavioral additionality approach. The study is based on microdata of the Community Innovation Survey 2012\u20132014, covering a sample of 98,809 enterprises from 14 EU countries. The direct and indirect relationships between the variables were studied using path analysis. For the whole sample, three additionality dimensions were confirmed; however, the result differs across EU member states. Multi-additionality of EU grants was confirmed only for Spain; in eight EU countries, input and behavioral additionality were proved, and in two, only behavioral additionality was found. This leads to the conclusion that the potential of EU support is not fully exploited, in particular in Central and Eastern European countries, and there is room for improvements with regard to policy design and implementation.",
+    "year":2022,
+    "venue":"International journal of management and economics",
+    "url":"https:\/\/www.semanticscholar.org\/paper\/97f763bdf080c392b531574c5eff75c24294e578",
     "references":[
-
+      {
+        "title":"Complementarity of additionalities resulting from European Union funds: Perspective of the users of research infrastructures",
+        "year":2022,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/c0dde08ef9ee666235a07ea74c0f08127240cb52",
+        "paperId":"c0dde08ef9ee666235a07ea74c0f08127240cb52",
+        "authors":[
+          "S. Hegerty",
+          "A. Kowalski",
+          "M. S. Lewandowska"
+        ]
+      },
+      {
+        "title":"Towards a holistic user innovation policy",
+        "year":2022,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/a513eaa20f47fd58273a0901819556f548a3dbf1",
+        "paperId":"a513eaa20f47fd58273a0901819556f548a3dbf1",
+        "authors":[
+          "L. Bengtsson",
+          "C. Edquist"
+        ]
+      },
+      {
+        "title":"Synergy effect of science and technology policies on innovation: Evidence from China",
+        "year":2020,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/d1d97f6b65c20a607a4006ba13849aac6c31f8af",
+        "paperId":"d1d97f6b65c20a607a4006ba13849aac6c31f8af",
+        "authors":[
+          "Shoulin Pang",
+          "Shiting Dou",
+          "Huanmin Li"
+        ]
+      },
+      {
+        "title":"Public R&D support and firm performance: A multivariate dose-response analysis",
+        "year":2020,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/ee4df67d4231000e58a0d52af8eb8c10511fbce6",
+        "paperId":"ee4df67d4231000e58a0d52af8eb8c10511fbce6",
+        "authors":[
+          "\u00d8ivind A. Nilsen",
+          "A. Raknerud",
+          "Diana\u2010Cristina Iancu"
+        ]
+      },
+      {
+        "title":"The effectiveness of R&D subsidies in fostering firm innovation: The role of knowledge-sourcing activities",
+        "year":2020,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/5a1c64fe496bb54390f80ca6b86bfac319e19315",
+        "paperId":"5a1c64fe496bb54390f80ca6b86bfac319e19315",
+        "authors":[
+          "S. Afcha",
+          "A. Lucena"
+        ]
+      },
+      {
+        "title":"The Role of Public Support for Innovativeness in SMEs Across European Countries and Sectors of Economic Activity",
+        "year":2020,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/fbae45f13fdbcce429a511bee4473a93559cb49b",
+        "paperId":"fbae45f13fdbcce429a511bee4473a93559cb49b",
+        "authors":[
+          "W. Grabowski",
+          "A. Staszewska-Bystrova"
+        ]
+      },
+      {
+        "title":"Prioritization and R&D Support Mechanisms: Turkish Case",
+        "year":2020,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/03a35d8e27f0d68867a279803bb4d91159db469e",
+        "paperId":"03a35d8e27f0d68867a279803bb4d91159db469e",
+        "authors":[
+          "K\u00fcbra G\u00fcrb\u00fcz",
+          "Erkan Erdil"
+        ]
+      },
+      {
+        "title":"Public procurement, innovation and industrial policy: Rationales, roles, capabilities and implementation",
+        "year":2020,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/5a4a8dabcac1c78e9257d0db66d98cf99bd71071",
+        "paperId":"5a4a8dabcac1c78e9257d0db66d98cf99bd71071",
+        "authors":[
+          "E. Uyarra",
+          "J. Zabala\u2010Iturriagagoitia",
+          "Kieron Flanagan",
+          "Edurne Magro"
+        ]
+      },
+      {
+        "title":"R&D and innovation policy in the Western Balkans: Are there additionality effects?",
+        "year":2019,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/fbad9ad8a50e4c59294e39cb55e0a3e8beab7adc",
+        "paperId":"fbad9ad8a50e4c59294e39cb55e0a3e8beab7adc",
+        "authors":[
+          "Edvard Orli\u0107",
+          "Dragana Radicic",
+          "Merima Balavac"
+        ]
+      },
+      {
+        "title":"Towards a holistic innovation policy: Can the Swedish National Innovation Council (NIC) be a role model?",
+        "year":2019,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/f5e8c01e1127a7ae0e8f484e4040f9756f001a4b",
+        "paperId":"f5e8c01e1127a7ae0e8f484e4040f9756f001a4b",
+        "authors":[
+          "C. Edquist"
+        ]
+      },
+      {
+        "title":"Holistic Innovation Policy",
+        "year":2019,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/b982a49620f883a5f4b588597255b6a9df8d064f",
+        "paperId":"b982a49620f883a5f4b588597255b6a9df8d064f",
+        "authors":[
+          "S. Borr\u00e1s",
+          "C. Edquist"
+        ]
+      },
+      {
+        "title":"Government R&D Subsidy and Additionality of Biotechnology Firms: The Case of the South Korean Biotechnology Industry",
+        "year":2019,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/f49bfe32ed6e8b2eeb9a2cb6dfa8682d07e7012c",
+        "paperId":"f49bfe32ed6e8b2eeb9a2cb6dfa8682d07e7012c",
+        "authors":[
+          "Kwangsoo Shin",
+          "Minkyung Choy",
+          "Chulung Lee",
+          "Gunno Park"
+        ]
+      },
+      {
+        "title":"Network analysis to evaluate the impact of research funding on research community consolidation",
+        "year":2019,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/de060afde6503b2d44be9dc8d7aa33ec8e9c8567",
+        "paperId":"de060afde6503b2d44be9dc8d7aa33ec8e9c8567",
+        "authors":[
+          "Daniel J. Hicks",
+          "D. Coil",
+          "Carl Stahmer",
+          "J. Eisen"
+        ]
+      },
+      {
+        "title":"Three frames for innovation policy: R&D, systems of innovation and transformative change",
+        "year":2018,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/57cf4221cf6669deb78aa1bc73856d7ae6df9a49",
+        "paperId":"57cf4221cf6669deb78aa1bc73856d7ae6df9a49",
+        "authors":[
+          "J. Schot",
+          "W. Steinmueller"
+        ]
+      },
+      {
+        "title":"Mission-oriented innovation policies: challenges and opportunities",
+        "year":2018,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/5e67f2480e041a606a86d0f2ba6c20213dc00d52",
+        "paperId":"5e67f2480e041a606a86d0f2ba6c20213dc00d52",
+        "authors":[
+          "Mariana Mazzucato"
+        ]
+      },
+      {
+        "title":"Disruptive Innovation: An Intellectual History and Directions for Future Research",
+        "year":2018,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/ad5aaf03b5144247bdc6d509dae6ecf0a24a6819",
+        "paperId":"ad5aaf03b5144247bdc6d509dae6ecf0a24a6819",
+        "authors":[
+          "Clayton M. Christensen",
+          "Rory M. McDonald",
+          "E. Altman",
+          "Jonathan Palmer"
+        ]
+      },
+      {
+        "title":"Input and output additionality of R&D subsidies",
+        "year":2018,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/0728a00304f2fe6f5b1ee2afd0a990d577270457",
+        "paperId":"0728a00304f2fe6f5b1ee2afd0a990d577270457",
+        "authors":[
+          "D. Czarnitzki",
+          "K. Hussinger"
+        ]
+      },
+      {
+        "title":"Sectors and the additionality effects of R&D tax credits: A cross-country microeconometric analysis",
+        "year":2017,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/952d5c2091b43ee90f59f5019538de9d9b82cafb",
+        "paperId":"952d5c2091b43ee90f59f5019538de9d9b82cafb",
+        "authors":[
+          "I. B. Freitas",
+          "F. Castellacci",
+          "R. Fontana",
+          "F. Malerba",
+          "A. Vezzulli"
+        ]
+      },
+      {
+        "title":"Does government support for private innovation matter? Firm-level evidence from two catching-up countries",
+        "year":2017,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/3abc9be8b1ac145af5b08ff3698bcf6171096cf0",
+        "paperId":"3abc9be8b1ac145af5b08ff3698bcf6171096cf0",
+        "authors":[
+          "K. Szczygielski",
+          "W. Grabowski",
+          "M. Pamuk\u00e7u",
+          "Vedat Sinan Tando\u011fan"
+        ]
+      },
+      {
+        "title":"Additionality or crowding-out? An overall evaluation of public R&D subsidy on private R&D expenditure",
+        "year":2016,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/f6fce84cfaf902da9db6d2a4132d3178e9dddf05",
+        "paperId":"f6fce84cfaf902da9db6d2a4132d3178e9dddf05",
+        "authors":[
+          "Marianna Marino",
+          "St\u00e9phane Lhuillery",
+          "Pierpaolo Parrotta",
+          "D. Sala"
+        ]
+      },
+      {
+        "title":"R&D Programmes, Policy Mix, and the \u2018European Paradox\u2019: Evidence from European SMEs",
+        "year":2016,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/9d39a46e6793854fa07b81f22fb36548b696b408",
+        "paperId":"9d39a46e6793854fa07b81f22fb36548b696b408",
+        "authors":[
+          "Dragana Radicic",
+          "G. Pugh"
+        ]
+      },
+      {
+        "title":"R&D policies for young SMEs: input and output effects",
+        "year":2015,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/d3e8c101099650e12d31a804bcabbd3242aff6eb",
+        "paperId":"d3e8c101099650e12d31a804bcabbd3242aff6eb",
+        "authors":[
+          "D. Czarnitzki",
+          "J. Delanote"
+        ]
+      },
+      {
+        "title":"The effects of public support schemes on small and medium enterprises",
+        "year":2015,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/a5370adac2d204bed12d20d9b5feffbc4136f1fd",
+        "paperId":"a5370adac2d204bed12d20d9b5feffbc4136f1fd",
+        "authors":[
+          "Sonja Radas",
+          "Ivan-Damir Ani\u0107",
+          "A. Tafro",
+          "Vanja Wagner"
+        ]
+      },
+      {
+        "title":"Demand-side vs. supply-side technology policies: Hidden treatment and new empirical evidence on the policy mix",
+        "year":2015,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/8e66e4c340adc4f35c3cb203624cb8b1c64a5de6",
+        "paperId":"8e66e4c340adc4f35c3cb203624cb8b1c64a5de6",
+        "authors":[
+          "M. Guerzoni",
+          "Emilio Raiteri"
+        ]
+      },
+      {
+        "title":"Effectiveness of Public Innovation Support in Europe. Does Public Support Foster Turnover, Employment and Labour Productivity?",
+        "year":2015,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/84afe43d0d3e3f5ccd6ce8a688d2ec382cb59546",
+        "paperId":"84afe43d0d3e3f5ccd6ce8a688d2ec382cb59546",
+        "authors":[
+          "Lasse Becker"
+        ]
+      },
+      {
+        "title":"The Impact of R&D Subsidies on Firm Innovation",
+        "year":2014,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/fcc97ad1ffad976da5aa0678609d8710de5e8b3b",
+        "paperId":"fcc97ad1ffad976da5aa0678609d8710de5e8b3b",
+        "authors":[
+          "Raffaello Bronzini",
+          "Paolo Piselli"
+        ]
+      },
+      {
+        "title":"Dipping in the policy mix: Do R&D subsidies foster behavioral additionality effects of R&D tax credits?",
+        "year":2014,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/3dca687515c12381e7bf99ccf10000c08b4bb82e",
+        "paperId":"3dca687515c12381e7bf99ccf10000c08b4bb82e",
+        "authors":[
+          "Daniel Neicu",
+          "P. Teirlinck",
+          "Stijn Kelchtermans"
+        ]
+      },
+      {
+        "title":"R&D Cooperation, Partner Diversity, and Innovation Performance: An Empirical Analysis\u2020",
+        "year":2014,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/157d7f8392e32c9152f938de86e1393c20e75c4d",
+        "paperId":"157d7f8392e32c9152f938de86e1393c20e75c4d",
+        "authors":[
+          "C. Beers",
+          "F. Zand"
+        ]
+      },
+      {
+        "title":"Complex innovation policy systems: Towards an evaluation mix",
+        "year":2013,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/adf5e8d54126597a1badf3e3b4f119906b143387",
+        "paperId":"adf5e8d54126597a1badf3e3b4f119906b143387",
+        "authors":[
+          "Edurne Magro",
+          "James R. Wilson"
+        ]
+      },
+      {
+        "title":"The Multi-Dimensional Additionality of Innovation Policies. A Multi-Level Application to Italy and Spain.",
+        "year":2013,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/f9dac8d9df96eefbf7f3e23c14be5cb4c69966ad",
+        "paperId":"f9dac8d9df96eefbf7f3e23c14be5cb4c69966ad",
+        "authors":[
+          "Alberto Marzucchi",
+          "Sandro Montresor"
+        ]
+      },
+      {
+        "title":"How do firm characteristics affect behavioural additionalities of public R&D subsidies? Evidence for the Austrian transport sector",
+        "year":2013,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/83cf83df2f8a5dac945f64e9358f13b12c2932cd",
+        "paperId":"83cf83df2f8a5dac945f64e9358f13b12c2932cd",
+        "authors":[
+          "I. Wanzenb\u00f6ck",
+          "Thomas Scherngell",
+          "M. Fischer"
+        ]
+      },
+      {
+        "title":"Does Firm Size make a Difference? Analysing the Effectiveness of R&D Subsidies in East Germany",
+        "year":2012,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/f728b2155187d1faf88a5f8fda77ea4317b97e3d",
+        "paperId":"f728b2155187d1faf88a5f8fda77ea4317b97e3d",
+        "authors":[
+          "Bj\u00f6rn Alecke",
+          "Janina Reinkowski",
+          "T. Mitze",
+          "G. Untiedt"
+        ]
+      },
+      {
+        "title":"Innovation Subsidies: Does the Funding Source Matter for Innovation Intensity and Performance? Empirical Evidence from Germany",
+        "year":2011,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/aacef1bba74660f4df83b9a437b345d43e2d0fcd",
+        "paperId":"aacef1bba74660f4df83b9a437b345d43e2d0fcd",
+        "authors":[
+          "D. Czarnitzki",
+          "Cindy Lopes-Bento"
+        ]
+      },
+      {
+        "title":"On Young Highly Innovative Companies: Why They Matter and How (Not) to Policy Support Them",
+        "year":2008,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/c2d7da9395d0c4b5f382043fa7d7587389c415e2",
+        "paperId":"c2d7da9395d0c4b5f382043fa7d7587389c415e2",
+        "authors":[
+          "C\u00e9dric Schneider",
+          "R. Veugelers"
+        ]
+      },
+      {
+        "title":"Forms of knowledge and modes of innovation",
+        "year":2007,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/ee6590c9afa7ce6d8907a6c1d9350c277690c4d9",
+        "paperId":"ee6590c9afa7ce6d8907a6c1d9350c277690c4d9",
+        "authors":[
+          "M. B. Jensen",
+          "B. Johnson",
+          "Edward N. Lorenz",
+          "B. Lundvall"
+        ]
+      },
+      {
+        "title":"On the contribution of innovation to multi-factor productivity growth",
+        "year":2006,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/29b69093c33ac90e48c2f189e8630e302456415f",
+        "paperId":"29b69093c33ac90e48c2f189e8630e302456415f",
+        "authors":[
+          "George van Leeuwen",
+          "L. Klomp"
+        ]
+      },
+      {
+        "title":"Additionality of Public R&D Grants in a Transition Economy",
+        "year":2006,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/5d37a312b1430b3b7c551291f30648128c257276",
+        "paperId":"5d37a312b1430b3b7c551291f30648128c257276",
+        "authors":[
+          "D. Czarnitzki",
+          "G. Licht"
+        ]
+      },
+      {
+        "title":"The Effects of Government-Industry R&D Programs on Private R&D: The Case of the Small Business Innovation Research Program",
+        "year":2000,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/1c2e325a0298289f8220669cc12a51b10db913dd",
+        "paperId":"1c2e325a0298289f8220669cc12a51b10db913dd",
+        "authors":[
+          "S. Wallsten"
+        ]
+      },
+      {
+        "title":"Bootstrapping Goodness-of-Fit Measures in Structural Equation Models",
+        "year":1992,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/20f7d2dc84ed322fc1add599a2cd9173461b0ec3",
+        "paperId":"20f7d2dc84ed322fc1add599a2cd9173461b0ec3",
+        "authors":[
+          "K. Bollen",
+          "R. Stine"
+        ]
+      },
+      {
+        "title":"The Method of Path Coefficients",
+        "year":1934,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/f6d9ba13cb2f6354787e1c8fe4ee30cbd5f6addb",
+        "paperId":"f6d9ba13cb2f6354787e1c8fe4ee30cbd5f6addb",
+        "authors":[
+          "S. Wright"
+        ]
+      },
+      {
+        "title":"Influence of government R&D support and inter-firm collaborations on innovation in Korean biotechnology SMEs",
+        "year":2012,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/510193ff8ad0dd67973234764bcbc67e5d07e1c4",
+        "paperId":"510193ff8ad0dd67973234764bcbc67e5d07e1c4",
+        "authors":[
+          "Kyung-Nam Kang",
+          "Hayoung Park"
+        ]
+      },
+      {
+        "title":"Research, Innovation And Productivity: An Econometric Analysis At The Firm Level",
+        "year":1998,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/e5f149e6bb37e8ddfa8a9b878ce3846e7256355e",
+        "paperId":"e5f149e6bb37e8ddfa8a9b878ce3846e7256355e",
+        "authors":[
+          "Bruno Cr\u00e9pon",
+          "Emmanuel Duguet",
+          "J. Mairesse"
+        ]
+      },
+      {
+        "title":"Bootstrap Methods: Another Look at the Jackknife",
+        "year":1979,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/005a8323a14a9710fad2f360cc2bd1bffb736240",
+        "paperId":"005a8323a14a9710fad2f360cc2bd1bffb736240",
+        "authors":[
+          "B. Efron"
+        ]
+      }
     ],
     "topics":[
 
@@ -20,1153 +471,267 @@
     ]
   },
   {
-    "paperId":"c28285cda684ed79daf8cc0d8a6abc87a94bacf3",
-    "title":"Pandemics and Political Development: The Electoral Legacy of the Black Death in Germany",
-    "abstract":"ABSTRACT:Do pandemics have lasting consequences for political behavior? The authors address this question by examining the consequences of the deadliest pandemic of the last millennium: the Black Death (1347\u20131351). They claim that pandemics can influence politics in the long run if the loss of life is high enough to increase the price of labor relative to other factors of production. When this occurs, labor-repressive regimes, such as serfdom, become untenable, which ultimately leads to the development of proto-democratic institutions and associated political cultures that shape modalities of political engagement for generations. The authors test their theory by tracing the consequences of the Black Death in German-speaking Central Europe. They find that areas hit hardest by that pandemic were more likely to adopt inclusive political institutions and equitable land ownership patterns, to exhibit electoral behavior indicating independence from landed elite influence during the transition to mass politics, and to have significantly lower vote shares for Hitler's National Socialist Party in the Weimar Republic's fateful 1930 and July 1932 elections.",
-    "year":2020,
-    "venue":"",
-    "url":"https:\/\/www.semanticscholar.org\/paper\/c28285cda684ed79daf8cc0d8a6abc87a94bacf3",
+    "paperId":"4eb705c2f90874ebeb6b8514a7cd72a6092a4fb9",
+    "title":"Analysis of Public Debt in the Context of Crises Generated by Socio-Economic Events. Case Study: European Union Countries",
+    "abstract":"In the current geopolitical configuration, generated by socio-economic and political-military events, with an impact on economic development, the public debt dynamics take on new dimensions. Public debt, as an indispensable concept for improving development strategies in an economic and geopolitical context, is influenced by the macroeconomic indicators\u2019 variation, but also by the internal and external factors\u2019 impact, which generate instability in a dynamic of unpredictable phenomena. Therefore, the study indicates proposals, based on multivariate regression, to capture the most sensitive variations of macroeconomic indicators on sustainable development at the European Union countries level. Moreover, the current European level configuration requires a detailed capture of the connection between public debt and economic growth, by using a VAR model (public debt, a concept that takes on new values in the current context, and economic growth, as the central pillar of sustainable development, analyzed from the perspective of the studied indicators fluctuation). Finally, I analyzed the public debt dynamics for the next period (2000 \u2013 2022) to create a realistic picture, using the ARMA model. The results confirm the direct impact of each event on economic growth and development, and the limitation and elimination of negative effects vary depending on how it is managed and prevented. Also, the link between the economic growth and public debt is confirmed and, at the same time, it constitutes a benchmark that captures the importance of the decisions of the responsible factors regarding the financial-monetary instruments implemented or what is requested to be adopted. In other words, forecasting the public debt dynamics gives a certain stability, but also a strategic vision, offering viable solutions to support sustainable development efforts at European states level.",
+    "year":2024,
+    "venue":"Scientific Annals of Economics and Business",
+    "url":"https:\/\/www.semanticscholar.org\/paper\/4eb705c2f90874ebeb6b8514a7cd72a6092a4fb9",
     "references":[
       {
-        "title":"THE GREAT LEVELER",
-        "year":2020,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/7e456420c624b455723b1a91222f33077efd832f",
-        "paperId":"7e456420c624b455723b1a91222f33077efd832f",
+        "title":"Digital finance infrastructure and growth of commercial banking firms in Nigeria",
+        "year":2024,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/98819f9403010fafd61ad9ed5b35d31a84c28f8b",
+        "paperId":"98819f9403010fafd61ad9ed5b35d31a84c28f8b",
         "authors":[
-          "Bill Herbst"
+          "Marshal Iwedi"
         ]
       },
       {
-        "title":"Buying Power: Electoral Strategy before the Secret Vote",
-        "year":2020,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/156f13399373f62b782812a6d00bd55504ee2756",
-        "paperId":"156f13399373f62b782812a6d00bd55504ee2756",
+        "title":"ARIMA Modeling and Forecasting of National Consumer Price Index in Nepal",
+        "year":2024,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/7f9741097351ccf59eded1fd7d1ea18205d45738",
+        "paperId":"7f9741097351ccf59eded1fd7d1ea18205d45738",
         "authors":[
-          "Daniel W. Gingerich"
+          "Omkar Poudel",
+          "Dr.Khom Raj Kharel",
+          "Pradeep Acharya",
+          "Daya Simkhada",
+          "Sarad Chandra Kafle"
         ]
       },
       {
-        "title":"Vote Secrecy With Diverse Voters",
-        "year":2020,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/2658da3e44829d0f600fed21df9c53d3dd960b59",
-        "paperId":"2658da3e44829d0f600fed21df9c53d3dd960b59",
+        "title":"The Influence of Public Debt on Economic Growth: a Review of Literature",
+        "year":2023,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/538b04937997a7abef3c99c17d9a2203b1730743",
+        "paperId":"538b04937997a7abef3c99c17d9a2203b1730743",
         "authors":[
-          "Daniel W. Gingerich",
-          "Danilo B. Medeiros"
+          "Ismail Yamin",
+          "Omar Al_kasasbeh",
+          "Amro Alzghoul",
+          "G. Alsheikh"
         ]
       },
       {
-        "title":"Imperial Rule, the Imposition of Bureaucratic Institutions, and Their Long-Term Legacies",
+        "title":"Do higher public debt levels reduce economic growth?",
+        "year":2022,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/57c9d98486f335732fc31fb2488aaea9e349deb3",
+        "paperId":"57c9d98486f335732fc31fb2488aaea9e349deb3",
+        "authors":[
+          "Philipp Heimberger"
+        ]
+      },
+      {
+        "title":"Public Debt and Real GDP: Revisiting the Impact",
+        "year":2022,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/daa7cbcc9dd59b07599546f7164016bb42552577",
+        "paperId":"daa7cbcc9dd59b07599546f7164016bb42552577",
+        "authors":[
+          "Constance de Soyres",
+          "Mengxue Wang",
+          "Reina Kawai"
+        ]
+      },
+      {
+        "title":"Exchange Rate Volatility, Inflation and Economic Growth in Developing Countries: Panel Data Approach for SADC",
+        "year":2022,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/ed76544e716b7305ed60132d38a128e1deffea8b",
+        "paperId":"ed76544e716b7305ed60132d38a128e1deffea8b",
+        "authors":[
+          "Ebenezer Olamide",
+          "K. Ogujiuba",
+          "A. Maredza"
+        ]
+      },
+      {
+        "title":"Debt Overhang, Gazelles\u2019 Growth, and Fiscal Policy: A Note from the Quantile Regression Approach",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/864d5d468f4b4fbb5d1ad0b183d3e436abce3b1c",
+        "paperId":"864d5d468f4b4fbb5d1ad0b183d3e436abce3b1c",
+        "authors":[
+          "S. Anton",
+          "M. Onofrei",
+          "E. Gogu",
+          "B. Neculau",
+          "Florin Mihai"
+        ]
+      },
+      {
+        "title":"The Impact of Corruption and Rent-Seeking Behavior upon Economic Wealth in the European Union from a Public Choice Approach",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/a92def9210d62478d49246ab07236cc0ac2950ba",
+        "paperId":"a92def9210d62478d49246ab07236cc0ac2950ba",
+        "authors":[
+          "Gheorghi\u021ba Dinc\u0103",
+          "M. Dinc\u0103",
+          "Camelia Negri",
+          "Mihaela B\u0103rbu\u021b\u0103"
+        ]
+      },
+      {
+        "title":"Government Spending and Economic Growth: A Cointegration Analysis on Romania",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/54cb499b78000aee592c59271f3624655a1b93ed",
+        "paperId":"54cb499b78000aee592c59271f3624655a1b93ed",
+        "authors":[
+          "C. Popescu",
+          "Laura Diaconu (Maxim)"
+        ]
+      },
+      {
+        "title":"Effects of Digitalisation on Higher Education in a Sustainable Development Framework\u2014Online Learning Challenges during the COVID-19 Pandemic",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/5d83169246307f5d45e282f25264c36025c4a55e",
+        "paperId":"5d83169246307f5d45e282f25264c36025c4a55e",
+        "authors":[
+          "T. Toader",
+          "Marieta Safta",
+          "Cristina Titiri\u0219c\u0103",
+          "B. F\u00eer\u021bescu"
+        ]
+      },
+      {
+        "title":"Influence of Fiscal Policies and Labor Market Characteristics on Sustainable Social Insurance Budgets\u2014Empirical Evidence from Central and Eastern European Countries",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/ad41c04c83a26fd354c47d0a2b85bfc89358902d",
+        "paperId":"ad41c04c83a26fd354c47d0a2b85bfc89358902d",
+        "authors":[
+          "A. Popa",
+          "\u0218. Jimon",
+          "Delia David",
+          "D. Sahlian"
+        ]
+      },
+      {
+        "title":"The Dynamic Impact of Agricultural Fiscal Expenditures and Gross Agricultural Output on Poverty Reduction: A VAR Model Analysis",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/bbeb12c7541de9340a61d267ee58a9e00f3b0917",
+        "paperId":"bbeb12c7541de9340a61d267ee58a9e00f3b0917",
+        "authors":[
+          "Guanglu Zeng",
+          "Chenggang Zhang",
+          "Sanxi Li",
+          "Hailin Sun"
+        ]
+      },
+      {
+        "title":"Taxation and Enterprise Innovation: Evidence from China\u2019s Value-Added Tax Reform",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/68df7d99d1a5cffcd74ede6c0d53fb8c32093097",
+        "paperId":"68df7d99d1a5cffcd74ede6c0d53fb8c32093097",
+        "authors":[
+          "Ke Ding",
+          "Helian Xu",
+          "Rongming Yang"
+        ]
+      },
+      {
+        "title":"The Effects of the Economic Adjustment Programmes for Greece: A Quasi-Experimental Approach",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/311747c7fef948e4eb2b70e39c470318c1a720dd",
+        "paperId":"311747c7fef948e4eb2b70e39c470318c1a720dd",
+        "authors":[
+          "J. Revuelta"
+        ]
+      },
+      {
+        "title":"The Heterogeneous Public Debt\u2013Growth Relationship: The Role of the Expenditure Multiplier",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/85563ce392cb6e33e1f6bfd830ef0b82bd92f451",
+        "paperId":"85563ce392cb6e33e1f6bfd830ef0b82bd92f451",
+        "authors":[
+          "Mindaugas Butkus",
+          "Diana Cibulskien\u0117",
+          "Lina Gar\u0161vien\u0117",
+          "Janina \u0160eputien\u0117"
+        ]
+      },
+      {
+        "title":"Impact of Governments\u2019 Fiscal Behaviors on Public Finance Sustainability: A Comparative Study",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/3b5bf75c087949dcb4df4da5f99645c0aa5ef7d3",
+        "paperId":"3b5bf75c087949dcb4df4da5f99645c0aa5ef7d3",
+        "authors":[
+          "M. Onofrei",
+          "T. Toader",
+          "Anca-Florentina Vatamanu",
+          "Florin Oprea"
+        ]
+      },
+      {
+        "title":"Impacts of openness on financial development in developing countries: Using a Bayesian model averaging approach",
+        "year":2021,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/e8ca2086dc24414bd9f079fb67b7cdcf9d9abf5b",
+        "paperId":"e8ca2086dc24414bd9f079fb67b7cdcf9d9abf5b",
+        "authors":[
+          "Diem Pham Thi Thuy",
+          "Ho\u00e0i Nguy\u1ec5n Tr\u1ecdng"
+        ]
+      },
+      {
+        "title":"Real interest rate and economic growth: A statistical exploration for transitory economies",
         "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/7987131a165cfc07c80c3f15d7d898d5baeb79cc",
-        "paperId":"7987131a165cfc07c80c3f15d7d898d5baeb79cc",
+        "url":"https:\/\/www.semanticscholar.org\/paper\/011caea9bda11404b224fcaf900de829f1a7fd39",
+        "paperId":"011caea9bda11404b224fcaf900de829f1a7fd39",
         "authors":[
-          "Jan P. Vogler"
+          "Badiea Shaukat",
+          "Qigui Zhu",
+          "M. Khan"
         ]
       },
       {
-        "title":"The German Right, 1860\u20131945: How It Changed",
+        "title":"Is Inflation Fiscally Determined?",
         "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/2a19f89f249e88f581aab01a1986ed900c9641f6",
-        "paperId":"2a19f89f249e88f581aab01a1986ed900c9641f6",
+        "url":"https:\/\/www.semanticscholar.org\/paper\/faf97f187788e0a3680b0f490c87196d0b0d9eca",
+        "paperId":"faf97f187788e0a3680b0f490c87196d0b0d9eca",
         "authors":[
-          "G. Eley"
+          "Lamia Bazzaoui",
+          "Jun Nagayasu"
         ]
       },
       {
-        "title":"Public Goods Institutions, Human Capital, and Growth: Evidence from German History",
+        "title":"How does public debt affect economic growth? A systematic review",
         "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/d8850cce5c2cecc3d98d21f031ddf09b7ff1a8bf",
-        "paperId":"d8850cce5c2cecc3d98d21f031ddf09b7ff1a8bf",
+        "url":"https:\/\/www.semanticscholar.org\/paper\/186e6bb67711c19bbed2fe7086f1ada325802270",
+        "paperId":"186e6bb67711c19bbed2fe7086f1ada325802270",
         "authors":[
-          "Jeremiah Dittmar",
-          "Ralf R. Meisenzahl"
+          "N. H. A. Rahman",
+          "S. Ismail",
+          "Abdul Rahim Ridzuan"
         ]
       },
       {
-        "title":"Pandemics, Places, and Populations: Evidence from the Black Death",
-        "year":2019,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/d1160b5c6b2a5aa0889de9586dd8d015a09c492f",
-        "paperId":"d1160b5c6b2a5aa0889de9586dd8d015a09c492f",
-        "authors":[
-          "Remi Jedwab",
-          "Noel D. Johnson",
-          "Mark Koyama"
-        ]
-      },
-      {
-        "title":"DEEP ROOTS: HOW SLAVERY STILL SHAPES SOUTHERN POLITICS. Acharya\u00a0A., Blackwell\u00a0M., and Sen\u00a0M.. Princeton, NJ: Princeton University Press. ISBN: 978-0-691-17674-1. $29.95.",
-        "year":2018,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/cea04388f4679d8c063262c0d8258668d0fdcfaa",
-        "paperId":"cea04388f4679d8c063262c0d8258668d0fdcfaa",
-        "authors":[
-          "J. Bakens"
-        ]
-      },
-      {
-        "title":"Government Finance and Imposition of Serfdom After the Black Death",
-        "year":2018,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/c9873fd3d639a148a03409ab4edd34a7fc91b5d6",
-        "paperId":"c9873fd3d639a148a03409ab4edd34a7fc91b5d6",
-        "authors":[
-          "M. Peters"
-        ]
-      },
-      {
-        "title":"Political Participation and Economic Development. Evidence from the Rise of Participative Political Institutions in the Late Medieval German Lands",
-        "year":2018,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/0b612158eb93573e3717036d1f498e7ddb826769",
-        "paperId":"0b612158eb93573e3717036d1f498e7ddb826769",
-        "authors":[
-          "Fabian Wahl"
-        ]
-      },
-      {
-        "title":"Trade routes and plague transmission in pre-industrial Europe",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/8be6b1f7e1a30c7385ffa6b1f2262f2381f8fbc7",
-        "paperId":"8be6b1f7e1a30c7385ffa6b1f2262f2381f8fbc7",
-        "authors":[
-          "R. Yue",
-          "H. Lee",
-          "Connor Y. H. Wu"
-        ]
-      },
-      {
-        "title":"Was Domar Right? Serfdom and Factor Endowments in Bohemia",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/6fa010c0ea97eebb8b3381245cab43ac589944b0",
-        "paperId":"6fa010c0ea97eebb8b3381245cab43ac589944b0",
-        "authors":[
-          "A. Klein",
-          "Sheilagh Ogilvie"
-        ]
-      },
-      {
-        "title":"Next\u2010generation ice core technology reveals true minimum natural levels of lead (Pb) in the atmosphere: Insights from the Black Death",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/8b8cd591720d8ab0d25be290c11cc5c418a569b0",
-        "paperId":"8b8cd591720d8ab0d25be290c11cc5c418a569b0",
-        "authors":[
-          "A. More",
-          "N. Spaulding",
-          "P. Bohleber",
-          "M. Handley",
-          "H. Hoffmann",
-          "E. Korotkikh",
-          "A. Kurbatov",
-          "Christopher P. Loveluck",
-          "S. Sneed",
-          "M. McCormick",
-          "P. Mayewski"
-        ]
-      },
-      {
-        "title":"\"The World Changed Today!\" Can We Recognize Critical Junctures When We See Them?",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/9444a3bda0904ad06b003074eed7cd10f00b1c07",
-        "paperId":"9444a3bda0904ad06b003074eed7cd10f00b1c07",
-        "authors":[
-          "S. Tarrow"
-        ]
-      },
-      {
-        "title":"Negative shocks and mass persecutions: evidence from the Black Death",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/2d2f5afbec35fcb0a7576fd4657053316bf735f6",
-        "paperId":"2d2f5afbec35fcb0a7576fd4657053316bf735f6",
-        "authors":[
-          "Remi Jedwab",
-          "N. Johnson",
-          "Mark Koyama"
-        ]
-      },
-      {
-        "title":"Pandemics: A Very Short Introduction",
-        "year":2016,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/72b51ee11d63656dc64887571d32c3cb80736f9f",
-        "paperId":"72b51ee11d63656dc64887571d32c3cb80736f9f",
-        "authors":[
-          "C. McMillen"
-        ]
-      },
-      {
-        "title":"From open secrets to secret voting: democratic electoral reforms and voter autonomy",
-        "year":2016,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/f14c273d54f81d3a6ffe01745299d52494ec52ad",
-        "paperId":"f14c273d54f81d3a6ffe01745299d52494ec52ad",
-        "authors":[
-          "P. Manow"
-        ]
-      },
-      {
-        "title":"Plague, Politics, and Pogroms: The Black Death, the Rule of Law, and the Persecution of Jews in the Holy Roman Empire",
-        "year":2016,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/759b8938b7900e8352a9d9b8dd22b998465494fb",
-        "paperId":"759b8938b7900e8352a9d9b8dd22b998465494fb",
-        "authors":[
-          "Theresa Finley",
-          "Mark Koyama"
-        ]
-      },
-      {
-        "title":"Does Medieval Trade Still Matter? Historical Trade Centers, Agglomeration and Contemporary Economic Development",
-        "year":2016,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/e54c1fd3b1ec48d5ddac90033f57e3ac0c1b4849",
-        "paperId":"e54c1fd3b1ec48d5ddac90033f57e3ac0c1b4849",
-        "authors":[
-          "Fabian Wahl"
-        ]
-      },
-      {
-        "title":"Participative political institutions in pre-modern Europe: Introducing a new database",
-        "year":2016,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/db4a66a2b94a8d16a5b4347da469ea105503a944",
-        "paperId":"db4a66a2b94a8d16a5b4347da469ea105503a944",
-        "authors":[
-          "Fabian Wahl"
-        ]
-      },
-      {
-        "title":"The production of electoral intimidation: Economic and political incentives",
-        "year":2015,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/a775c5bbd47f352fd1c27b8f6739bf44f17b0e56",
-        "paperId":"a775c5bbd47f352fd1c27b8f6739bf44f17b0e56",
-        "authors":[
-          "Isabela Mares",
-          "Boliang Zhu"
-        ]
-      },
-      {
-        "title":"Critical junctures and institutional change",
-        "year":2015,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/fa79fde0ca78361bdcd89a1ad3606c2a8e3af45e",
-        "paperId":"fa79fde0ca78361bdcd89a1ad3606c2a8e3af45e",
-        "authors":[
-          "G. Capoccia"
-        ]
-      },
-      {
-        "title":"Clientelism in Indian Villages",
-        "year":2015,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/334473c8431caa23ead085094d8c20e8fa65d114",
-        "paperId":"334473c8431caa23ead085094d8c20e8fa65d114",
-        "authors":[
-          "Siwan Anderson",
-          "P. Francois",
-          "Ashok Kotwal"
-        ]
-      },
-      {
-        "title":"The Rents from Trade and Coercive Institutions: Removing the Sugar Coating",
-        "year":2015,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/d6855705f6dee961620f69c1123c298f99b8d930",
-        "paperId":"d6855705f6dee961620f69c1123c298f99b8d930",
-        "authors":[
-          "C. Dippel",
-          "A. Greif",
-          "Daniel Trefler"
-        ]
-      },
-      {
-        "title":"Inequality and Democratization: An Elite-Competition Approach",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/e6a7e910dbaf5c0315121cdd155f7c496499f0fe",
-        "paperId":"e6a7e910dbaf5c0315121cdd155f7c496499f0fe",
-        "authors":[
-          "Ben W. Ansell",
-          "David J. Samuels"
-        ]
-      },
-      {
-        "title":"Making clientelism work: How norms of reciprocity increase voter compliance",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/049a0c9445a12fe56bbb4a122c17d47f17856c7e",
-        "paperId":"049a0c9445a12fe56bbb4a122c17d47f17856c7e",
-        "authors":[
-          "Chappell Lawson",
-          "Kenneth F. Greene"
-        ]
-      },
-      {
-        "title":"Labor Shortages, Rural Inequality, and Democratization",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/e94ad6e28e0450044f44a2dd9ddd6efe045f1bf4",
-        "paperId":"e94ad6e28e0450044f44a2dd9ddd6efe045f1bf4",
-        "authors":[
-          "Mart\u00edn Ardanaz",
-          "Isabela Mares"
-        ]
-      },
-      {
-        "title":"The Politics of the Prussian Nobility: The Development of a Conservative Ideology, 1770-1848",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/3a08eb915369f96ce5b019a743aa93b40f119d6f",
-        "paperId":"3a08eb915369f96ce5b019a743aa93b40f119d6f",
-        "authors":[
-          "R. Berdahl"
-        ]
-      },
-      {
-        "title":"Inequality in the long run",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/bc652892d826d9da892c37c941df363884d58437",
-        "paperId":"bc652892d826d9da892c37c941df363884d58437",
-        "authors":[
-          "T. Piketty",
-          "Emmanuel Saez"
-        ]
-      },
-      {
-        "title":"Political Machines at Work: Voter Mobilization and Electoral Subversion in the Workplace",
-        "year":2014,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/bed54368014a67e5e895bc5b13f77496181a184d",
-        "paperId":"bed54368014a67e5e895bc5b13f77496181a184d",
-        "authors":[
-          "Timothy Frye",
-          "O. J. Reuter",
-          "David Szakonyi"
-        ]
-      },
-      {
-        "title":"Culture and Institutions",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/6f5847198dd7c0ce628550cbf92ac983e8bda733",
-        "paperId":"6f5847198dd7c0ce628550cbf92ac983e8bda733",
-        "authors":[
-          "A. Alesina",
-          "Paola Giuliano"
-        ]
-      },
-      {
-        "title":"The Endurance and Eclipse of the Controlled Vote: A Formal Model of Vote Brokerage Under the Secret Ballot",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/5186a5aea38576910e34f0ed49bd9c4266eb9379",
-        "paperId":"5186a5aea38576910e34f0ed49bd9c4266eb9379",
-        "authors":[
-          "Daniel W. Gingerich",
-          "L. Medina"
-        ]
-      },
-      {
-        "title":"Brokers, Voters, and Clientelism: The Puzzle of Distributive Politics",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/42c956be2313712e6210a731887301fd05378605",
-        "paperId":"42c956be2313712e6210a731887301fd05378605",
-        "authors":[
-          "S. Stokes",
-          "T. Dunning",
-          "Marcelo Nazareno",
-          "V. Brusco"
-        ]
-      },
-      {
-        "title":"Inequality, Grievances, and Civil War",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/cbaf51b270ab465f010bed5f495a206b1c35d452",
-        "paperId":"cbaf51b270ab465f010bed5f495a206b1c35d452",
-        "authors":[
-          "L. Cederman",
-          "K. Gleditsch",
-          "Halvard Buhaug"
-        ]
-      },
-      {
-        "title":"Capital in the twenty-first century: a multidimensional approach to the history of capital and social classes.",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/9056bacde3b06af0081f316fda19a45f61fcf695",
-        "paperId":"9056bacde3b06af0081f316fda19a45f61fcf695",
-        "authors":[
-          "T. Piketty"
-        ]
-      },
-      {
-        "title":"What Wins Votes: Why Some Politicians Opt Out of Clientelism",
-        "year":2012,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/0c7df632d589ff867b5212d2ed9d78ecc87db96c",
-        "paperId":"0c7df632d589ff867b5212d2ed9d78ecc87db96c",
-        "authors":[
-          "Rebecca Weitz-Shapiro"
-        ]
-      },
-      {
-        "title":"The Holy Roman Empire of the German Nation past and present",
-        "year":2012,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/1e9e7d37fd5a92664592aa441e4315a22a61d3a3",
-        "paperId":"1e9e7d37fd5a92664592aa441e4315a22a61d3a3",
-        "authors":[
-          "T. Blanning"
-        ]
-      },
-      {
-        "title":"Vote-Buying and Reciprocity",
-        "year":2011,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/66d37e56f24d0e5e254dc774451c3400208443bf",
-        "paperId":"66d37e56f24d0e5e254dc774451c3400208443bf",
-        "authors":[
-          "Frederico Finan",
-          "L. Schechter"
-        ]
-      },
-      {
-        "title":"Make It Rain? Retrospection and the Attentive Electorate in the Context of Natural Disasters",
-        "year":2011,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/e94541420135cffc10eb366e402fc0afb1d21a13",
-        "paperId":"e94541420135cffc10eb366e402fc0afb1d21a13",
-        "authors":[
-          "J. Gasper",
-          "Andrew Reeves"
-        ]
-      },
-      {
-        "title":"Winner-Take-All Politics: How Washington Made the Rich Richer--and Turned Its Back on the Middle Class",
-        "year":2010,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/171bc1e8b4754d9cdbf325f891eca4021aa21f6e",
-        "paperId":"171bc1e8b4754d9cdbf325f891eca4021aa21f6e",
-        "authors":[
-          "J. Hacker",
-          "P. Pierson"
-        ]
-      },
-      {
-        "title":"\u66f8\u8a55 \u30a8\u30ea\u30c3\u30af\u30fb\u30a2\u30b9\u30ec\u30a4\u30ca\u30fc\u8457\u300eCorruption, inequality, and rule of law\u300f",
-        "year":2010,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/b172ec1f99e6847c8d943a47a043ce31a9ab74a0",
-        "paperId":"b172ec1f99e6847c8d943a47a043ce31a9ab74a0",
-        "authors":[
-          "\u7a32\u8449 \u967d\u4e8c"
-        ]
-      },
-      {
-        "title":"Poverty trap formed by the ecology of infectious diseases",
-        "year":2010,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/6944eafeb53a727aa4e0891837195392d63d8437",
-        "paperId":"6944eafeb53a727aa4e0891837195392d63d8437",
-        "authors":[
-          "M. Bonds",
-          "Donald C. Keenan",
-          "P. Rohani",
-          "J. Sachs"
-        ]
-      },
-      {
-        "title":"Institutions, Factor Prices and Taxation: Virtues of Strong States?",
-        "year":2010,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/2d929d4fce956b499b5be4eb0f30fb361d6a9009",
-        "paperId":"2d929d4fce956b499b5be4eb0f30fb361d6a9009",
-        "authors":[
-          "D. Acemoglu"
-        ]
-      },
-      {
-        "title":"The Economics of Labor Coercion",
-        "year":2009,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/1a620f9f2a42a4a4f5c5af7a90cc7f5c18a7092e",
-        "paperId":"1a620f9f2a42a4a4f5c5af7a90cc7f5c18a7092e",
-        "authors":[
-          "D. Acemoglu",
-          "A. Wolitzky"
-        ]
-      },
-      {
-        "title":"Citizens, Elections, Parties: Approaches to the Comparative Study of the Processes of Development",
-        "year":2009,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/933e317d38965a12e679c7331b24ba910372742e",
-        "paperId":"933e317d38965a12e679c7331b24ba910372742e",
-        "authors":[
-          "S. Rokkan",
-          "A. Campbell",
-          "Per Torsvik",
-          "H. Valen"
-        ]
-      },
-      {
-        "title":"Myopic Voters and Natural Disaster Policy",
-        "year":2009,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/e61f3902904f978ecc72eea6bdaa420af053c733",
-        "paperId":"e61f3902904f978ecc72eea6bdaa420af053c733",
-        "authors":[
-          "A. Healy",
-          "Neil Malhotra"
-        ]
-      },
-      {
-        "title":"Shaping Democratic Practice and the Causes of Electoral Fraud: The Case of Nineteenth-Century Germany",
-        "year":2009,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/fdd5faaae969d78ad7101ee3a600bb52fc73f452",
-        "paperId":"fdd5faaae969d78ad7101ee3a600bb52fc73f452",
-        "authors":[
-          "D. Ziblatt"
-        ]
-      },
-      {
-        "title":"Does Landholding Inequality Block Democratization?: A Test of the \"Bread and Democracy\" Thesis and the Case of Prussia",
-        "year":2008,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/251cffd839f7dde6705e96c078fb0ce3c39d51fa",
-        "paperId":"251cffd839f7dde6705e96c078fb0ce3c39d51fa",
-        "authors":[
-          "D. Ziblatt"
-        ]
-      },
-      {
-        "title":"The Black Death and the origins of the \u2018Great Divergence\u2019 across Europe, 1300\u20131600",
-        "year":2007,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/f1ad697e022c7f5af060267a012fcd3f50f152f3",
-        "paperId":"f1ad697e022c7f5af060267a012fcd3f50f152f3",
-        "authors":[
-          "\u015e. Pamuk"
-        ]
-      },
-      {
-        "title":"The impact of childhood mortality on Fertility in six rural Thanas of Bangladesh",
-        "year":2007,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/3324b6450c165181398c16dccc9b4105fcd3cb63",
-        "paperId":"3324b6450c165181398c16dccc9b4105fcd3cb63",
-        "authors":[
-          "M. Hossain",
-          "J. Phillips",
-          "T. Legrand"
-        ]
-      },
-      {
-        "title":"The Study of Critical Junctures: Theory, Narrative, and Counterfactuals in Historical Institutionalism",
-        "year":2007,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/9d85023c818e0f2b835548e1b7fda372ad825c23",
-        "paperId":"9d85023c818e0f2b835548e1b7fda372ad825c23",
-        "authors":[
-          "Giovanni Capoccia",
-          "R. Kelemen"
-        ]
-      },
-      {
-        "title":"The German Right, 1860?1920: Political Limits of the Authoritarian Imagination",
-        "year":2006,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/e1d216e0e83c3910858972b18f615a48a3993078",
-        "paperId":"e1d216e0e83c3910858972b18f615a48a3993078",
-        "authors":[
-          "J. Retallack"
-        ]
-      },
-      {
-        "title":"Electing to Fight: Why Emerging Democracies Go to War",
-        "year":2006,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/53a9a37342aba94a632e08cb488b32846e223856",
-        "paperId":"53a9a37342aba94a632e08cb488b32846e223856",
-        "authors":[
-          "A. Enterline"
-        ]
-      },
-      {
-        "title":"Technological and Geographical Knowledge Spillover in the German Empire 18771918",
-        "year":2006,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/a4c1fdfdcb95d9314d88ab86a44f1ecba2fbce05",
-        "paperId":"a4c1fdfdcb95d9314d88ab86a44f1ecba2fbce05",
-        "authors":[
-          "Jochen Streb",
-          "J. Baten",
-          "Shuxing Yin"
-        ]
-      },
-      {
-        "title":"Interdisciplinary Public Health Reasoning and Epidemic Modelling: The Case of Black Death",
-        "year":2006,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/2364bbf18ebaf2cc21000d4dafc7dba2375fa4df",
-        "paperId":"2364bbf18ebaf2cc21000d4dafc7dba2375fa4df",
-        "authors":[
-          "M. Meltzer"
-        ]
-      },
-      {
-        "title":"Culture and Institutions: Economic Development in the Regions of Europe",
-        "year":2005,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/1ac178d7f22a81c04d98dba94c8f8c917375b878",
-        "paperId":"1ac178d7f22a81c04d98dba94c8f8c917375b878",
-        "authors":[
-          "G. Tabellini"
-        ]
-      },
-      {
-        "title":"Does education improve citizenship? Evidence from the United States and the United Kingdom",
-        "year":2004,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/1487b9019e76e53428d8986763cda756095cee9a",
-        "paperId":"1487b9019e76e53428d8986763cda756095cee9a",
-        "authors":[
-          "Kevin Milligan",
-          "Enrico Moretti",
-          "P. Oreopoulos"
-        ]
-      },
-      {
-        "title":"Vote Buying in Argentina",
-        "year":2004,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/d08b7c9885cb4ae0b7c0782a070f87d6635c5e29",
-        "paperId":"d08b7c9885cb4ae0b7c0782a070f87d6635c5e29",
-        "authors":[
-          "V. Brusco",
-          "Marcelo Nazareno",
-          "S. Stokes"
-        ]
-      },
-      {
-        "title":"The Legacies of Liberalism: Path Dependence and Political Regimes in Central America",
-        "year":2004,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/413919d0c6f84ab852980b4e7a63ecbff626993f",
-        "paperId":"413919d0c6f84ab852980b4e7a63ecbff626993f",
-        "authors":[
-          "Craig W. Auchter"
-        ]
-      },
-      {
-        "title":"Social inequalities without class cleavages in Latin America\u2019s neoliberal era",
-        "year":2002,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/6775e3c47398a89419017dc2dccfaf2b166bf458",
-        "paperId":"6775e3c47398a89419017dc2dccfaf2b166bf458",
-        "authors":[
-          "Kenneth M. Roberts"
-        ]
-      },
-      {
-        "title":"Modernization in Historical Perspective: The Case of Imperial Germany",
-        "year":2001,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/a7b401f363516fb66bfd8d39efeaae93796f78e1",
-        "paperId":"a7b401f363516fb66bfd8d39efeaae93796f78e1",
-        "authors":[
-          "Sheri Berman"
-        ]
-      },
-      {
-        "title":"The Colonial Origins of Comparative Development: An Empirical Investigation",
-        "year":2000,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/38d738717bcd4618a107bf564e68ae3e495d99d1",
-        "paperId":"38d738717bcd4618a107bf564e68ae3e495d99d1",
-        "authors":[
-          "D. Acemoglu",
-          "Simon Johnson",
-          "James A. Robinson"
-        ]
-      },
-      {
-        "title":"The Kaiser's Voters: Electors and Elections in Imperial Germany. By Jonathan Sperber. Cambridge: Cambridge University Press, 1997. Pp. xiii + 389. $59.95.",
-        "year":2000,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/503ff608714b1c98a2cc4453de4728a33a50e629",
-        "paperId":"503ff608714b1c98a2cc4453de4728a33a50e629",
-        "authors":[
-          "Merith Niehuss"
-        ]
-      },
-      {
-        "title":"Practicing Democracy: Elections and Political Culture in Imperial Germany",
-        "year":2000,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/5a8e83e4b935ac6eb1648a2f604b7ddb0e1a74d1",
-        "paperId":"5a8e83e4b935ac6eb1648a2f604b7ddb0e1a74d1",
-        "authors":[
-          "K. McFall"
-        ]
-      },
-      {
-        "title":"Born to die: disease and new world conquest, 1492\u20131650",
-        "year":2000,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/39cbd12218d734788a3eab34829d6a90c6176191",
-        "paperId":"39cbd12218d734788a3eab34829d6a90c6176191",
-        "authors":[
-          "G. Risse"
-        ]
-      },
-      {
-        "title":"Guns, Germs and Steel: A Short History of Everybody for the Last 13,000 Years",
-        "year":1999,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/3431241adeeb4e619c12a70d59400116403628d2",
-        "paperId":"3431241adeeb4e619c12a70d59400116403628d2",
-        "authors":[
-          "A. Brooks"
-        ]
-      },
-      {
-        "title":"German Armies: War and German Society, 1648-1806",
-        "year":1998,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/04393e9f0bc7e6adb1a6359189c7050743885fe4",
-        "paperId":"04393e9f0bc7e6adb1a6359189c7050743885fe4",
-        "authors":[
-          "P. Wilson"
-        ]
-      },
-      {
-        "title":"Born to Die: Disease and New World Conquest, 1492-1650",
-        "year":1998,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/36c25f973baa1b6e5b7794143b6d4172428d9a23",
-        "paperId":"36c25f973baa1b6e5b7794143b6d4172428d9a23",
-        "authors":[
-          "A. Crosby",
-          "N. D. Cook"
-        ]
-      },
-      {
-        "title":"Sources of Slow Growth in African Economies",
-        "year":1997,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/840319bc01f2da345e553b6a16fd941fde35c5f7",
-        "paperId":"840319bc01f2da345e553b6a16fd941fde35c5f7",
-        "authors":[
-          "J. Sachs",
-          "Andrew M. Warner"
-        ]
-      },
-      {
-        "title":"Coffee and Power: Revolution and the Rise of Democracy in Central America",
-        "year":1997,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/75d8e69c30c86b4c4b1c38f595fbec9a4da09cf5",
-        "paperId":"75d8e69c30c86b4c4b1c38f595fbec9a4da09cf5",
-        "authors":[
-          "Jeffery M. Paige"
-        ]
-      },
-      {
-        "title":"Voter, junker, landrat, priest: The old authorities and the new franchise in Imperial Germany",
-        "year":1993,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/9ae2d936e95c15f3d4e9522f29a603fb4c203f27",
-        "paperId":"9ae2d936e95c15f3d4e9522f29a603fb4c203f27",
-        "authors":[
-          "M. Anderson"
-        ]
-      },
-      {
-        "title":"Beyond the Miracle of the Market: The political economy of agrarian development in Kenya",
-        "year":1992,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/43b90ef61d74121d9686e659b4b4dc52012629a8",
-        "paperId":"43b90ef61d74121d9686e659b4b4dc52012629a8",
-        "authors":[
-          "J. Lonsdale"
-        ]
-      },
-      {
-        "title":": Notables of the Right: The Conservative Party and Political Mobilization in Germany, 1876-1918",
-        "year":1990,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/1b25cd2ba4a947ba81b434a815955b6176dfec00",
-        "paperId":"1b25cd2ba4a947ba81b434a815955b6176dfec00",
-        "authors":[
-          "R. Chickering"
-        ]
-      },
-      {
-        "title":"Notables of the Right: The Conservative Party and Political Mobilization in Germany 1876-1918",
-        "year":1989,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/47461bcc299576874df34f52d4b191a453e3318b",
-        "paperId":"47461bcc299576874df34f52d4b191a453e3318b",
-        "authors":[
-          "K. Lerman"
-        ]
-      },
-      {
-        "title":"The Black Death: natural and human disaster in medieval Europe.",
-        "year":1984,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/6b82798807693c2a65cf10d9e52b1618450165fd",
-        "paperId":"6b82798807693c2a65cf10d9e52b1618450165fd",
-        "authors":[
-          "R. Gottfried"
-        ]
-      },
-      {
-        "title":"AGRARIAN CLASS STRUCTURE AND ECONOMIC DEVELOPMENT IN PREINDUSTRIAL EUROPE",
-        "year":1978,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/593d8849c431f2c700a3ad3478c7a268d57321ce",
-        "paperId":"593d8849c431f2c700a3ad3478c7a268d57321ce",
-        "authors":[
-          "E. L. Ladurie"
-        ]
-      },
-      {
-        "title":"The Rise of the Western World: A New Economic History",
-        "year":1973,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/840eef7d11d68e2614857ed83d7de667d6e746af",
-        "paperId":"840eef7d11d68e2614857ed83d7de667d6e746af",
-        "authors":[
-          "J. L. Shneidman"
-        ]
-      },
-      {
-        "title":"Comparative Political Corruption",
-        "year":1972,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/7aeec93b96375c5b560e25292733a5513d082131",
-        "paperId":"7aeec93b96375c5b560e25292733a5513d082131",
-        "authors":[
-          "James C. Scott"
-        ]
-      },
-      {
-        "title":"Conservative Politics and Aristocratic Landholders in Bismarckian Germany",
-        "year":1972,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/9c0647913cabe27e295e1f6ea1198a71d44755bf",
-        "paperId":"9c0647913cabe27e295e1f6ea1198a71d44755bf",
-        "authors":[
-          "R. Berdahl"
-        ]
-      },
-      {
-        "title":"The Causes of Slavery or Serfdom: A Hypothesis",
-        "year":1970,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/828ae6130c80f8772bfdacb3ce3ebfb8b5b76d3d",
-        "paperId":"828ae6130c80f8772bfdacb3ce3ebfb8b5b76d3d",
-        "authors":[
-          "E. D. Domar"
-        ]
-      },
-      {
-        "title":"Social Origins of Dictatorship and Democracy: Lord and Peasant in the Making of the Modern World",
-        "year":1967,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/d4c65bb0d77c0f82c4fa1214fdff5fa4a7be305d",
-        "paperId":"d4c65bb0d77c0f82c4fa1214fdff5fa4a7be305d",
-        "authors":[
-          "David Lowenthal",
-          "Barrington. Moore"
-        ]
-      },
-      {
-        "title":"The rise of serfdom in eastern Europe",
-        "year":1957,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/8cdd529f80d0bfc45bd1607b9217fdce28a51b33",
-        "paperId":"8cdd529f80d0bfc45bd1607b9217fdce28a51b33",
-        "authors":[
-          "J. Blum"
-        ]
-      },
-      {
-        "title":"GeoNames Geographical Database",
-        "year":2020,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"B uilding Blocks and Methodological Challenges: A Framework for Studying Critical Junctures",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/5ca1a5e90c2133545c206f07b2abe4dcfff9dcb9",
-        "paperId":"5ca1a5e90c2133545c206f07b2abe4dcfff9dcb9",
-        "authors":[
-          "David R. Collier",
-          "Gerardo L. Munck"
-        ]
-      },
-      {
-        "title":"Disease and Demographic Development: The Legacy of the Black Death\u2217",
-        "year":2017,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/019c0ee62dff1285fc7c1bf0d6448f811a9a9b4a",
-        "paperId":"019c0ee62dff1285fc7c1bf0d6448f811a9a9b4a",
-        "authors":[
-          "Fabian Siuda",
-          "U. Sunde"
-        ]
-      },
-      {
-        "title":"The Black Death And The Transformation Of The West",
-        "year":2016,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/aac4f19364db4a51cc9a5ecc1ffa1a9ddaeaa57a",
-        "paperId":"aac4f19364db4a51cc9a5ecc1ffa1a9ddaeaa57a",
-        "authors":[
-          "J. Junker"
-        ]
-      },
-      {
-        "title":"Economic Inequality and Political Power in America",
-        "year":2016,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/0f97e85a9ea18adf8c1973db395cda6810959d1b",
-        "paperId":"0f97e85a9ea18adf8c1973db395cda6810959d1b",
-        "authors":[
-          "Martin Gilens"
-        ]
-      },
-      {
-        "title":"Why nations fail? The origins of Power, Prosperity and Poverty",
-        "year":2015,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/3d8008bcc50f47ba560b39da8a88566e879428a4",
-        "paperId":"3d8008bcc50f47ba560b39da8a88566e879428a4",
-        "authors":[
-          "Daron Acemoglu",
-          "James A. Robinson"
-        ]
-      },
-      {
-        "title":"Coercive contract enforcement: law and the labor market in nineteenth century industrial Britain",
-        "year":2013,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/16e7597ec53178523df83840d27c9760dc62f6e0",
-        "paperId":"16e7597ec53178523df83840d27c9760dc62f6e0",
-        "authors":[
-          "S. Naidu",
-          "Noam Yuchtman"
-        ]
-      },
-      {
-        "title":"The Impact of War: The Holy Roman Empire and Poland-Lithuania, c. 1600\u20131806",
-        "year":2012,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/72c340ca2b1968d924765e72afd39ecd276e5ee5",
-        "paperId":"72c340ca2b1968d924765e72afd39ecd276e5ee5",
-        "authors":[
-          "R. Frost"
-        ]
-      },
-      {
-        "title":"Die industrielle Revolution in Deutschland",
-        "year":2011,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/21382e22933a333086f385e35560d385688ebeee",
-        "paperId":"21382e22933a333086f385e35560d385688ebeee",
-        "authors":[
-          "H. Hahn"
-        ]
-      },
-      {
-        "title":"Using Experiments to Estimate the Effects of Education on Voter Turnout",
-        "year":2010,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/c435276691d94d04a42279a1eb12f8415508aa84",
-        "paperId":"c435276691d94d04a42279a1eb12f8415508aa84",
-        "authors":[
-          "R. M. Sondheimer",
-          "D. Green"
-        ]
-      },
-      {
-        "title":"Unequal Democracy: The Political Economy of the New Gilded Age",
-        "year":2010,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/267fccd580b782181cf1d8c424ccc733995c812a",
-        "paperId":"267fccd580b782181cf1d8c424ccc733995c812a",
-        "authors":[
-          "R. Pollin"
-        ]
-      },
-      {
-        "title":"The Three Horsemen of Riches: Plague, War, and Urbanization in Early Modern Europe",
-        "year":2009,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/95a9a0cf8c4d1f5e92fbadd1171b864f7880ac3f",
-        "paperId":"95a9a0cf8c4d1f5e92fbadd1171b864f7880ac3f",
-        "authors":[
-          "Nico Voigtl\u00e4nder"
-        ]
-      },
-      {
-        "title":"Democracy, Inequality, and Representation in Comparative Perspective",
-        "year":2008,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/b0e5d0ef8d0d4fb84e65364e9d54e7b9fdb05933",
-        "paperId":"b0e5d0ef8d0d4fb84e65364e9d54e7b9fdb05933",
-        "authors":[
-          "P. Beramendi",
-          "C. Anderson"
-        ]
-      },
-      {
-        "title":"Complete Reichstag Election Disputes Dataset, 1871 1914",
-        "year":2008,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Land and Power: Theory and Evidence from Chile",
-        "year":2008,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Sozialmoralisches Milieu",
-        "year":2008,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Handbuch der Reichstagswahlen 1890-1918 : B\u00fcndnisse, Ergebnisse, Kandidaten",
-        "year":2007,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/692b74913719af7446157295102ef7f2779a4541",
-        "paperId":"692b74913719af7446157295102ef7f2779a4541",
-        "authors":[
-          "Carl-Wilhelm Reibel"
-        ]
-      },
-      {
-        "title":"Economic Origins of Democracy and Dictatorship",
-        "year":2006,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Is the 1918 In uenza Pandemic Over? Long-Term E ects of In Utero In uenza Exposure in the Post-1940 US Population",
-        "year":2006,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"The Black Death 1346-1353: The Complete History",
-        "year":2006,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/5b6fadf859ef30f8eecec80af14a8a4ea5341f82",
-        "paperId":"5b6fadf859ef30f8eecec80af14a8a4ea5341f82",
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Are there Civic Returns to Education",
-        "year":2004,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Democracy and redistribution",
-        "year":2003,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/e75df9385c3fda647ab8525abfccfc671bfa413a",
-        "paperId":"e75df9385c3fda647ab8525abfccfc671bfa413a",
-        "authors":[
-          "C. Boix"
-        ]
-      },
-      {
-        "title":"Varieties of Capitalism",
-        "year":2001,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/a850ab09ac067b483eb6ac786db4075f00e05236",
-        "paperId":"a850ab09ac067b483eb6ac786db4075f00e05236",
-        "authors":[
-          "P. Hall",
-          "D. Soskice"
-        ]
-      },
-      {
-        "title":"The economic burden of malaria.",
-        "year":2001,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/807131a295fbb9444a039b8b76ce1dbab6efbd31",
-        "paperId":"807131a295fbb9444a039b8b76ce1dbab6efbd31",
-        "authors":[
-          "J. Gallup",
-          "J. Sachs"
-        ]
-      },
-      {
-        "title":"Political Economics: Explaining Economic Policy",
-        "year":2000,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/6cbb20a29588438b23d1545bec9736d69f450327",
-        "paperId":"6cbb20a29588438b23d1545bec9736d69f450327",
-        "authors":[
-          "T. Persson",
-          "G. Tabellini"
-        ]
-      },
-      {
-        "title":"Anatomy of an election",
+        "title":"Inflation and Economic Growth",
         "year":1995,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/f71d3b14c37aa5580aa9e85464fbe6ed3c4b86bd",
-        "paperId":"f71d3b14c37aa5580aa9e85464fbe6ed3c4b86bd",
+        "url":"https:\/\/www.semanticscholar.org\/paper\/fc025c8d21f64b2a7b42fbde1d245fe2bb1d30e3",
+        "paperId":"fc025c8d21f64b2a7b42fbde1d245fe2bb1d30e3",
         "authors":[
-          "Saul J. Amdursky"
+          "R. Barro"
         ]
       },
       {
-        "title":"Capitalist Development and Democracy.",
-        "year":1992,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/f456741cdf7f677189656482c33b5a4521b3d2dc",
-        "paperId":"f456741cdf7f677189656482c33b5a4521b3d2dc",
+        "title":"Public spending and growth: A simple model",
+        "year":2024,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/a954af6a8645ca6b1408b9e88cb8662940a35173",
+        "paperId":"a954af6a8645ca6b1408b9e88cb8662940a35173",
         "authors":[
-          "Brad Bullock",
-          "D. Rueschemeyer",
-          "E. Stephens",
-          "J. Stephens"
+          "C. Sardoni"
         ]
       },
       {
-        "title":"Commerce and coalitions: how trade affects domestic political alignments",
-        "year":1991,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/3131b44edfba7653b168f1142a5a9f1cddde9ab7",
-        "paperId":"3131b44edfba7653b168f1142a5a9f1cddde9ab7",
+        "title":"ANALYSIS OF PUBLIC DEBT FROM THE PERSPECTIVE OF MULTICULTURAL FACTORS",
+        "year":2023,
+        "url":"https:\/\/www.semanticscholar.org\/paper\/033411c4e2b6b060e95e2b02e0fb7f80a344eeb6",
+        "paperId":"033411c4e2b6b060e95e2b02e0fb7f80a344eeb6",
         "authors":[
-          "Clive C. Aston"
+          "A. Str\u0103chinaru",
+          "Adelina-Andreea Siriteanu",
+          "Erika-Maria Doaca"
         ]
       },
       {
-        "title":"Shaping the Political Arena: Critical Junctures, Trade Unions, and the State in Latin America",
-        "year":1991,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Coronelismo: The Municipality and Representative Government in Brazil",
-        "year":1977,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/9dde29863ff07c2c11895a82e3c3469e39cf5618",
-        "paperId":"9dde29863ff07c2c11895a82e3c3469e39cf5618",
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"The decline of serfdom in medieval England",
-        "year":1969,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/d100a0a0de8a1b6ba62cf84be012b4364e3900b8",
-        "paperId":"d100a0a0de8a1b6ba62cf84be012b4364e3900b8",
-        "authors":[
-          "R. Hilton"
-        ]
-      },
-      {
-        "title":"Parteiensystem und Sozialstruktur",
-        "year":1966,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Medieval Agrarian Society in its Prime: England",
-        "year":1966,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Die Organisation der deutschen Parteien vor 1918",
-        "year":1961,
-        "url":"https:\/\/www.semanticscholar.org\/paper\/4f47c7345989f6037490f6fcd77107d054dc92cb",
-        "paperId":"4f47c7345989f6037490f6fcd77107d054dc92cb",
-        "authors":[
-          "T. Nipperdey"
-        ]
-      },
-      {
-        "title":"A Comparison of the E ects of the Black Death on the Economic Organization of France and England",
-        "year":1928,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Available at SSRN: https: \/ \/ ssrn",
-        "year":null,
-        "url":null,
-        "paperId":null,
-        "authors":[
-
-        ]
-      },
-      {
-        "title":"Demokratisierung der deutschen Gesellschaft",
-        "year":null,
+        "title":"The quiet side of debt: public debt management in advanced economies",
+        "year":2022,
         "url":null,
         "paperId":null,
         "authors":[

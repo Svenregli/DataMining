@@ -13,8 +13,14 @@ load_dotenv()
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 VECTOR_STORE_PATH = "data/vector_store.json"
+CACHE_DIR = "data/semantic_scholar_cache"
 
-# Step 1: Embed and store paper chunks
+load_dotenv()
+openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+VECTOR_STORE_PATH = "data/vector_store.json"
+
+# Step 1: Embed and store paper chunks (append-safe)
 def embed_and_store_chunks(chunks, metadata_list, store_path=VECTOR_STORE_PATH):
     response = openai_client.embeddings.create(
         model="text-embedding-3-small",
@@ -22,19 +28,30 @@ def embed_and_store_chunks(chunks, metadata_list, store_path=VECTOR_STORE_PATH):
     )
     embeddings = [e.embedding for e in response.data]
 
-    records = []
+    # Load existing records if present
+    if os.path.exists(store_path):
+        with open(store_path, "r") as f:
+            existing = json.load(f)
+    else:
+        existing = []
+
+    existing_keys = {(r["metadata"].get("paperId"), r["text"]) for r in existing}
+    new_records = []
     for chunk, metadata, vector in zip(chunks, metadata_list, embeddings):
-        records.append({
-            "text": chunk,
-            "vector": vector,
-            "metadata": metadata
-        })
+        if (metadata.get("paperId"), chunk) not in existing_keys:
+            new_records.append({
+                "text": chunk,
+                "vector": vector,
+                "metadata": metadata
+            })
+
+    records = existing + new_records
 
     os.makedirs(os.path.dirname(store_path), exist_ok=True)
     with open(store_path, "w") as f:
         json.dump(records, f, indent=2)
 
-    print(f"✅ Stored {len(records)} chunks to {store_path}")
+    print(f"✅ Appended {len(new_records)} new chunks. Total now: {len(records)}")
 
 
 # Step 2: Search from stored embeddings
@@ -67,6 +84,7 @@ def embed_papers_to_openai(papers, text_splitter):
         title = paper.get("title") or f"Paper {i}"
         abstract = paper.get("abstract") or ""
         source_url = paper.get("url") or ""
+        paper_id = paper.get("paperId")
 
         full_text = f"{title}\n\n{abstract}"
         paper_chunks = text_splitter.split_text(full_text)
@@ -75,7 +93,8 @@ def embed_papers_to_openai(papers, text_splitter):
         metadatas.extend([{
             "title": title,
             "source_url": source_url,
-            "paper_index": i
+            "paper_index": i,
+            "paperId": paper_id
         }] * len(paper_chunks))
 
     embed_and_store_chunks(chunks, metadatas)
@@ -84,13 +103,9 @@ def embed_papers_to_openai(papers, text_splitter):
 def search_chunks(query, k=6):
     return search_openai_vector_store(query=query, top_k=k)
 
-
-
-
-VECTOR_STORE_PATH = "data/vector_store.json"
-CACHE_DIR = "data/semantic_scholar_cache"
-
-
+##################################################################################
+# Load vector store papers from the JSON file
+##################################################################################
 def load_vector_store_papers(store_path=VECTOR_STORE_PATH):
     if not os.path.exists(store_path):
         return {}
@@ -106,7 +121,9 @@ def load_vector_store_papers(store_path=VECTOR_STORE_PATH):
             unique_papers[pid] = meta
     return unique_papers
 
-
+######################################################################################
+# Enriching  papers with references from Semantic Scholar API used when no referneces were found at the time of embedding
+######################################################################################
 def enrich_chroma_papers_with_references():
     os.makedirs(CACHE_DIR, exist_ok=True)
     unique_papers = load_vector_store_papers()
@@ -141,7 +158,9 @@ def enrich_chroma_papers_with_references():
 
     return enriched_count
 
-
+########################################################################################
+# Load all cached papers from the cache directory
+########################################################################################
 def load_all_cached_papers(folder=CACHE_DIR):
     all_references = []
     for file in os.listdir(folder):
