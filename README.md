@@ -1,6 +1,8 @@
 # 📚 Semantic Scholar Research Assistant
 
 A powerful academic assistant that helps you fetch, embed, analyze, and visualize scientific papers using Semantic Scholar and OpenAI. Built with Streamlit.
+You can test it here: https://datamining-dkm9iake685izsyfddtr3q.streamlit.app/
+
 🔁 Step-by-Step Workflow
 1. Search & Fetch (Tab 1)
 The user enters a topic (e.g., "causal inference in medical AI").
