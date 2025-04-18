@@ -1,10 +1,24 @@
 # 📚 Semantic Scholar Research Assistant
 
-A powerful academic assistant that helps you fetch, embed, analyze, and visualize scientific papers using Semantic Scholar and OpenAI. Built with Streamlit.
+An academic assistant that helps you fetch, embed, analyze, and visualize scientific papers using Semantic Scholar and OpenAI. Built with Streamlit.
 
 👉 **Try it live**: [https://datamining-dkm9iake685izsyfddtr3q.streamlit.app/](https://datamining-dkm9iake685izsyfddtr3q.streamlit.app/)
 
 💸 **Note**: There are around **$10 in OpenAI credit** remaining on the API key. This should be sufficient to analyze ~500–1000 papers depending on their length.
+#### 🔍 Why use Semantic Scholar API instead of ArXiv or PubMed?
+
+**✅ Unified Access to Multiple Sources**  
+Semantic Scholar aggregates papers from ArXiv, PubMed, Springer, Elsevier, and more — saving you the trouble of querying multiple APIs.  
+It currently provides access to **over 215 million papers** (as of April 18, 2025).
+
+**📊 Enriched Metadata Features**  
+Semantic Scholar provides structured metadata, including:
+- Citations and references
+- Paper influence score
+- Fields of study
+- Author affiliations
+- Open access status
+- Optionally fetch full reference lists for each paper
 
 ---
 
@@ -14,13 +28,10 @@ A powerful academic assistant that helps you fetch, embed, analyze, and visualiz
 
 - Enter a topic (e.g., _“causal inference in medical AI”_)
 - The app queries the **Semantic Scholar API** to fetch relevant papers
-- Optionally fetch full reference lists for each paper
 - The results are displayed, and you can:
   - 🧠 Extract independent/dependent variables using GPT
   - 📝 Summarize the abstract
-
 ---
-
 ### 2️⃣ Embed with OpenAI (Tab 1)
 
 - When “Fetch and Embed” is selected:
