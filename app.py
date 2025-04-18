@@ -2,7 +2,9 @@ import streamlit as st
 from rag_extract_variables import search_chunks, extract_variables_from_chunks, summarize_chunks
 from pdf_utils import extract_text_from_pdf, chunk_text
 import pandas as pd
-from fetch_semantic import query_semantic_scholar, embed_papers_to_chroma
+from fetch_semantic import query_semantic_scholar, embed_papers_to_openai_wrapper
+from embed_papers_openai import embed_papers_to_openai, embed_and_store_chunks, load_all_cached_papers, enrich_chroma_papers_with_references
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 import plotly.express as px
 from pyvis.network import Network
 import streamlit.components.v1 as components
@@ -10,6 +12,14 @@ import networkx as nx
 import json
 import os
 
+
+
+
+
+
+
+
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 # --- Streamlit App Setup ---
 st.set_page_config(
     page_title="🎓 Research Variable Extractor",
@@ -21,9 +31,9 @@ st.title("🔍 Academic Assistant")
 tab1, tab2,tab3,tab4 = st.tabs(["Semantic Scholar","📎 Upload PDF", "📚 Search stored papers" , "Research citation Network"])
 
 with tab1:
-        ###############################################################################################
-        #  --- Semantic Scholar Search Section ---
-        ##############################################################################################
+            ###############################################################################################
+            #  --- Semantic Scholar Search Section ---
+            ##############################################################################################
     st.markdown("---")
     st.markdown("### 🔎 Semantic Scholar Search")
 
@@ -35,7 +45,7 @@ with tab1:
     # Mode selection
     mode = st.radio("Choose what to do:", [
         "Fetch and Analyze (no embedding)",
-        "Fetch and Embed to ChromaDB"
+        "Fetch and Embed to OpenAI Vector Store"
     ])
 
     # Process query
@@ -44,11 +54,11 @@ with tab1:
             try:
                 df = query_semantic_scholar(user_query, limit=paper_limit, fetch_references=fetch_refs)
                 papers = df.to_dict(orient="records")
-                st.success(f"Fetched {len(papers)} papers.")
+                st.success(f"✅ Fetched {len(papers)} papers.")
 
-                if mode == "Fetch and Embed to ChromaDB":
-                    embed_papers_to_chroma(papers)
-                    st.success(f"Embedded {len(papers)} papers to ChromaDB.")
+                if mode == "Fetch and Embed to OpenAI Vector Store":
+                    embed_papers_to_openai_wrapper(papers)
+                    st.success(f"✅ Embedded {len(papers)} papers using OpenAI embeddings.")
 
                 # Show papers + select
                 titles = [p["title"] for p in papers]
@@ -78,7 +88,7 @@ with tab1:
                         title = paper["title"]
                         G.add_node(pid, label=title)
                         for ref in paper.get("references", []):
-                            ref_id = ref.get("url", "").split("/")[-1]
+                            ref_id = ref.get("paperId")
                             if ref_id:
                                 G.add_node(ref_id, label=ref.get("title", "Unknown"))
                                 G.add_edge(pid, ref_id)
@@ -140,14 +150,14 @@ with tab2:
 ##############################################################################################
 with tab3:
     st.markdown("---")
-    st.markdown("### 🧠 Analyze Embedded Papers in ChromaDB")
+    st.markdown("### 🧠 Analyze Embedded Papers with OpenAI Vector Search")
 
     query = st.text_input("Search embedded paper chunks:", value="causal inference in medical AI")
     k = st.slider("How many chunks to retrieve:", 3, 20, 6)
 
     if query:
-        with st.spinner("Searching ChromaDB..."):
-            chunks = search_chunks(query=query, k=k, collection_name="semantic_scholar")
+        with st.spinner("Searching with OpenAI vector embeddings..."):
+            chunks = search_chunks(query=query, k=k)
 
         if not chunks:
             st.warning("⚠️ No matching chunks found. Try another query.")
@@ -186,22 +196,16 @@ with tab3:
 # --- Research Network Visualization Section ---
 #############################################################################################
 
+# Tab 4: Global Research Citation Network
+
 with tab4:  # "Research Network" tab
     st.markdown("---")
     st.markdown("### 🌐 Global Research Citation Network (from cached queries)")
 
-    # Load all cached results
-    def load_all_cached_papers(folder="data/semantic_scholar_cache"):
-        all_papers = []
-        for file in os.listdir(folder):
-            if file.endswith(".json"):
-                try:
-                    with open(os.path.join(folder, file), "r") as f:
-                        papers = json.load(f)
-                        all_papers.extend(papers)
-                except:
-                    st.warning(f"Failed to load {file}")
-        return all_papers
+    if st.button("📡 Enrich stored Papers with References"):
+        with st.spinner("Fetching missing references from stored papers..."):
+            count = enrich_chroma_papers_with_references()
+            st.success(f"✅ Enriched {count} new papers from stored papers.")
 
     papers = load_all_cached_papers()
 
@@ -211,25 +215,39 @@ with tab4:  # "Research Network" tab
         st.success(f"Loaded {len(papers)} papers from cache.")
 
         G = nx.DiGraph()
+        edges = 0
+
         for paper in papers:
             pid = paper.get("paperId")
             title = paper.get("title", "Untitled")
+
             if pid:
                 G.add_node(pid, label=title)
+
                 for ref in paper.get("references", []):
                     ref_id = ref.get("paperId")
+                    ref_title = ref.get("title", "Unknown")
                     if ref_id:
-                        G.add_node(ref_id, label=ref.get("title", "Unknown"))
+                        G.add_node(ref_id, label=ref_title)
                         G.add_edge(pid, ref_id)
+                        edges += 1
 
+        st.text(f"📊 Graph has {G.number_of_nodes()} nodes and {edges} edges.")
 
-        net = Network(height="600px", width="100%", directed=True)
-        net.from_nx(G)
-        net.save_graph("data/global_citation_network.html")
+        if edges == 0:
+            st.warning("⚠️ No citation edges were created. Make sure references have 'paperId' fields.")
+        else:
+            net = Network(height="600px", width="100%", directed=True)
+            net.from_nx(G)
+            net.save_graph("data/global_citation_network.html")
 
-        with open("data/global_citation_network.html", "r", encoding="utf-8") as f:
-            html = f.read()
-        components.html(html, height=650, scrolling=True)
+            with open("data/global_citation_network.html", "r", encoding="utf-8") as f:
+                html = f.read()
+            components.html(html, height=650, scrolling=True)
+
+        # Optional diagnostics
+        missing_refs = sum(1 for p in papers for r in p.get("references", []) if not r.get("paperId"))
+        st.info(f"🧩 Found {missing_refs} references missing 'paperId'.")
 
 
 

@@ -1,76 +1,13 @@
-import chromadb
-from sentence_transformers import SentenceTransformer
 import openai
 from dotenv import load_dotenv
 import os
-import time # Import time for potential backoff
-from chromadb.utils import embedding_functions
-from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
-# Load env variables (make sure .env has OPENAI_API_KEY)
+import time
+import streamlit as st
+from embed_papers_openai import search_chunks
+
+# Load env variables
 load_dotenv()
 openai_client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-# Load sentence-transformer model
-print("Loading embedding model...")
-openai_ef = OpenAIEmbeddingFunction(api_key=os.getenv("OPENAI_API_KEY"))
-print("Embedding model loaded.")
-
-# Connect to ChromaDB server
-try:
-    print("Connecting to ChromaDB...")
-    client = chromadb.HttpClient(host="localhost", port=8000)
-    client.heartbeat()
-    collection = client.get_or_create_collection("paper_chunks", embedding_function=openai_ef)
-    print("Connected to ChromaDB and collection obtained.")
-except Exception as e:
-    print(f"Error connecting to ChromaDB: {e}")
-    collection = None
-
-
-def search_chunks(query: str, k=6, year=None, author=None, collection_name="semantic_scholar"):
-    """
-    Searches for relevant text chunks in ChromaDB based on a query and filters.
-    """
-    try:
-        # Define client inside the function
-        client = chromadb.HttpClient(host="localhost", port=8000)
-        openai_ef = OpenAIEmbeddingFunction(api_key=os.getenv("OPENAI_API_KEY"))
-
-        # Always create collection first
-        collection = client.get_or_create_collection(collection_name, embedding_function=openai_ef)
-    except Exception as e:
-        print(f"❌ Error creating or connecting to ChromaDB collection: {e}")
-        return []
-
-    try:
-        results = collection.query(query_texts=[query], n_results=50)
-
-        if not results or not results.get("documents") or not results["documents"][0]:
-            print("⚠️ No results found in ChromaDB for the query.")
-            return []
-
-        docs = results["documents"][0]
-        metas = results["metadatas"][0]
-
-        filtered = []
-        for doc, meta in zip(docs, metas):
-            meta_year = meta.get("year")
-            meta_authors_str = meta.get("authors", "").lower()
-
-            year_match = (year is None or (meta_year is not None and str(meta_year) == str(year)))
-            author_match = (author is None or author.strip() == "" or author in meta_authors_str)
-
-            if year_match and author_match:
-                filtered.append((doc, meta))
-
-        return filtered[:k]
-
-    except Exception as e:
-        print(f"❌ Error during ChromaDB search: {e}")
-        return []
-
-
-
 
 
 def extract_variables_from_chunks(chunks: list[str]) -> str:
