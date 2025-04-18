@@ -89,6 +89,9 @@ def embed_papers_to_openai(papers, text_splitter):
         full_text = f"{title}\n\n{abstract}"
         paper_chunks = text_splitter.split_text(full_text)
 
+        # ✅ Filter out None values just in case
+        paper_chunks = [chunk for chunk in paper_chunks if isinstance(chunk, str)]
+
         chunks.extend(paper_chunks)
         metadatas.extend([{
             "title": title,
@@ -98,6 +101,7 @@ def embed_papers_to_openai(papers, text_splitter):
         }] * len(paper_chunks))
 
     embed_and_store_chunks(chunks, metadatas)
+
 
 
 def search_chunks(query, k=6):
